@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mApper</title>
+  <meta charset="utf-8" />
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+	<script src = "app.js"></script>
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
+  <script type="game.js"></script>
+  </head>
+  <body>
+  <h1>mApper</h1>
+  <div id="border"> </div>
+  <div id="pano"></div>
+  	<div ng-app = 'App'>
+  		<div ng-controller = "mapController">
+        <ng-click = "Start Game"></ng-click>
+  
+  		test: {{testLat}}
+  		map: {{map}}
+  		</div>
+  	</div>
+
+  </body>
+  </html>

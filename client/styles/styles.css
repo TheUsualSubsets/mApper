@@ -1,0 +1,12 @@
+h1{
+	font-size: 30px;
+	text-align: center;
+	color: #202020;
+    letter-spacing: .1em;    
+}
+
+#pano{
+	height: 70vh;
+	width: 70vw;
+	z-index: 0;
+}
