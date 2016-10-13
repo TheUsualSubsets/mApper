@@ -12,6 +12,7 @@ Make sure you have FORKED the main repo and are working from YOUR FORK.
 
 `git checkout master`
 
+`git remote add upstream LinkToOrgRepo` *(sets up an upstream to source of truth - make sure the url is to the ORG repo, NOT your fork)*
 
 ___
 
