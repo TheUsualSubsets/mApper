@@ -1,21 +1,29 @@
 {
   "name": "mapper",
   "version": "1.0.0",
-  "description": "A geo mapping game for friends",
+  "description": "geo-location game",
   "main": "config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  },
   "dependencies": {
-    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.3",
     "mongoose-random": "^0.1.1",
     "nodemon": "^1.11.0",
     "request": "^2.75.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizzieshipton/mApper.git"
+  },
+  "author": "the usual subsets",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizzieshipton/mApper/issues"
+  },
+  "homepage": "https://github.com/lizzieshipton/mApper#readme"
 }
