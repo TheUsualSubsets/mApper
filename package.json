@@ -1,24 +1,26 @@
 {
-  "name": "mApper",
+  "name": "mapper",
   "version": "1.0.0",
   "description": "A geo mapping game for friends",
-  "main": "index.js",
+  "main": "config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trannda1223/mApper.git"
+    "url": "git+https://github.com/pizzasaurusrex/mApper.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/trannda1223/mApper/issues"
+    "url": "https://github.com/pizzasaurusrex/mApper/issues"
   },
-  "homepage": "https://github.com/trannda1223/mApper#readme",
+  "homepage": "https://github.com/pizzasaurusrex/mApper#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.3",
+    "mongoose-random": "^0.1.1",
     "nodemon": "^1.11.0",
     "request": "^2.75.0"
   }
