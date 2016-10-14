@@ -1,6 +1,13 @@
 var mongoose = require('mongoose');
 var fs = require('fs');
-mongoose.connect('mongodb://localhost/loco');
+//in order for the following connection to work, I had to set the bind_ip variable inside the etc/mongo.config file (on the remote server) to 0.0.0.0.  This allows the database to accept connections from networks outside of the local machine.
+mongoose.connect('mongodb://104.236.129.131/mapper', function(err, db) {
+  if (err) {
+    throw err;
+  } else {
+    console.log('successfully connected to database');
+  }
+});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -46,7 +53,7 @@ var entry = mongoose.model('entrySchema', entrySchema);
 //USE FS READFILE TO READ THE CSV FILE INTO MEMORY
 //NOTE ***IF CSV FILE IS LARGE, THE FOLLOWING MAY NEED TO BE REFACTORED
 //TO INCLUDE STREAMING/PIPING SO AS TO NOT TAKE UP SO MUCH VOLOTILE MEMORY 
-fs.readFile('LocationPoints.csv', 'utf-8', (err, data) => {
+fs.readFile('./LocationPoints.csv', 'utf-8', (err, data) => {
   if (err) throw err;
   //SPLIT EACH ENTRY INTO A SEPARATE STRING
   var array = data.split('\r\n');
