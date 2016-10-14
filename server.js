@@ -1,18 +1,19 @@
 var express = require('express');
 var request = require('request');
-// var mongo = require('mongodb');
-// var mongoose = require('mongoose');
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var query = require('./server/dbqueries.js');
 
-
-// mongoose.connect('mongodb://localhost/test');
-// var db = mongoose.connection;
-// db.on('error', function(error){
-//   console.error.bind(console, 'connection error: ')
+// mongoose.connect('mongodb://104.236.129.131/mapper', function(err, db) {
+//   if (err) {
+//     throw err;
+//   } else {
+//     console.log('successfully connected to database');
+//   }
 // });
-// db.once('open', function(){
-//   console.log('connected to MONGODB');
-// })
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
 
 var app = express();
 app.use(bodyParser.json());
@@ -31,15 +32,9 @@ request('https://maps.googleapis.com/maps/api/js?key=AIzaSyB0HuOvHVC8Rs8ZLtFoYfk
 
 
 app.get('/newGame', function(req, res){
-  res.send(200, Map);
-})
+  query.randomQuery(req, res);
+});
 
-//on load - send API request
-  //res.send(map obect) to client
-//app.get('/newGame') --> we make a request to DB
-  //get an array of 5 cities from DB
-    //itarate over array and set one random index key to 'true' (dafault is false)
-    //send it to client
 
 
 app.listen(PORT, function(){
