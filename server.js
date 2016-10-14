@@ -5,15 +5,6 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var query = require('./server/dbqueries.js');
 
-// mongoose.connect('mongodb://104.236.129.131/mapper', function(err, db) {
-//   if (err) {
-//     throw err;
-//   } else {
-//     console.log('successfully connected to database');
-//   }
-// });
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
 
 var app = express();
 app.use(bodyParser.json());
@@ -27,7 +18,6 @@ request('https://maps.googleapis.com/maps/api/js?key=AIzaSyB0HuOvHVC8Rs8ZLtFoYfk
     console.error('Oops: ', err);
   }
    Map = body;
-   // res.send(200);
 });
 
 
