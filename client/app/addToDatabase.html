@@ -1,0 +1,28 @@
+<div ng-controller = "addToDatabaseController">
+    <input places-auto-complete types=['geocode'] ng-model="place">
+    <button ng-click="updateToPlace(place)">Search</button>
+    <map on-click="updateInfo()" center="39.56951192473842,-97.65442098692967">
+    <street-view-panorama
+      position="39.56951192473842,-97.65442098692967"
+      pov="{heading:0, pitch: 90}">
+    </street-view-panorama>
+    </map>
+    <button ng-click="addToDatabase()">Add To Database</button>
+    <button ng-click="updateInfo()">Generate Info</button>
+    <form>
+    Point of Interest: <input ng-model="locationObj.poi"><br>
+    City: <input ng-model="locationObj.city">
+    State: <input ng-model="locationObj.state">
+    Country: <input ng-model="locationObj.country"><br>
+    Latitude: <input ng-model="locationObj.lat">
+    Longitute: <input ng-model="locationObj.lng">
+    Heading: <input ng-model="locationObj.heading"><br>
+    Pitch: <input ng-model="locationObj.pitch"><br>
+    </form>
+    
+</div>
+
+
+
+<!-- <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: true, fullscreenControl: true, panControl: true, zoomControl: true, imageDateControl: true})"/>  
+    </map> -->
