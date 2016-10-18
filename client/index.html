@@ -16,11 +16,23 @@
   </head>
   <body>
     <div ng-app  = 'App'>
-      <h1>mApper</h1>
-          <div ng-view></div>
-        </div>
+
+      <div class='header'>
+        <div class='navbar navbar-inverse navbar-static-top'>
+          <div class='container'>
+            <a href="/" class='navbar-brand'>Map Game</a>
+            <ul class='nav navbar-nav navbar-right'>
+              <li><a href="/#/game">Play Game</a></li>
+              <li><a href="/#/game">More Links</a></li>
+            </ul>
+          </div> <!--container-->
+        </div> 
+      </div><!-- header -->
+
+
+      <div ng-view></div>
     <!--david start - there was missing closing div/also fixed some intention -->    
-    </div>
+    </div><!--App-->
 
     <link rel="stylesheet" type="text/css" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'></link>
     <!--david end-->

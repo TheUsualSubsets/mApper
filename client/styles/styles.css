@@ -4,6 +4,17 @@ body, html {
 	text-align: center;
 }
 
+body {
+	/*background: #000d1a url('./images/hero.jpg') top center no-repeat;*/
+}
+
+.hero {
+	background: #000d1a url('./images/hero.jpg') top center no-repeat;
+	background-size: 100%;
+	/*width: 100px;*/
+	height: 400px;
+}
+
 #butt {
     background-color: gray;
     border: none;
@@ -40,3 +51,7 @@ h1 {
 	font-size: 2em;
 	font-family: arial;
 }
+
+/*#playgamebuttons {
+	top: 60vh;
+}*/
