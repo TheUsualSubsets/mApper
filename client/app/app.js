@@ -23,6 +23,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase'])
 })
 .controller('mapController', ['$scope', 'Map', function ($scope, Map){
 	$scope.count = 0; 
+	
 	$scope.compareAnswer = function (answer){
 		console.log(answer.answer)
 		if ($scope.answer === answer.answer){
