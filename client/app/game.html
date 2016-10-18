@@ -1,0 +1,10 @@
+<div class='pano' ng-init="StartGame()">
+  <div ng-controller = "mapController">
+    <span class="score">SCORE: {{count}}</span>
+    <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>  
+    </map>
+    <div id = 'butt' ng-repeat="answer in answerChoices">
+      <button ng-click="compareAnswer(this)">{{answer}}</button>
+    </div>
+  </div>
+</div>

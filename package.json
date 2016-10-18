@@ -6,6 +6,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "forever": "^0.15.2",
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.3",
     "mongoose-query-random": "^1.0.1",
@@ -16,7 +17,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "installall": "npm install && cd client && bower install"
   },
   "repository": {
     "type": "git",

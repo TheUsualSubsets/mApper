@@ -1,0 +1,24 @@
+{
+  "name": "client",
+  "homepage": "https://github.com/TheUsualSubsets/mApper",
+  "authors": [
+    "TheUsualSubsets"
+  ],
+  "description": "mapper game",
+  "main": "index.html",
+  "keywords": [
+    "map"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngmap": "^1.17.6"
+  }
+}

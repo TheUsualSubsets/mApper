@@ -1,0 +1,52 @@
+id, city_name, lat, lng, poi 
+1, Chicago, 41.8916978, -87.60852, Navy Pier 
+2, Chicago, 41.8827381, -87.62276, The Bean 
+3, Chicago, 41.8813627, -87.67255, The United Center 
+6, Chicago, 41.9102189, -87.67752, Wicker Park 
+4, Chicago, 41.8515308, -87.63204, China Town 
+5, Chicago, 41.7799305, -87.64968, Englewood 
+7, Chicago, 41.9472224, -87.65648, Wrigley Field 
+8, Chicago, 41.946409, -87.64939, Lakeview 
+9, Chicago, 41.9017095, -87.70334, Humboldt Park 
+10, Chicago, 41.9028199, -87.6895, Pilson 
+13, London, 51.5031075, -0.1197771, London Eye 
+11, Chicago, 41.9542214, -87.67958, Lakeview 
+14, London, 51.5086019, -0.0761589, Tower of London 
+15, London, 51.5073368, -0.164999, Hyde Park 
+12, London, 51.5137588, -0.0990787, St Paul's Cathedral 
+16, London, 51.5009354, -0.1244986, Big Ben 
+17, London, 51.5056233, -0.1872464, Kensington Palace 
+18, London, 51.6570983, -0.3911517, Watford 
+20, London, 51.518845, -0.12597, British Museum 
+19, London, 51.5081035, -0.09708, Globe Theatre 
+21, London, 51.5383379, -0.0173894, Olympic Stadium 
+23, San Francisco, 37.7597727, -122.42706, Dolores Park 
+22, San Francisco, 37.770478, -122.47743, Golden Gate Park 
+24, San Francisco, 37.8158332, -122.47804, Golden Gate Bridge 
+25, San Francisco, 37.7631877, -122.51286, Ocean Beach 
+26, San Francisco, 37.8087435, -122.41588, Fishermans Wharf 
+27, San Francisco, 37.7545798, -122.44642, Twin Peaks 
+28, San Francisco, 37.7948658, -122.39347, San Francisco Ferry Building 
+29, San Francisco, 37.778074, -122.39166, At&t Park 
+30, San Francisco, 37.7699989, -122.44691, Haight Ashbury 
+33, New York, 40.7585853, -73.97901, 30 Rockefeller Plaza 
+31, San Francisco, 37.8020583, -122.41918, Lombard Street 
+34, New York, 40.7514272, -73.9937, Madison Square Garden 
+32, New York, 40.7483142, -73.9847, Empire State Building 
+35, New York, 40.7585993, -73.98514, Times Square 
+36, New York, 40.775333, -73.97283, Central Park 
+37, New York, 40.5730103, -73.98132, Cony Island 
+38, New York, 40.7613411, -73.97796, MoMa 
+39, New York, 40.7112892, -74.01456, Near World Trade Center 
+40, New York, 40.7054665, -74.01336, New York Stock Exchange 
+42, Istanbul, 41.0063603, 28.97808, Sultanahmet 
+41, New York, 40.7037122, -73.99374, Brooklyn Bridge 
+43, Istanbul, 41.0373658, 28.98542, Taksim Square 
+44, Istanbul, 41.041994, 29.00686, Becesehir University 
+45, Istanbul, 41.0220137, 28.97704, Karakoy 
+46, Istanbul, 41.0054443, 28.97694, Blue Mosque 
+47, Istanbul, 41.008767, 28.9798, Haiga Sophia 
+48, Istanbul, 41.0754137, 29.04433, Misir Konsoloslugo 
+50, Istanbul, 41.0105645, 28.96803, Grand Bazaar 
+49, Istanbul, 40.8779465, 29.0995, Heybiliada 
+51, Istanbul, 41.012334, 28.98463, Topkapi Palace 
