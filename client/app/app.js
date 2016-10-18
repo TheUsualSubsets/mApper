@@ -32,6 +32,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase'])
 		} else {
 			$scope.count = 0;
 		}
+		$scope.StartGame();
 	}
 	$scope.StartGame = function(){
 		console.log($scope.show, 'before getMpas function')
@@ -42,7 +43,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase'])
 			$scope.answer = result.answer; 
 			$scope.poi = result.poi;
 			$scope.answerChoices = result.answerChoices;
-			console.log($scope.show)
+			
 	})
 }
 }])
