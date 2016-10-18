@@ -1,12 +1,13 @@
 <div ng-controller = "addToDatabaseController">
     <input places-auto-complete types=['geocode'] ng-model="place">
-    <button ng-click="updateToPlace(place)">Search</button>
-    <map on-click="updateInfo()" center="39.56951192473842,-97.65442098692967">
+    <button ng-click="updateToPlace(place)">Search</button><br>
+    <map ng-click="updateInfo()" center="39.56951192473842,-97.65442098692967"> 
     <street-view-panorama
-      position="39.56951192473842,-97.65442098692967"
-      pov="{heading:0, pitch: 90}">
+      container="streetview"
+      ng-click="updateInfo()">
     </street-view-panorama>
     </map>
+    <div id="streetview"></div><br>
     <button ng-click="addToDatabase()">Add To Database</button>
     <button ng-click="updateInfo()">Generate Info</button>
     <form>
@@ -24,5 +25,47 @@
 
 
 
-<!-- <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: true, fullscreenControl: true, panControl: true, zoomControl: true, imageDateControl: true})"/>  
-    </map> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<style>
+  ng-map, #streetview {display:inline-block !important;width:40%;height: 300px}
+</style>
+
+<div ng-controller = "addToDatabaseController">
+
+    <ng-map zoom="18" center="[40.688738,-74.043871]"
+            default-style="false"
+            map-type-id="MapTypeId.SATELLITE" tilt="45">
+
+        <street-view-panorama container="streetview">
+        </street-view-panorama>
+
+
+    </ng-map>
+        <div id="streetview"></div> 
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
