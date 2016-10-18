@@ -44,3 +44,12 @@ h1 {
  map {
  	height: 30em;
  }
+
+ .red{
+ 	color: red;
+ 
+ }
+
+ .hidden {
+ 	 visibility: hidden;
+ }

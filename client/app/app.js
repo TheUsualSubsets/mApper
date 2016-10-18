@@ -23,22 +23,27 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 })
 .controller('mapController', ['$scope', 'Map', function ($scope, Map){
 	$scope.count = 0; 
-
+	$scope.toggle = true;
 	$scope.compareAnswer = function (answer){
 		console.log(answer.answer)
 		if ($scope.answer === answer.answer){
 			$scope.count++;
+			$scope.toggle = !$scope.toggle;
 			console.log($scope.count);
 			console.log($scope.show);
 		} else {
 			$scope.count = 0;
 		}
-		$scope.StartGame();
+		setTimeout(function(){
+			$scope.StartGame();
+		}, 1000)
+		
 	}
 	$scope.StartGame = function(){
 		console.log($scope.show, 'before getMpas function')
 		Map.getMaps(function(result){
 			console.log('start game function', result);
+			$scope.toggle = true;
 			$scope.lat = result.position.lat;
 			$scope.lng = result.position.lng; 
 			$scope.answer = result.answer; 
