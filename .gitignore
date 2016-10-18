@@ -15,6 +15,7 @@ Icon
 .Spotlight-V100
 .Trashes
 node_modules/
+client/bower_components
 
 
 

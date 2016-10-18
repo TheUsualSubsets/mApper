@@ -5,10 +5,10 @@ angular.module('addToDatabase', [])
   $scope.updateInfo = function() {
     $scope.locationObj = 
     {
-      lat: $scope.svp.getPosition().lat(),
-      lng: $scope.svp.getPosition().lng(),
-      heading: $scope.svp.getPov().heading,
-      pitch: $scope.svp.getPov().pitch
+      lat: $scope.map.streetView.getPosition().lat(),
+      lng: $scope.map.streetView.getPosition().lng(),
+      heading: $scope.map.streetView.getPov().heading,
+      pitch: $scope.map.streetView.getPov().pitch
     }
     GeoCoder.geocode({location: {lat: $scope.locationObj.lat, lng: $scope.locationObj.lng}}).then(function(result) {
       console.log('dang geocoding result', result);
@@ -25,7 +25,6 @@ angular.module('addToDatabase', [])
     })
   };
   $scope.$on('mapInitialized', function(event, map) {
-    $scope.svp = map.streetView;
     $scope.map = map;
   });
   $scope.addToDatabase = function() {
@@ -36,12 +35,10 @@ angular.module('addToDatabase', [])
     console.log(place);
     GeoCoder.geocode({address: $scope.place}).then(function(result){
       console.log(result[0].geometry.location);
-      $scope.map.setCenter(result[0].geometry.location)
+      console.log($scope.svp)
+      $scope.map.setCenter(result[0].geometry.location);
+      $scope.map.streetView.setPosition(result[0].geometry.location);
     })
   }
-
-
-
-
 
 }])

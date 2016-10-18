@@ -33,6 +33,7 @@ h1 {
 	font-family: arial;
 }
 
+
  map {
  	margin: auto;
  	width: 90%;
@@ -42,6 +43,7 @@ h1 {
  .hidden {
  	 visibility: hidden;
  }
+
  .correct {
  	width: 100%;
  	height: 100%;
@@ -49,7 +51,6 @@ h1 {
  	text-align: center;
  	z-index: 10;
 
- 
  }
 
 .correct h1 {
@@ -66,9 +67,7 @@ h1 {
  	height: 100%;
  	position: absolute;
  	text-align: center;
- 	z-index: 10;
-
- 
+ 	z-index: 10; 
  }
 
 .incorrect h1 {
@@ -78,4 +77,28 @@ h1 {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
+
+
+.ng-scope {
+  width: 100%,
+  height: 100%;
+}
+
+#googleMap {
+  height: 100%,
+  width: 100%;
+}
+
+#streetview {
+  display:inline-block !important;
+  width:50%;
+  height: 300px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  float: left;
+
+}
+
+
 
