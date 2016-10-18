@@ -3,11 +3,11 @@
     <button ng-click="StartGame()">New Location</button>
 
 
-    <button id='btn' ng-class="toggle ? 'hidden' : 'red'">Correct</button>
+    <h1 id='btn' ng-class="toggle ? 'hidden' : 'red'">Correct</h1>
     <span class="score">SCORE: {{count}}</span>
     <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>  
     </map>
-    <div id = 'butt' ng-repeat="answer in answerChoices">
+    <div ng-class="toggle ? 'butt' : 'hidden'" ng-repeat="answer in answerChoices">
       <button ng-click="compareAnswer(this)">{{answer}}</button>
     </div>
   </div>

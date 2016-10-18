@@ -4,7 +4,7 @@ body, html {
 	text-align: center;
 }
 
-#butt {
+.butt {
     background-color: gray;
     border: none;
     color: white;
@@ -47,6 +47,11 @@ h1 {
 
  .red{
  	color: red;
+ 	position: absolute;
+ 	top: 5em;
+ 	left: 45%;
+ 	z-index: 10;
+
  
  }
 

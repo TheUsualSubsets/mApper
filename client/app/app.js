@@ -36,7 +36,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 		}
 		setTimeout(function(){
 			$scope.StartGame();
-		}, 1000)
+		}, 500)
 		
 	}
 	$scope.StartGame = function(){
