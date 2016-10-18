@@ -44,8 +44,10 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase'])
 			$scope.poi = result.poi;
 			$scope.answerChoices = result.answerChoices;
 			
-	})
-}
+		})
+	}
+
+	$scope.StartGame();
 }])
 
 //{
