@@ -29,8 +29,11 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
+	$scope.user;
 	$scope.topScores = [];
-	
+
+
+
 	$scope.compareAnswer = function (answer){
 		console.log(answer.answer)
 		if ($scope.answer === answer.answer){
@@ -40,7 +43,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 			console.log($scope.count);
 			console.log($scope.show);
 		} else {
-			scoreFactory.addScore('SCE', $scope.count)
+			scoreFactory.addScore($scope.user, $scope.count)
 			$scope.count = 0;
 			$scope.incorrect = !$scope.incorrect;
 			$scope.buttonToggle = !$scope.buttonToggle;
@@ -52,6 +55,13 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 	}
 	$scope.StartGame = function(){
 		console.log($scope.show, 'before getMpas function')
+		scoreFactory.getScores(function(result){
+			result.data.forEach(function(score){
+				$scope.topScores.push(score)
+			})
+			
+			console.log('scores', $scope.topScores);
+		})
 		Map.getMaps(function(result){
 			console.log('start game function', result);
 			$scope.toggle = true;
@@ -65,6 +75,16 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 			
 		})
 	}
+	var getUserInfo = function() {
+		$scope.user = prompt('Enter your initials (3 letters or digits)');
+		if ($scope.user.length > 3) {
+			alert('Length exceeded, please enter three initials');
+			getUserInfo();
+		} 
+
+	};
+
+	getUserInfo()
 
 	$scope.StartGame();
 }])
