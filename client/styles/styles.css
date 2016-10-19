@@ -4,17 +4,9 @@ body, html {
 	text-align: center;
 }
 
-#butt {
-    background-color: gray;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
+.butt {
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    margin: .5%; 
 }
 
 #pano{
@@ -41,6 +33,52 @@ h1 {
 	font-family: arial;
 }
 
+
+ map {
+ 	margin: auto;
+ 	width: 90%;
+ 	height: 40em;
+ }
+
+ .hidden {
+ 	 visibility: hidden;
+ }
+
+ .correct {
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	text-align: center;
+ 	z-index: 10;
+
+ }
+
+.correct h1 {
+	margin-top: 10%;
+	color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+}
+
+ .incorrect {
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	text-align: center;
+ 	z-index: 10; 
+ }
+
+.incorrect h1 {
+    margin-top: 10%;
+	color: black;
+    -webkit-text-fill-color: white; 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+
 .ng-scope {
   width: 100%,
   height: 100%;
@@ -51,7 +89,7 @@ h1 {
   width: 100%;
 }
 
-map, #streetview {
+#streetview {
   display:inline-block !important;
   width:50%;
   height: 300px;

@@ -1,4 +1,4 @@
-angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase'])
+angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 'ui.bootstrap'])
 .config(function($routeProvider){
 	$routeProvider
 
@@ -23,28 +23,44 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase'])
 })
 .controller('mapController', ['$scope', 'Map', function ($scope, Map){
 	$scope.count = 0; 
+	$scope.toggle = true;
+	$scope.buttonToggle = true;
+	$scope.incorrect = true;
 	$scope.compareAnswer = function (answer){
 		console.log(answer.answer)
 		if ($scope.answer === answer.answer){
 			$scope.count++;
+			$scope.toggle = !$scope.toggle;
+			$scope.buttonToggle = !$scope.toggle;
 			console.log($scope.count);
 			console.log($scope.show);
 		} else {
 			$scope.count = 0;
+			$scope.incorrect = !$scope.incorrect;
+			$scope.buttonToggle = !$scope.buttonToggle;
 		}
+		setTimeout(function(){
+			$scope.StartGame();
+		}, 2500)
+		
 	}
 	$scope.StartGame = function(){
 		console.log($scope.show, 'before getMpas function')
 		Map.getMaps(function(result){
 			console.log('start game function', result);
+			$scope.toggle = true;
+			$scope.buttonToggle = true;
+			$scope.incorrect = true;
 			$scope.lat = result.position.lat;
 			$scope.lng = result.position.lng; 
 			$scope.answer = result.answer; 
 			$scope.poi = result.poi;
 			$scope.answerChoices = result.answerChoices;
-			console.log($scope.show)
-	})
-}
+			
+		})
+	}
+
+	$scope.StartGame();
 }])
 
 //{
