@@ -29,6 +29,8 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
+	$scope.topScores = [];
+	
 	$scope.compareAnswer = function (answer){
 		console.log(answer.answer)
 		if ($scope.answer === answer.answer){
