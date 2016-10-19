@@ -30,6 +30,8 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'Highsco
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
+	$scope.topScores = [];
+	
 	$scope.compareAnswer = function (answer){
 		if ($scope.answer === answer.answer){
 			$scope.count++;
