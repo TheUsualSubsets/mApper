@@ -1,28 +1,93 @@
-<div ng-controller = "addToDatabaseController">
-    <input places-auto-complete types=['geocode'] ng-model="place">
-    <button ng-click="updateToPlace(place)">Search</button><br>
-    <map ng-click="updateInfo()" center="39.56951192473842,-97.65442098692967"> 
-    <street-view-panorama
-      container="streetview"
-      ng-click="updateInfo()">
-    </street-view-panorama>
-    </map>
-    <div id="streetview"></div><br>
-    <button ng-click="addToDatabase()">Add To Database</button>
-    <button ng-click="updateInfo()">Generate Info</button>
-    <form>
-    Point of Interest: <input ng-model="locationObj.poi"><br>
-    City: <input ng-model="locationObj.city">
-    State: <input ng-model="locationObj.state">
-    Country: <input ng-model="locationObj.country"><br>
-    Latitude: <input ng-model="locationObj.lat">
-    Longitute: <input ng-model="locationObj.lng">
-    Heading: <input ng-model="locationObj.heading"><br>
-    Pitch: <input ng-model="locationObj.pitch"><br>
-    </form>
-    
+<div class="container-fluid" ng-controller="addToDatabaseController">
+  <div class="row">
+    <div class="mapcontainer">
+
+      <map class="smallmap" ng-click="updateInfo()" center="39.56951192473842,-97.65442098692967"> 
+          <street-view-panorama
+            container="streetview"
+            ng-click="updateInfo()">
+          </street-view-panorama>
+      </map>
+      <div id="streetview"></div><br>
+
+      <form ng-submit=updateToPlace(place) class="searchbar">
+          <input places-auto-complete types=['geocode'] ng-model="place" class="form-control input-transparent col-sm-6">
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" style="background-color: lightblue">
+  <div class="row">
+    <div style="background-color: blue" class="col-md-6 poiInput">
+            
+      <form ng-submit=addToDatabase() class="form-horizontal">
+        <div class="form-group">
+            <div class="row">
+                <label class="col-md-1 control-label" for="poi">POI</label>
+                <div class="col-md-5" style="display: inline-block;">
+                    <input ng-model="locationObj.poi" class="form-control" id="poi">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <label class="col-md-2 control-label" for="city">CITY</label>
+            <div class="col-md-10" style="display: inline-block;">
+                <input ng-model="locationObj.poi" class="form-control" id="city">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+        <div style="background-color: red" class="col-md-6 poiInfo">
+        test
+        </div>
+    </div>
 </div>
 
+        <br>
+        
+        </div>
+        <div class="panel-primary">
+        <div class="panel-heading">
+        hello
+        </div>
+        <div class="panel-body">
+        test
+        </div>
+        </div>
+        <form ng-submit=addToDatabase() class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-1 control-label" for="poi">POI</label>
+                <div class="col-sm-8">
+                    <input ng-model="locationObj.poi" class="form-control" id="poi">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label" for="city">CITY</label>
+                <div class="col-sm-8">
+                    <input ng-model="locationObj.poi" class="form-control" id="city">
+                </div>
+            </div>
+        </form>
+            <button ng-click="addToDatabase()">Add To Database</button>
+            <button ng-click="updateInfo()">Generate Info</button>
+        Point of Interest: <br>
+        City: <input ng-model="locationObj.city" class="form-control">
+            </div>
+        State: <input ng-model="locationObj.state">
+        Country: <input ng-model="locationObj.country"><br>
+        Latitude: <input ng-model="locationObj.lat">
+        Longitute: <input ng-model="locationObj.lng">
+        Heading: <input ng-model="locationObj.heading"><br>
+        Pitch: <input ng-model="locationObj.pitch"><br>
+
+        </form>
+
+        <form>
+        </form>
+        
+</div>
 
 
 
