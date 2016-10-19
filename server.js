@@ -51,7 +51,17 @@ app.get('/api/distinct', function(req, res) {
 
 app.get('/scores', function(req, res) {
 	console.log('request made')
-	res.send(200);
+  query.getScores(function(results) {
+    res.send(200, results);
+  })
+
+})
+
+app.post('/scores', function(req, res) {
+  query.addScores(req.body, function(results) {
+    res.send(200);
+  });
+
 })
 
 app.listen(PORT, function(){

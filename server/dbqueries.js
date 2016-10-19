@@ -145,7 +145,23 @@ module.exports = {
         var results = array.slice(originalLength - numOfItems);
         console.log('shuffleresults', results);
         return results;
+    },
+
+
+    getScores: function(cb){
+      var results = 'test'
+
+      return cb(results);
+
+    },
+
+    addScores: function(data, cb) {
+      //add score to database then run callback on results;
+        cb(data);
+
     }
+
+
 };
 
 // module.exports = {
