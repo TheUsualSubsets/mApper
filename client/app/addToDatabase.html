@@ -15,14 +15,16 @@
   Find a rad location?  Think your friends can figure it out?<br>
   <a ng-click="appear = !appear; updateInfo()">Challenge them!</a>
   </div>
-  <div class="generatelinkpanel fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}">
+  <div class="fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}" id="generatelinkpanel">
   <form>
-  <span>We just need a bit more information to keep our database looking pretty!</span><br>
+  <span style="margin-bottom: 20px;">We just need a bit more information to keep our database looking pretty!</span><br>
+  <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong! :)</span><br>
     <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span>
     <span>City Name:  </span> <span><input ng-model="locationObj.city" class="form-control" id="city"></span><br>
-    <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong! :)</span><br>
-    <button class="btn-success" ng-click="updateInfo()">I'm ready, give me a link!</button>
-    <button class="btn-danger" ng-click="appear=!appear">Nevermind, I'm not ready for this</button>
+    
+    <a ng-click="updateInfo()">I'm ready, give me a link!  </a>
+    <span> OR....  </span>
+    <a ng-click="appear=!appear" class="danger"> Not yet</a>
   </form>
   </div>
   

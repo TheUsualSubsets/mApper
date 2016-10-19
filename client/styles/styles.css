@@ -145,6 +145,7 @@ h1 {
   display: inline-block;
   width: 30%;
   height: 20px;
+  margin: 10px;
 }
 
 .dissapear {
@@ -154,9 +155,7 @@ h1 {
   display: block;
 }
 
-#generatelinkpanelheading {
-  color: white;
-  font-size: 1.5em;
+#generatelinkpanelheading, #generatelinkpanel {
   padding-bottom: 30px;
   background-color: #222;
   border-color: #080808;
@@ -164,6 +163,15 @@ h1 {
   background-image:      -o-linear-gradient(top, #3c3c3c 0%, #222 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
   background-image:         linear-gradient(to bottom, #3c3c3c 0%, #222 100%);
+}
+#generatelinkpanelheading {
+  color: white;
+  font-size: 1.5em;
+}
+
+#generatelinkpanel {
+  color: white;
+  font-size: 1em;
 }
 
 
@@ -188,6 +196,10 @@ h1 {
 
 .notice {
   font-size: .7em;
+}
+
+.danger {
+  color: red;
 }
 
 
