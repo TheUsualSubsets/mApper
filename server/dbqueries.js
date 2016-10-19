@@ -149,18 +149,33 @@ module.exports = {
 
 
     getScores: function(cb){
-      var results = 'test'
+      
+      db.scores.find(function (err, scores) {
+       if (err) {
+        return console.error(err);
+      }
+        cb(scores)
 
-      return cb(results);
+      })
 
     },
 
     addScores: function(data, cb) {
-      //add score to database then run callback on results;
-        cb(data);
+      // add score to database then run callback on results;
+        var newScore = new db.scores({
+          id : data.user,
+          score: data.score
 
-    }
-
+        });
+        console.log(newScore);
+        newScore.save(function(err, resp){
+          if (err) {
+            console.log('issue saving score')
+          } else {
+            console.log('score saved to db')
+          }
+        });
+      }
 
 };
 

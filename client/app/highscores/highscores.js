@@ -2,11 +2,17 @@ angular.module('Highscores', [])
 	.controller('scoreController', ['$scope', 'scoreFactory', function($scope, scoreFactory) {
 		//high scores page will display high scores in order
 		$scope.scores = 'Scores go here';
-		var postScores = function() {
-			scoreFactory.getScores(function(){
 
+		var postScores = function() {
+			scoreFactory.getScores(function(result){
+				console.log(result.data)
+				$scope.scores = result.data
 			});
 
+		}
+ 
+		$scope.addScore = function() {
+			scoreFactory.addScore();
 		}
 
 		postScores();
@@ -17,12 +23,25 @@ angular.module('Highscores', [])
 		
 		var getScores = function(cb) {
 			$http.get('/scores').then(function(result) {
-				console.log('high scores', result);
+
 				cb(result);
 			})
 
 		};
-		return {getScores: getScores};
+
+		var addScore = function(cb) {
+			$http({
+				url: '/scores',
+				method: 'POST',
+				data: {user: 'ASS', score: 1}
+
+			}).then(function(result) {
+				console.log(result);
+
+			})
+		}
+		return {getScores: getScores, addScore: addScore};
 
 	})
 
+  

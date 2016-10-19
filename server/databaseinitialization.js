@@ -88,6 +88,7 @@ var highScoreSchema = new mongoose.Schema({
 //ASSIGN THE MODEL CONSTRUCTOR TO A VARIABLE
 var entry = mongoose.model('entrySchema', entrySchema);
 var city = mongoose.model('citylistSchema', citylistSchema);
-var score = mongoose.model('highScoreSchema', highScoreSchema);
+var scores = mongoose.model('highScoreSchema', highScoreSchema);
 module.exports.data = entry;
 module.exports.cityList = city;
+module.exports.scores = scores;

@@ -50,14 +50,16 @@ app.get('/api/distinct', function(req, res) {
 
 
 app.get('/scores', function(req, res) {
-	console.log('request made')
-  query.getScores(function(results) {
-    res.send(200, results);
+    query.getScores(function(results) {
+      console.log(results);
+      res.send(200, results);
   })
 
 })
 
 app.post('/scores', function(req, res) {
+  console.log(req)
+
   query.addScores(req.body, function(results) {
     res.send(200);
   });
