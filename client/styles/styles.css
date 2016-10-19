@@ -4,28 +4,10 @@ body, html {
 	text-align: center;
 }
 
-body {
-	/*background: #000d1a url('./images/hero.jpg') top center no-repeat;*/
-}
-
 .hero {
 	background: #000d1a url('./images/hero.jpg') top center no-repeat;
 	background-size: 100%;
-	/*width: 100px;*/
 	height: 400px;
-}
-
-#butt {
-    background-color: gray;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
 }
 
 #pano{
@@ -34,24 +16,75 @@ body {
 	z-index: 0;
 }
 
+.butt {
+	display: inline-block;
+	margin: .5%;
+}
+
 h1 {
 	font-size: 3em;
 	font-family: arial;
 	text-align: center;
-	color: #E3F09B;
 }
 
-.button {
-	border: 1px solid gray;
-	border-radius: 50px;
-	padding: 30px;
-	background-color: #E3F09B;
-	color: white;
-	margin-bottom: 20px;
-	font-size: 2em;
-	font-family: arial;
+ map {
+ 	margin: auto;
+ 	width: 85%;
+ 	height: 32em;
+ }
+
+ .hidden {
+ 	 visibility: hidden;
+ }
+
+ .correct {
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	text-align: center;
+ 	z-index: 10;
+
+ }
+
+.correct h1 {
+	margin-top: 10%;
+	color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
 }
 
-/*#playgamebuttons {
-	top: 60vh;
-}*/
+ .incorrect {
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	text-align: center;
+ 	z-index: 10; 
+ }
+
+.incorrect h1 {
+    margin-top: 10%;
+	color: black;
+    -webkit-text-fill-color: white; 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+
+
+#googleMap {
+  height: 100%;
+  width: 100%;
+}
+
+#streetview {
+  display:inline-block !important;
+  width:50%;
+  height: 300px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  float: left;
+
+}
