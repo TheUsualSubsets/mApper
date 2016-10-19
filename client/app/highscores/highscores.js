@@ -3,9 +3,8 @@ angular.module('Highscores', [])
 		//high scores page will display high scores in order
 		$scope.scores = 'Scores go here';
 		var postScores = function() {
-			console.log('posting scores')
 			scoreFactory.getScores(function(){
-				
+
 			});
 
 		}
@@ -23,7 +22,6 @@ angular.module('Highscores', [])
 			})
 
 		};
-
 		return {getScores: getScores};
 
 	})

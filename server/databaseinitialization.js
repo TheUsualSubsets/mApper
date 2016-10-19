@@ -70,8 +70,25 @@ var citylistSchema = new mongoose.Schema({
   }
 });
 
+//CREATE A MONGOOSE SCHEMA FOR THE HIGH SCORE VIEW - THIS TABLE WILL JUST
+//STORE USER NAME INITIALS WITH THEIR SCORES.   
+
+var highScoreSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    required: true, 
+    maxLength: 3
+  }, 
+  score: {
+    type: Number, 
+    required: true
+  }
+
+})
+
 //ASSIGN THE MODEL CONSTRUCTOR TO A VARIABLE
 var entry = mongoose.model('entrySchema', entrySchema);
 var city = mongoose.model('citylistSchema', citylistSchema);
+var score = mongoose.model('highScoreSchema', highScoreSchema);
 module.exports.data = entry;
 module.exports.cityList = city;
