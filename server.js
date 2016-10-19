@@ -91,6 +91,8 @@ app.get('/scores', function(req, res) {
 
 
 app.post('/scores', function(req, res) {
+  console.log(req)
+
   query.addScores(req.body, function(results) {
     res.send(200);
   });

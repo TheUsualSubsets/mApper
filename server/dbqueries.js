@@ -213,14 +213,13 @@ module.exports = {
     },
 
 
-  getScores: function(cb){
-      
-      db.scores.find({}, null, {sort: {score: -1}}, function (err, scores) {
-       if (err) {
+
+  getScores: function(cb){    
+    db.scores.find({}, null, {sort: {score: -1}}, function (err, scores) {
+      if (err) {
         return console.error(err);
       }
         cb(scores)
-
       })
 
     },
@@ -230,9 +229,7 @@ module.exports = {
         var newScore = new db.scores({
           id : data.user,
           score: data.score
-
         });
-        console.log(newScore);
         newScore.save(function(err, resp){
           if (err) {
             console.log('issue saving score')
