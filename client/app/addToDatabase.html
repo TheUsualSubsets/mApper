@@ -11,62 +11,24 @@
           <input places-auto-complete ng-model="place" class="form-control input-transparent">
       </form>
     </div>
+  <div class="fade-in appear" id="generatelinkpanelheading" ng-class="{'appear': !appear, 'dissapear': appear, 'fade-in': appear}">
+  Find a rad location?  Think your friends can figure it out?<br>
+  <a ng-click="appear = !appear; updateInfo()">Challenge them!</a>
   </div>
-  <div class="row">
-    <div style="background-color: blue" class="poiInput">
-            
-      <form ng-submit=addToDatabase() class="form-horizontal">
-        <div class="form-group">
-            <div class="row">
-                <label class="col-md-1 control-label" for="poi">POI</label>
-                <div class="col-md-5" style="display: inline-block;">
-                    <input ng-model="locationObj.poi" class="form-control" id="poi">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <label class="col-md-2 control-label" for="city">CITY</label>
-            <div class="col-md-10" style="display: inline-block;">
-                <input ng-model="locationObj.poi" class="form-control" id="city">
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-        <div style="background-color: red" class="poiInfo">
-        test
-        </div>
-    </div>
-</div>
-
-        <br>
-        
-        </div>
-        <div class="panel-primary">
-        <div class="panel-heading">
-        hello
-        </div>
-        <div class="panel-body">
-        test
-        </div>
-        </div>
-        <form ng-submit=addToDatabase() class="form-horizontal">
-            <div class="form-group">
-                <label class="col-sm-1 control-label" for="poi">POI</label>
-                <div class="col-sm-8">
-                    <input ng-model="locationObj.poi" class="form-control" id="poi">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-1 control-label" for="city">CITY</label>
-                <div class="col-sm-8">
-                    <input ng-model="locationObj.poi" class="form-control" id="city">
-                </div>
-            </div>
-        </form>
+  <div class="generatelinkpanel fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}">
+  <form>
+  <span>We just need a bit more information to keep our database looking pretty!</span><br>
+    <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span>
+    <span>City Name:  </span> <span><input ng-model="locationObj.city" class="form-control" id="city"></span><br>
+    <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong! :)</span><br>
+    <button class="btn-success" ng-click="updateInfo()">I'm ready, give me a link!</button>
+    <button class="btn-danger" ng-click="appear=!appear">Nevermind, I'm not ready for this</button>
+  </form>
+  </div>
+  
+   <!--      </form>
             <button ng-click="addToDatabase()">Add To Database</button>
-            <button ng-click="updateInfo()">Generate Info</button>
+            
         Point of Interest: <br>
         City: <input ng-model="locationObj.city" class="form-control">
             </div>
@@ -84,4 +46,4 @@
         
 </div>
 
-
+ -->

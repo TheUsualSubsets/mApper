@@ -1,6 +1,7 @@
 angular.module('addToDatabase', [])
 
 .controller('addToDatabaseController', ['$scope', 'GeoCoder', 'AddNewPoint', function($scope, GeoCoder, AddNewPoint){
+  $scope.appear = false;
   $scope.place;
   $scope.updateInfo = function() {
     $scope.locationObj =
@@ -24,7 +25,7 @@ angular.module('addToDatabase', [])
   };
   $scope.$on('mapInitialized', function(event, map) {
     $scope.map = map;
-    $scope.map.set('styles', $scope.custom);
+    $scope.map.set('styles', $scope.silver);
     $scope.map.streetView.setOptions({position: 'BOTTOM_CENTER'});
   });
 
