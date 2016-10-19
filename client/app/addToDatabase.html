@@ -1,7 +1,7 @@
 <div ng-controller = "addToDatabaseController">
     <input places-auto-complete types=['geocode'] ng-model="place">
     <button ng-click="updateToPlace(place)">Search</button><br>
-    <map ng-click="updateInfo()" center="39.56951192473842,-97.65442098692967"> 
+    <map ng-click="updateInfo()" center="39.56951192473842,-97.65442098692967">
     <street-view-panorama
       container="streetview"
       ng-click="updateInfo()">
@@ -9,6 +9,7 @@
     </map>
     <div id="streetview"></div><br>
     <button ng-click="addToDatabase()">Add To Database</button>
+      <div model='link'>{{link}}</div>
     <button ng-click="updateInfo()">Generate Info</button>
     <form>
     Point of Interest: <input ng-model="locationObj.poi"><br>
@@ -20,7 +21,7 @@
     Heading: <input ng-model="locationObj.heading"><br>
     Pitch: <input ng-model="locationObj.pitch"><br>
     </form>
-    
+
 </div>
 
 
@@ -36,7 +37,7 @@
 
 
 
-<!-- 
+<!--
 <style>
   ng-map, #streetview {display:inline-block !important;width:40%;height: 300px}
 </style>
@@ -52,20 +53,6 @@
 
 
     </ng-map>
-        <div id="streetview"></div> 
+        <div id="streetview"></div>
 
 </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
