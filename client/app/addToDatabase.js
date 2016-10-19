@@ -1,9 +1,9 @@
 angular.module('addToDatabase', [])
 
-.controller('addToDatabaseController', ['$scope', 'GeoCoder', function($scope, GeoCoder){
+.controller('addToDatabaseController', ['$scope', 'GeoCoder', 'AddNewPoint', function($scope, GeoCoder, AddNewPoint){
   $scope.place;
   $scope.updateInfo = function() {
-    $scope.locationObj = 
+    $scope.locationObj =
     {
       lat: $scope.map.streetView.getPosition().lat(),
       lng: $scope.map.streetView.getPosition().lng(),
@@ -11,17 +11,15 @@ angular.module('addToDatabase', [])
       pitch: $scope.map.streetView.getPov().pitch
     }
     GeoCoder.geocode({location: {lat: $scope.locationObj.lat, lng: $scope.locationObj.lng}}).then(function(result) {
-      console.log('dang geocoding result', result);
       var addressComponents = result[result.length - 3].formatted_address.split(',');
       if (addressComponents.length === 2) {
         $scope.locationObj.country = addressComponents[1];
       } else {
         $scope.locationObj.country = addressComponents[2];
-        $scope.locationObj.state = addressComponents[1]; 
+        $scope.locationObj.state = addressComponents[1];
       }
 
       $scope.locationObj.city = addressComponents[0];
-      console.log($scope.locationObj);
     })
   };
   $scope.$on('mapInitialized', function(event, map) {
@@ -29,16 +27,15 @@ angular.module('addToDatabase', [])
     $scope.map.set('styles', $scope.custom);
     $scope.map.streetView.setOptions({position: 'BOTTOM_CENTER'});
   });
-  $scope.addToDatabase = function() {
-    console.log('add to database');
 
+  $scope.addToDatabase = function() {
+    console.log('adding in client', $scope.locationObj);
+    AddNewPoint.addPoint($scope.locationObj);
   };
+
+
   $scope.updateToPlace = function(place) {
-    console.log($scope.map)
-    console.log(place);
     GeoCoder.geocode({address: $scope.place}).then(function(result){
-      console.log(result[0].geometry.location);
-      console.log($scope.svp)
       $scope.map.setCenter(result[0].geometry.location);
       $scope.map.streetView.setPosition(result[0].geometry.location);
     })
@@ -54,4 +51,11 @@ angular.module('addToDatabase', [])
 }])
 
 
-
+.factory('AddNewPoint', ['$http', function($http){
+  var addPoint = function(point){
+    console.log('adding in factory', point);
+    $http.post('/api/addPoint', point)
+      .success(console.log('success!', point));
+    };
+    return {addPoint: addPoint};
+}]);

@@ -25,7 +25,7 @@ module.exports = {
       findRandomPOI(cities, cities[randomIndex]);
     });
 
-    //use selected city name to query database and return tuple of lat/long 
+    //use selected city name to query database and return tuple of lat/long
     //coords.
     var findRandomPOI = function(cities, city) {
       db.data.find().where('city_name').equals(city).then(function(results) {
@@ -35,7 +35,7 @@ module.exports = {
       var lat = results[randomIndex2].lat;
       var lng = results[randomIndex2].lng;
       //create object to send back to client
-      var responseObject = 
+      var responseObject =
       {
         position: {lat: lat, lng: lng},
         answer: city,
@@ -54,6 +54,27 @@ module.exports = {
     }
   },
 
+  addToDatabase: function(point, callback) {
+    db.data.find().where('poi').equals(point.poi)
+      .exec(function(found){
+        if(found){
+          callback(found[0]._id);
+        } else {
+           var newEntry = new db.data({
+              city_name: point.city,
+              lat: point.lat,
+              lng: point.lng,
+              poi: point.poi,
+              heading: point.heading,
+              pitch: point.pitch,
+              state: point.state || null,
+              country: point.country
+           });
+           callback(newEntry);
+        }
+     })
+  },
+
 
     //getAllQuery is mainly used for debugging purposes via postman
     //it is a more convenient alternative to logging on to droplet and querying
@@ -66,7 +87,7 @@ module.exports = {
         })
         .catch(function(err) {
           callback(err);
-        }); 
+        });
       } else {//if no city was given as a query parameter, return all results
         db.data.find().then(function(results) {
           callback(results);
@@ -77,8 +98,8 @@ module.exports = {
       }
     },
 
-    //the following function is used for database maintenence.  If a value is 
-    //noticed to be incorrect, the databse can be updated by a simple post 
+    //the following function is used for database maintenence.  If a value is
+    //noticed to be incorrect, the databse can be updated by a simple post
     //request from postman.
     updateEntry: function(lookup, update, callback) {
       db.data.findOneAndUpdate(lookup, update, {new: true}, function(err, result) {
@@ -139,7 +160,7 @@ module.exports = {
 //           callback(err)
 //         } else {
 //         //send coordinates back to client via server
-//           callback([cities[0].lat, cities[0].lng]);  
+//           callback([cities[0].lat, cities[0].lng]);
 //         }
 //       });
 //   }
