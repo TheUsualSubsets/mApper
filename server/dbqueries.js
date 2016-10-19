@@ -61,14 +61,14 @@ module.exports = {
     getAllQuery: function(city, callback) {
       //if a city was given as a query parameter, return only that cities' results
       if(city) {
-        City.find().where('city_name').equals(city).then(function(results) {
+        db.data.find().where('city_name').equals(city).then(function(results) {
           callback(results);
         })
         .catch(function(err) {
           callback(err);
         }); 
       } else {//if no city was given as a query parameter, return all results
-        City.find().then(function(results) {
+        db.data.find().then(function(results) {
           callback(results);
         })
         .catch(function(err) {

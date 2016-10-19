@@ -135,11 +135,21 @@ h1 {
   display: inline-block;
   width: 50%;
   float: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
 
 }
 
 #poi, #city {
   display: inline-block;
+}
+
+.shortrow {
+  height: 20vh;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
 }
 
 

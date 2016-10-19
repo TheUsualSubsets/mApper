@@ -1,7 +1,5 @@
-<div class="container-fluid" ng-controller="addToDatabaseController">
-  <div class="row">
+<div ng-controller="addToDatabaseController">
     <div class="mapcontainer">
-
       <map class="smallmap" ng-click="updateInfo()" center="39.56951192473842,-97.65442098692967"> 
           <street-view-panorama
             container="streetview"
@@ -9,16 +7,13 @@
           </street-view-panorama>
       </map>
       <div id="streetview"></div><br>
-
       <form ng-submit=updateToPlace(place) class="searchbar">
-          <input places-auto-complete types=['geocode'] ng-model="place" class="form-control input-transparent col-sm-6">
+          <input places-auto-complete ng-model="place" class="form-control input-transparent">
       </form>
     </div>
   </div>
-</div>
-<div class="container-fluid" style="background-color: lightblue">
   <div class="row">
-    <div style="background-color: blue" class="col-md-6 poiInput">
+    <div style="background-color: blue" class="poiInput">
             
       <form ng-submit=addToDatabase() class="form-horizontal">
         <div class="form-group">
@@ -39,7 +34,7 @@
         </div>
       </form>
     </div>
-        <div style="background-color: red" class="col-md-6 poiInfo">
+        <div style="background-color: red" class="poiInfo">
         test
         </div>
     </div>
