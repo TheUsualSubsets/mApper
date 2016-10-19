@@ -48,6 +48,12 @@ app.get('/api/distinct', function(req, res) {
   })
 })
 
+
+app.get('/scores', function(req, res) {
+	console.log('request made')
+	res.send(200);
+})
+
 app.listen(PORT, function(){
   console.log('listening on PORT ' + PORT);
 })

@@ -1,7 +1,6 @@
-angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 'ui.bootstrap'])
+angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 'Highscores', 'ui.bootstrap'])
 .config(function($routeProvider){
 	$routeProvider
-
 
 	////david - start - also added homePage depend line 1///
 	.when('/', {
@@ -16,6 +15,10 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 	.when('/addToDatabase', {
 		templateUrl: 'app/addToDatabase.html',
 		controller: 'addToDatabaseController'
+	})
+	.when('/scores', {
+		templateUrl: 'app/highScores/highscores.html',
+		controller: 'scoreController'
 	})
 	.otherwise({
 		redirectTo: '/game'
