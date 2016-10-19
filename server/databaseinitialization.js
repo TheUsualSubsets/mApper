@@ -18,11 +18,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 //CREATE A MONGOOSE SCHEMA FOR THE ENTRYSCHEMA DOCUMENT
 var entrySchema = new mongoose.Schema({
-  id: {
-    type: Number,
-    required: true,
-    unique: true
-  },
 
   city_name: {
     type: String,
@@ -40,6 +35,22 @@ var entrySchema = new mongoose.Schema({
   poi: {
     type: String,
     required: true
+  },
+  heading: {
+    type: Number,
+    required: true
+  },
+  pitch: {
+    type: Number,
+    required: true
+  },
+  state: {
+    type: String,
+    required: false
+  },
+  country: {
+    type: String,
+    required: true
   }
 });
 
@@ -52,7 +63,7 @@ var citylistSchema = new mongoose.Schema({
     unique: true
   },
   city_name: {
-    type: String, 
+    type: String,
     required: true,
     unique: true
   }
@@ -63,6 +74,3 @@ var entry = mongoose.model('entrySchema', entrySchema);
 var city = mongoose.model('citylistSchema', citylistSchema);
 module.exports.data = entry;
 module.exports.cityList = city;
-
-
-
