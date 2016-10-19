@@ -24,7 +24,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 		redirectTo: '/game'
 	})
 })
-.controller('mapController', ['$scope', 'Map', function ($scope, Map){
+.controller('mapController', ['$scope', 'Map','scoreFactory', function ($scope, Map, scoreFactory){
 	$scope.count = 0; 
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
@@ -38,6 +38,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 			console.log($scope.count);
 			console.log($scope.show);
 		} else {
+			scoreFactory.addScore('SCE', $scope.count)
 			$scope.count = 0;
 			$scope.incorrect = !$scope.incorrect;
 			$scope.buttonToggle = !$scope.buttonToggle;
