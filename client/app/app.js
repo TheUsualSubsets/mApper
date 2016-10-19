@@ -24,8 +24,9 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'Highsco
 		//any link with querystring will be redirected to this view
 	})
 })
-.controller('mapController', ['$scope', 'Map', function ($scope, Map){
-	$scope.count = 0;
+
+.controller('mapController', ['$scope', 'Map','scoreFactory', function ($scope, Map, scoreFactory){
+	$scope.count = 0; 
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
@@ -35,6 +36,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'Highsco
 			$scope.toggle = !$scope.toggle;
 			$scope.buttonToggle = !$scope.toggle;
 		} else {
+			scoreFactory.addScore('SCE', $scope.count)
 			$scope.count = 0;
 			$scope.incorrect = !$scope.incorrect;
 			$scope.buttonToggle = !$scope.buttonToggle;

@@ -29,11 +29,11 @@ angular.module('Highscores', [])
 
 		};
 
-		var addScore = function(cb) {
+		var addScore = function(user, score) {
 			$http({
 				url: '/scores',
 				method: 'POST',
-				data: {user: 'ASS', score: 1}
+				data: {user: user, score: score}
 
 			}).then(function(result) {
 				console.log(result);
