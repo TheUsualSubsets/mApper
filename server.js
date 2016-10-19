@@ -36,7 +36,7 @@ app.post('/api/update', function(req, res) {
 app.post('/api/addPoint', function(req, res) {
   query.addToDatabase(req.body, function(newEntry){
     console.log('ID: ', newEntry._id);
-    var id = newEntry.id;
+    var id = newEntry._id;
     var link = 'http://104.236.129.131/'
     res.send(link + id);
   });
