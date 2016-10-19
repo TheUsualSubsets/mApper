@@ -30,15 +30,18 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'Highsco
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
+	$scope.user;
 	$scope.topScores = [];
-	
+
+
+
 	$scope.compareAnswer = function (answer){
 		if ($scope.answer === answer.answer){
 			$scope.count++;
 			$scope.toggle = !$scope.toggle;
 			$scope.buttonToggle = !$scope.toggle;
 		} else {
-			scoreFactory.addScore('SCE', $scope.count)
+			scoreFactory.addScore($scope.user, $scope.count)
 			$scope.count = 0;
 			$scope.incorrect = !$scope.incorrect;
 			$scope.buttonToggle = !$scope.buttonToggle;
@@ -49,6 +52,11 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'Highsco
 
 	}
 	$scope.StartGame = function(){
+		scoreFactory.getScores(function(result){
+			result.data.forEach(function(score){
+				$scope.topScores.push(score)
+			})
+		})
 		Map.getMaps(function(result){
 			$scope.toggle = true;
 			$scope.buttonToggle = true;
@@ -61,6 +69,16 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'Highsco
 
 		})
 	}
+	var getUserInfo = function() {
+		$scope.user = prompt('Enter your initials (3 letters or digits)');
+		if ($scope.user.length > 3) {
+			alert('Length exceeded, please enter three initials');
+			getUserInfo();
+		} 
+
+	};
+
+	getUserInfo()
 
 	$scope.StartGame();
 }])
