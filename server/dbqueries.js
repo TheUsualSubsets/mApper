@@ -201,5 +201,61 @@ module.exports = {
           callback(err);
         }
       })
-    }
+
+    },
+    //this uses a modified form of the fisher-yates shuffle to shuffle an array
+    shuffleArray: function(array, numOfItems) {
+        var originalLength = array.length;
+        var m = array.length, t, i;
+
+        // While there remain elements to shuffle…
+        while (m > originalLength - numOfItems) {
+
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * m--);
+
+          // And swap it with the current element.
+          t = array[m];
+          array[m] = array[i];
+          array[i] = t;
+        }
+        //return a array with a length of numOfItems
+        var results = array.slice(originalLength - numOfItems);
+        console.log('shuffleresults', results);
+        return results;
+    },
+
+
+
+    getScores: function(cb){
+      
+      db.scores.find({}, null, {sort: {score: -1}}, function (err, scores) {
+       if (err) {
+        return console.error(err);
+      }
+        cb(scores)
+
+      })
+
+    },
+
+    addScores: function(data, cb) {
+      // add score to database then run callback on results;
+        var newScore = new db.scores({
+          id : data.user,
+          score: data.score
+
+        });
+        console.log(newScore);
+        newScore.save(function(err, resp){
+          if (err) {
+            console.log('issue saving score')
+          } else {
+            console.log('score saved to db')
+          }
+        });
+      }
+
 };
+
+

@@ -11,6 +11,7 @@ body, html {
 	background: #000d1a url('./images/hero.jpg') top center no-repeat;
 	background-size: 100%;
 	height: 400px;
+  overflow: auto;
 }
 
 #pano{
@@ -235,6 +236,47 @@ h1 {
   margin-top: 5px;
   color: lightblue;
 }
+
+
+
+.top {
+  margin-left: 5%;
+  text-align: left;
+  color: black;
+    -webkit-text-fill-color: grey;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+  font-size: 500%
+}
+
+.scores h3{  
+  margin-left: 10%;
+  text-align: left;
+  color: black;
+    -webkit-text-fill-color: grey;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  font-size: 300%;
+}
+
+.userInfo {
+  position: absolute;
+  text-align: right;
+  z-index: 10;
+  margin: 0 25% 5px 25%;
+  width: 60%;
+
+}
+
+.userInfo form {
+  font-size: 1.3em
+}
+
+.userInfo input {
+  border-radius: 15%
+}
+
+
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
