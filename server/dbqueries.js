@@ -211,8 +211,7 @@ module.exports = {
         console.log('shuffleresults', results);
         return results;
     },
-<<<<<<< HEAD
-=======
+
 
 
     getScores: function(cb){
@@ -245,33 +244,5 @@ module.exports = {
       }
 
 };
->>>>>>> 5595a5909459717a0b312f64e3dfe84ceb86fa68
 
 
-  getScores: function(cb){    
-    db.scores.find({}, null, {sort: {score: -1}}, function (err, scores) {
-      if (err) {
-        return console.error(err);
-      }
-        cb(scores)
-      })
-
-    },
-
-    addScores: function(data, cb) {
-      // add score to database then run callback on results;
-        var newScore = new db.scores({
-          id : data.user,
-          score: data.score
-        });
-        newScore.save(function(err, resp){
-          if (err) {
-            console.log('issue saving score')
-          } else {
-            console.log('score saved to db')
-          }
-        });
-      }
-
-
-};

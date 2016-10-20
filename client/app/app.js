@@ -1,16 +1,6 @@
-<<<<<<< HEAD
-
 angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'Highscores', 'ui.bootstrap'])
 .config(function($routeProvider){
 	$routeProvider
-
-=======
-angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 'Highscores', 'ui.bootstrap'])
-.config(function($routeProvider){
-	$routeProvider
-
-	////david - start - also added homePage depend line 1///
->>>>>>> 5595a5909459717a0b312f64e3dfe84ceb86fa68
 	.when('/', {
 		templateUrl: '/app/info.html',
 		controller: 'homePageCtrl'
@@ -32,10 +22,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 		//any link with querystring will be redirected to this view
 	})
 })
-<<<<<<< HEAD
 
-=======
->>>>>>> 5595a5909459717a0b312f64e3dfe84ceb86fa68
 .controller('mapController', ['$scope', 'Map','scoreFactory', function ($scope, Map, scoreFactory){
 	$scope.count = 0; 
 	$scope.toggle = true;
