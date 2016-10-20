@@ -1,4 +1,4 @@
-angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 'ui.bootstrap'])
+angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'challenge', 'ui.bootstrap'])
 .config(function($routeProvider){
 	$routeProvider
 
@@ -11,11 +11,11 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 	})
 	.when('/game', {
 		templateUrl: '/app/game.html',
-		controller: 'gameController'
+		controller: 'mapController'
 	})
-	.when('/addToDatabase', {
+	.when('/challenge', {
 		templateUrl: 'app/addToDatabase.html',
-		controller: 'addToDatabaseController'
+		controller: 'challengeController'
 	})
 	.otherwise({
 		redirectTo: '/game'

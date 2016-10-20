@@ -1,6 +1,6 @@
-angular.module('addToDatabase', [])
+angular.module('challenge', [])
 
-.controller('addToDatabaseController', ['$scope', 'GeoCoder', 'AddNewPoint', function($scope, GeoCoder, AddNewPoint){
+.controller('challengeController', ['$scope', 'GeoCoder', 'AddNewPoint', function($scope, GeoCoder, AddNewPoint){
   //initialize variables
   //$scope.appear is used for animations when generating links
   $scope.appear = false;
@@ -37,6 +37,7 @@ angular.module('addToDatabase', [])
       }
 
       $scope.locationObj.city = addressComponents[0];
+      console.log($scope.locationObj, 'geocode - location obj')
     })
   };
 
@@ -51,7 +52,7 @@ angular.module('addToDatabase', [])
   //user has selected a location they'd like to turn into a link
   $scope.addToDatabase = function() {
     console.log('adding in client', $scope.locationObj);
-    AddNewPoint.addPoint($scope.locationObj);
+    // AddNewPoint.addPoint($scope.locationObj);
   };
 
   //use map search box value to update current location of the map

@@ -166,12 +166,15 @@ h1 {
 }
 #generatelinkpanelheading {
   color: white;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 #generatelinkpanel {
   color: white;
   font-size: 1em;
+  position: relative;
+  top: -250px;
+  z-index: 99;
 }
 
 
@@ -202,6 +205,9 @@ h1 {
   color: red;
 }
 
+.challengedescription {
+  font-size: .7em;
+}
 
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

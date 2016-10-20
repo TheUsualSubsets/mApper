@@ -1,6 +1,6 @@
-<div ng-controller="addToDatabaseController">
+<div ng-controller="challengeController">
     <div class="mapcontainer">
-      <map class="smallmap" ng-click="updateInfo()" center="39.56951192473842,-97.65442098692967"> 
+      <map class="smallmap" center="39.56951192473842,-97.65442098692967"> 
           <street-view-panorama
             container="streetview"
             ng-click="updateInfo()">
@@ -12,41 +12,33 @@
       </form>
     </div>
   <div class="fade-in appear" id="generatelinkpanelheading" ng-class="{'appear': !appear, 'dissapear': appear, 'fade-in': appear}">
-  Find a rad location?  Think your friends can figure it out?<br>
+  Explore the world. <br><span class="challengedescription">  When you've found a rad location, challenge your friends and family by sending them a link, and they'll have to guess the location!</span><br>
+  When you're ready --->
   <a ng-click="appear = !appear; updateInfo()">Challenge them!</a>
   </div>
   <div class="fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}" id="generatelinkpanel">
-  <form>
   <span style="margin-bottom: 20px;">We just need a bit more information to keep our database looking pretty!</span><br>
   <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong! :)</span><br>
-    <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span>
+    <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span><br>
     <span>City Name:  </span> <span><input ng-model="locationObj.city" class="form-control" id="city"></span><br>
     
-    <a ng-click="updateInfo()">I'm ready, give me a link!  </a>
+    <a href ng-click="addToDatabase()">I'm ready, give me a link!  </a>
     <span> OR....  </span>
-    <a ng-click="appear=!appear" class="danger"> Not yet</a>
-  </form>
+    <a href ng-click="appear=!appear" class="danger"> Not yet</a>
   </div>
-</div>
   
-        </form>
-            <button ng-click="updateInfo()">Add To Database</button>
             
         Point of Interest: <br>
-        City: <input ng-model="locationObj.city" class="form-control">
-            </div>
+        City: <input ng-model="locationObj.city">
         State: <input ng-model="locationObj.state">
         Country: <input ng-model="locationObj.country"><br>
         Latitude: <input ng-model="locationObj.lat">
         Longitute: <input ng-model="locationObj.lng">
         Heading: <input ng-model="locationObj.heading"><br>
         Pitch: <input ng-model="locationObj.pitch"><br>
-
-        </form>
-
-        <form>
-        </form>
-        
 </div>
+
+
+        
 
 
