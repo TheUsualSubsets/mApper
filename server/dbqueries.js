@@ -29,6 +29,7 @@ module.exports = {
       var responseObject =
       {
         position: {lat: lat, lng: lng},
+        streetViewParams: {heading: results[randomIndex2].heading, pitch: results[randomIndex2].pitch},
         answer: city,
         poi: results[randomIndex2].poi,
         answerChoices: cities
@@ -80,6 +81,7 @@ module.exports = {
         var responseObject =
         {
           position: {lat: challengePoint.lat, lng: challengePoint.lng},
+          streetViewParams: {heading: challengePoint.heading, pitch: challengePoint.pitch},
           answer: challengePoint.city_name,
           poi: challengePoint.poi,
           answerChoices: cities
