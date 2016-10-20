@@ -43,7 +43,9 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 			console.log($scope.count);
 			console.log($scope.show);
 		} else {
-			scoreFactory.addScore($scope.user, $scope.count)
+			if ($scope.user) {
+			  scoreFactory.addScore($scope.user, $scope.count);
+			}
 			$scope.count = 0;
 			$scope.incorrect = !$scope.incorrect;
 			$scope.buttonToggle = !$scope.buttonToggle;
@@ -75,16 +77,11 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 			
 		})
 	}
-	var getUserInfo = function() {
-		$scope.user = prompt('Enter your initials (3 letters or digits)');
-		if ($scope.user.length > 3) {
-			alert('Length exceeded, please enter three initials');
-			getUserInfo();
-		} 
+	$scope.getUserInfo = function(value) {
+		$scope.user = value;
+		$scope.userName = "";
 
 	};
-
-	getUserInfo()
 
 	$scope.StartGame();
 }])
