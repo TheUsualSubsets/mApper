@@ -109,15 +109,16 @@ h1 {
   padding-right: 2px;
   padding-bottom: 0px;
   border: 0px;
-  align-items: center;
 }
 
 .searchbar {
   position: relative;
-  top: -18%;
+  top: -50px;
   left: 5%;
   width: 40%;
 }
+
+
 
 .no-margin {
   padding: 0px;
@@ -175,6 +176,7 @@ h1 {
   position: relative;
   top: -250px;
   z-index: 99;
+  padding-top: 20px;
 }
 
 
@@ -209,6 +211,9 @@ h1 {
   font-size: .7em;
 }
 
+.noheight {
+  height: 0px;
+}
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

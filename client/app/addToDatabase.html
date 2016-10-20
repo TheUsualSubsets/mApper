@@ -6,7 +6,9 @@
             ng-click="updateInfo()">
           </street-view-panorama>
       </map>
-      <div id="streetview"></div><br>
+      <div id="streetview"></div>
+    </div>
+    <div class="noheight">
       <form ng-submit=updateToPlace(place) class="searchbar">
           <input places-auto-complete ng-model="place" class="form-control input-transparent">
       </form>
@@ -27,7 +29,7 @@
     <a href ng-click="appear=!appear" class="danger"> Not yet</a>
   </div>
   
-            
+     <!--        
         Point of Interest: <br>
         City: <input ng-model="locationObj.city">
         State: <input ng-model="locationObj.state">
@@ -35,7 +37,7 @@
         Latitude: <input ng-model="locationObj.lat">
         Longitute: <input ng-model="locationObj.lng">
         Heading: <input ng-model="locationObj.heading"><br>
-        Pitch: <input ng-model="locationObj.pitch"><br>
+        Pitch: <input ng-model="locationObj.pitch"><br> -->
 </div>
 
 
