@@ -21,7 +21,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 		//any link with querystring will be redirected to this view
 	})
 })
-.controller('mapController', ['$scope', 'Map', function ($scope, Map){
+.controller('mapController', ['$scope', '$location', 'Map', function ($scope, $location, Map){
 	$scope.count = 0;
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
@@ -37,14 +37,19 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 			$scope.buttonToggle = !$scope.buttonToggle;
 		}
 		setTimeout(function(){
-			
+			//if game was started via shared link, show options
+			if($location.url() !== '/game'){
+				$scope.toggleOptionsDisplay();
+				$scope.StartGame();
+
+			}
 				$scope.StartGame();
 		}, 2500)
 
 	}
+
 	$scope.StartGame = function(){
 		Map.getMaps(function(result){
-			console.log(result, 'getmap result')
 			$scope.toggle = true;
 			$scope.buttonToggle = true;
 			$scope.incorrect = true;
@@ -55,9 +60,18 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 			$scope.answerChoices = result.answerChoices;
 			$scope.heading = result.streetViewParams.heading;
 			$scope.pitch = result.streetViewParams.pitch;
-
 		})
 	}
+
+	//these are options that will appear only when someone has started a game via
+	//a shared link.
+	$scope.displayOptions = false;
+
+	$scope.toggleOptionsDisplay = function(){
+		$scope.displayOptions = !$scope.displayOptions;
+		return $scope.displayOptions;
+	}
+
 	$scope.StartGame();
 
 }])
@@ -73,7 +87,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 			if(path){
 				//if there is a querystring, add it to the base url
 				url = url + path;
-				
 			}
 			//send GET request to server for location for new game
 			$http.get(url).success(function(result){

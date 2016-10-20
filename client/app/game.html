@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='pano' ng-init="StartGame()">
     <div ng-controller = "mapController">
-     
+
 
       <div ng-class="toggle ? 'hidden' : 'correct'">
         <h1>Correct! <br> You were dropped near <br> {{poi}} <br> in <br> {{answer}}
@@ -9,18 +9,25 @@
       </div>
 
        <div ng-class="incorrect ? 'hidden' : 'incorrect'">
-         <h1>Incorrect that was <br> {{poi}} <br> in <br> {{answer}} 
+         <h1>Incorrect that was <br> {{poi}} <br> in <br> {{answer}}
          </h1>
        </div>
 
-      
+       <div class="displayLink fade-in" ng-show="displayOptions">
+         <h3>What's next?</h3>
+         <br>
+         <a class='option' href="/#/game">keep playing</a>
+         <a class='option' href ng-click="link=null"> create a challenge</a>
+         <a class='option' href="http://www.google.com"> get me outta here!</a>
+       </div>
+
+
       <span class="score">SCORE: {{count}}</span>
-      <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>  
+      <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
       </map>
       <div class = 'butt' ng-repeat="answer in answerChoices">
         <button type='button' ng-class="buttonToggle ? 'btn btn-lg btn-primary' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</button>
       </div>
     </div>
-  </div> 
+  </div>
 </div>
-
