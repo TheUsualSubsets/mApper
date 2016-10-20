@@ -13,7 +13,6 @@ body, html {
 }
 
 .hero {
-<<<<<<< HEAD
 	background: black url('./images/hero.jpg') top center no-repeat;
 	background-image:
 	  linear-gradient(
@@ -44,12 +43,10 @@ body, html {
 
 .btn {
 	color: #f5f5dc;
-=======
 	background: #000d1a url('./images/hero.jpg') top center no-repeat;
 	background-size: 100%;
 	height: 400px;
   overflow: auto;
->>>>>>> 43eb84cee13f08ebcfb20d89ca3ea649c1a67cc6
 }
 
 #pano{
