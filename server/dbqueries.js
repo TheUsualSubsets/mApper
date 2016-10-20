@@ -150,7 +150,7 @@ module.exports = {
 
     getScores: function(cb){
       
-      db.scores.find(function (err, scores) {
+      db.scores.find({}, null, {sort: {score: -1}}, function (err, scores) {
        if (err) {
         return console.error(err);
       }
