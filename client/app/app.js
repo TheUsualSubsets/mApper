@@ -1,17 +1,15 @@
-angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 'ui.bootstrap'])
+angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'ui.bootstrap'])
 .config(function($routeProvider){
 	$routeProvider
 
 
-	////david - start - also added homePage depend line 1///
 	.when('/', {
 		templateUrl: '/app/info.html',
 		controller: 'homePageCtrl'
-	///david - end///
 	})
 	.when('/game', {
 		templateUrl: '/app/game.html',
-		controller: 'gameController'
+		controller: 'mapController'
 	})
 	.when('/addToDatabase', {
 		templateUrl: 'app/addToDatabase.html',
@@ -19,21 +17,19 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 	})
 	.otherwise({
 		redirectTo: '/game'
+		//any link with querystring will be redirected to this view
 	})
 })
 .controller('mapController', ['$scope', 'Map', function ($scope, Map){
-	$scope.count = 0; 
+	$scope.count = 0;
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
 	$scope.compareAnswer = function (answer){
-		console.log(answer.answer)
 		if ($scope.answer === answer.answer){
 			$scope.count++;
 			$scope.toggle = !$scope.toggle;
 			$scope.buttonToggle = !$scope.toggle;
-			console.log($scope.count);
-			console.log($scope.show);
 		} else {
 			$scope.count = 0;
 			$scope.incorrect = !$scope.incorrect;
@@ -42,42 +38,41 @@ angular.module('App', ['ngRoute', 'ngMap', 'Game', 'homePage', 'addToDatabase', 
 		setTimeout(function(){
 			$scope.StartGame();
 		}, 2500)
-		
+
 	}
 	$scope.StartGame = function(){
-		console.log($scope.show, 'before getMpas function')
 		Map.getMaps(function(result){
-			console.log('start game function', result);
 			$scope.toggle = true;
 			$scope.buttonToggle = true;
 			$scope.incorrect = true;
 			$scope.lat = result.position.lat;
-			$scope.lng = result.position.lng; 
-			$scope.answer = result.answer; 
+			$scope.lng = result.position.lng;
+			$scope.answer = result.answer;
 			$scope.poi = result.poi;
 			$scope.answerChoices = result.answerChoices;
-			
+
 		})
 	}
 
 	$scope.StartGame();
 }])
 
-//{
-  // position: {lat: 36.2048, lng: 138.2529},
-  // answer:'Chicago',
-  // poi:'Navy Pier',
-  // otherAnswers: ['London', 'Istanbul', 'San Francisco', 'New York City']
-  // }
 
 
-
-.factory('Map', function ($http){
+.factory('Map', ['$http', '$location', function ($http, $location){
 		var getMaps = function (callback){
-			$http.get('/newGame').success(function(result){ //enter express URL
-				console.log('map factory', result)
+			//set base url - will be called for standard gameplay started from homepage
+			var url = '/newGame';
+			//get querystring from window url
+			var path = $location.url().slice(5);
+			if(path){
+				//if there is a querystring, add it to the base url
+				url = url + path;
+			}
+			//send GET request to server for location for new game
+			$http.get(url).success(function(result){
 				callback(result);
 			})
 		};
 		return {getMaps: getMaps};
-});
+}]);
