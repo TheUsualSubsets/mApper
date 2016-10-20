@@ -54,6 +54,8 @@ module.exports = {
       //shuffle the list of cities, returning only 5 in random order
       //random order ensures answer list on client is random order
       var cities = module.exports.shuffleArray(results, 5);
+
+
       //query DB based on querystring attached to end of shared link,
       //matching query with unique id for the POI in DB
       lookupPOI(cities, link);
@@ -64,7 +66,16 @@ module.exports = {
         if(err){
           callback(err);
         }
-        var challengePoint = result[0];
+        var challengePoint = result;
+
+        //check to see if correct answer is in random shuffled answer array
+        if (cities.indexOf(challengePoint.city_name) === -1) {
+          //If it is not, we must replace one city 
+          //with the correct answer
+          cities[Math.floor(Math.random()*5)] = challengePoint.city_name;
+        } 
+
+
         //use result to build expected response object for client
         var responseObject =
         {

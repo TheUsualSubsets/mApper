@@ -1,4 +1,5 @@
-angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'ui.bootstrap'])
+angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstrap', 'ngclipboard'])
+
 .config(function($routeProvider){
 	$routeProvider
 
@@ -11,9 +12,9 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'ui.boot
 		templateUrl: '/app/game.html',
 		controller: 'mapController'
 	})
-	.when('/addToDatabase', {
-		templateUrl: 'app/addToDatabase.html',
-		controller: 'addToDatabaseController'
+	.when('/challenge', {
+		templateUrl: 'app/challenge.html',
+		controller: 'challengeController'
 	})
 	.otherwise({
 		redirectTo: '/game'
@@ -54,7 +55,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'addToDatabase', 'ui.boot
 		})
 	}
 
-	$scope.StartGame();
 }])
 
 

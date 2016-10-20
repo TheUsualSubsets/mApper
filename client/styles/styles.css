@@ -109,15 +109,16 @@ h1 {
   padding-right: 2px;
   padding-bottom: 0px;
   border: 0px;
-  align-items: center;
 }
 
 .searchbar {
   position: relative;
-  top: -18%;
+  top: -50px;
   left: 5%;
   width: 40%;
 }
+
+
 
 .no-margin {
   padding: 0px;
@@ -143,14 +144,102 @@ h1 {
 
 #poi, #city {
   display: inline-block;
+  width: 30%;
+  height: 20px;
+  margin: 10px;
 }
 
-.shortrow {
-  height: 20vh;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
+.dissapear {
+  display: none;
 }
+.appear {
+  display: block;
+}
+
+#generatelinkpanelheading, #generatelinkpanel, .displayLink {
+  padding-bottom: 30px;
+  background-color: #222;
+  border-color: #080808;
+  background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+  background-image:      -o-linear-gradient(top, #3c3c3c 0%, #222 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
+  background-image:         linear-gradient(to bottom, #3c3c3c 0%, #222 100%);
+}
+#generatelinkpanelheading {
+  color: white;
+  font-size: 1.3em;
+}
+
+#generatelinkpanel {
+  border-radius: 15px;
+  margin: 10px;
+  color: white;
+  font-size: 1em;
+  position: relative;
+  top: -250px;
+  z-index: 99;
+  padding-top: 20px;
+}
+
+
+
+
+
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.notice {
+  font-size: .7em;
+}
+
+.danger {
+  color: red;
+}
+
+.challengedescription {
+  font-size: .7em;
+}
+
+.noheight {
+  height: 0px;
+}
+
+.displayLink {
+  padding: 20px;
+  width: 60%;
+  left: 20%;
+  position: absolute;
+  margin: auto;
+  z-index: 99;
+  top: 30vh;
+  height: 140px;
+  color: white;
+  border-radius: 15px;
+
+}
+
+.specialtext {
+  margin-top: 5px;
+  color: lightblue;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 
 
 
