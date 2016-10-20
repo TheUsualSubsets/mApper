@@ -27,6 +27,10 @@ body, html {
 }
 
 
+h3 {
+	margin-top: 0px;
+}
+
  map {
  	margin: auto;
  	width: 85%;
@@ -53,6 +57,7 @@ body, html {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 
+
 }
 
  .incorrect {
@@ -60,13 +65,13 @@ body, html {
  	height: 100%;
  	position: absolute;
  	text-align: center;
- 	z-index: 10; 
+ 	z-index: 10;
  }
 
 .incorrect h1 {
     margin-top: 10%;
 	color: black;
-    -webkit-text-fill-color: white; 
+    -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
@@ -177,7 +182,14 @@ body, html {
 }
 
 
-
+.option {
+	margin-top: 10px;
+	font-size: 1.5em;
+	padding: 20px;
+	border: 1px solid white;
+	border-radius: 15px;
+	color: gray;
+}
 
 
 
@@ -223,7 +235,6 @@ body, html {
   height: 140px;
   color: white;
   border-radius: 15px;
-
 }
 
 .specialtext {
@@ -243,7 +254,7 @@ body, html {
   font-size: 500%
 }
 
-.scores h3{  
+.scores h3{
   margin-left: 10%;
   text-align: left;
   color: black;
@@ -275,7 +286,3 @@ body, html {
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-
-
-
