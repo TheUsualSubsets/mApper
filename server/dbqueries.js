@@ -213,7 +213,6 @@ module.exports = {
     },
 
 
-
   getScores: function(cb){    
     db.scores.find({}, null, {sort: {score: -1}}, function (err, scores) {
       if (err) {
