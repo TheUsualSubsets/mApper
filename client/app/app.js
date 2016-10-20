@@ -55,7 +55,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 		})
 	}
 
-	$scope.StartGame();
 }])
 
 

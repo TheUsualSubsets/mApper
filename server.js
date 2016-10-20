@@ -45,9 +45,9 @@ app.post('/api/addPoint', function(req, res) {
     // var IP = 'http://104.236.129.131:9001/'
 
     //send the url back to the client
-    console.log(testIP + 'newGame?q=' + ID);
+    console.log(testIP + '#/game?q=' + ID);
     // console.log(IP + 'newGame?q=' + ID)
-    res.send(testIP + 'newGame?q=' + ID);
+    res.send(testIP + '#/game?q=' + ID);
     // res.send(IP + 'newGame?q=' + ID);
   });
 })
