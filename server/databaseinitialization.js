@@ -15,9 +15,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 
-
-
-
 //CREATE A MONGOOSE SCHEMA FOR THE ENTRYSCHEMA DOCUMENT
 var entrySchema = new mongoose.Schema({
  
