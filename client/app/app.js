@@ -38,12 +38,11 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 		}
 		setTimeout(function(){
 			
-		$scope.StartGame();
+				$scope.StartGame();
 		}, 2500)
 
 	}
 	$scope.StartGame = function(){
-		var querystring = window.location.hash.slice(6);
 		Map.getMaps(function(result){
 			console.log(result, 'getmap result')
 			$scope.toggle = true;
