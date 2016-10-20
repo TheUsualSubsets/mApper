@@ -156,7 +156,7 @@ h1 {
   display: block;
 }
 
-#generatelinkpanelheading, #generatelinkpanel {
+#generatelinkpanelheading, #generatelinkpanel, .displayLink {
   padding-bottom: 30px;
   background-color: #222;
   border-color: #080808;
@@ -171,6 +171,8 @@ h1 {
 }
 
 #generatelinkpanel {
+  border-radius: 15px;
+  margin: 10px;
   color: white;
   font-size: 1em;
   position: relative;
@@ -213,6 +215,25 @@ h1 {
 
 .noheight {
   height: 0px;
+}
+
+.displayLink {
+  padding: 20px;
+  width: 60%;
+  left: 20%;
+  position: absolute;
+  margin: auto;
+  z-index: 99;
+  top: 30vh;
+  height: 140px;
+  color: white;
+  border-radius: 15px;
+
+}
+
+.specialtext {
+  margin-top: 5px;
+  color: lightblue;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

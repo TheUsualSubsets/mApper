@@ -1,4 +1,4 @@
-angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstrap'])
+angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstrap', 'ngclipboard'])
 
 .config(function($routeProvider){
 	$routeProvider

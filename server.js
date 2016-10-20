@@ -74,7 +74,7 @@ app.post('/api/update', function(req, res) {
   })
 })
 
-//a Jeff thing that I'm not sure what it does...
+//sends back a list of unique cities in the database ;)
 app.get('/api/distinct', function(req, res) {
   query.distinctQuery(function(results) {
     res.send(results);

@@ -20,7 +20,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 //CREATE A MONGOOSE SCHEMA FOR THE ENTRYSCHEMA DOCUMENT
 var entrySchema = new mongoose.Schema({
-
+ 
   city_name: {
     type: String,
     required: true
@@ -75,3 +75,4 @@ var entry = mongoose.model('entrySchema', entrySchema);
 var city = mongoose.model('citylistSchema', citylistSchema);
 module.exports.data = entry;
 module.exports.cityList = city;
+module.exports.db = db;
