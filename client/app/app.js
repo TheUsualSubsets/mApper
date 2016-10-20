@@ -31,6 +31,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
 	$scope.user;
+	$scope.isUser = true; 
 	$scope.topScores = [];
 
 
@@ -74,15 +75,13 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 
 	$scope.getUserInfo = function(value) {
 		$scope.user = value;
+		$scope.isUser = false;
 		$scope.userName = "";
-
 	};
 
 	$scope.StartGame();
 
 }])
-
-
 
 .factory('Map', ['$http', '$location', function ($http, $location){
 		var getMaps = function (callback){

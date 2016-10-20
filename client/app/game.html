@@ -13,9 +13,9 @@
          </h1>
        </div>
 
-      
+    
       <span class="score">SCORE: {{count}}</span>
-      <div class='userInfo'>
+      <div ng-class="isUser ? 'userInfo' : 'hidden'">
         <form>
          Enter initials to save score
           <input type="text" maxlength="3" size="5" ng-model='userName'>
