@@ -25,13 +25,13 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	})
 })
 
-.controller('mapController', ['$scope', 'Map','scoreFactory', function ($scope, Map, scoreFactory){
-	$scope.count = 0; 
+.controller('mapController', ['$scope', 'Map', '$location', 'scoreFactory', function ($scope, Map, $location, scoreFactory){
+	$scope.count = 0;
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
 	$scope.user;
-	$scope.isUser = true; 
+	$scope.isUser = true;
 	$scope.topScores = [];
 
 
@@ -50,15 +50,20 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			$scope.buttonToggle = !$scope.buttonToggle;
 		}
 		setTimeout(function(){
-			
+			//if game was started via shared link, show options
+			if($location.url() !== '/game'){
+				$scope.toggleOptionsDisplay();
+				$scope.StartGame();
+
+			}
 				$scope.StartGame();
 		}, 2500)
 
 	}
+
 	$scope.StartGame = function(){
 		console.log($scope.show, 'before getMpas function')
 		Map.getMaps(function(result){
-			console.log(result, 'getmap result')
 			$scope.toggle = true;
 			$scope.buttonToggle = true;
 			$scope.incorrect = true;
@@ -69,8 +74,16 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			$scope.answerChoices = result.answerChoices;
 			$scope.heading = result.streetViewParams.heading;
 			$scope.pitch = result.streetViewParams.pitch;
-
 		})
+	}
+
+	//these are options that will appear only when someone has started a game via
+	//a shared link.
+	$scope.displayOptions = false;
+
+	$scope.toggleOptionsDisplay = function(){
+		$scope.displayOptions = !$scope.displayOptions;
+		return $scope.displayOptions;
 	}
 
 	$scope.getUserInfo = function(value) {
@@ -92,7 +105,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			if(path){
 				//if there is a querystring, add it to the base url
 				url = url + path;
-				
 			}
 			//send GET request to server for location for new game
 			$http.get(url).success(function(result){

@@ -15,9 +15,10 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 
+
 //CREATE A MONGOOSE SCHEMA FOR THE ENTRYSCHEMA DOCUMENT
 var entrySchema = new mongoose.Schema({
- 
+
   city_name: {
     type: String,
     required: true
@@ -68,16 +69,16 @@ var citylistSchema = new mongoose.Schema({
 });
 
 //CREATE A MONGOOSE SCHEMA FOR THE HIGH SCORE VIEW - THIS TABLE WILL JUST
-//STORE USER NAME INITIALS WITH THEIR SCORES.   
+//STORE USER NAME INITIALS WITH THEIR SCORES.
 
 var highScoreSchema = new mongoose.Schema({
   id: {
     type: String,
-    required: true, 
+    required: true,
     maxLength: 3
-  }, 
+  },
   score: {
-    type: Number, 
+    type: Number,
     required: true
   }
 
@@ -91,6 +92,3 @@ module.exports.data = entry;
 module.exports.cityList = city;
 module.exports.scores = scores;
 module.exports.db = db;
-
-
-
