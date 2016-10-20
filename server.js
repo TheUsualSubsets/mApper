@@ -84,12 +84,19 @@ app.get('/api/distinct', function(req, res) {
 
 app.get('/scores', function(req, res) {
     query.getScores(function(results) {
+<<<<<<< HEAD
+=======
+      console.log(results);
+>>>>>>> 5595a5909459717a0b312f64e3dfe84ceb86fa68
       res.send(200, results);
   })
 
 })
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5595a5909459717a0b312f64e3dfe84ceb86fa68
 app.post('/scores', function(req, res) {
   console.log(req)
 
@@ -98,6 +105,10 @@ app.post('/scores', function(req, res) {
   });
 
 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5595a5909459717a0b312f64e3dfe84ceb86fa68
 app.listen(PORT, function(){
   console.log('listening on PORT ' + PORT);
 })
