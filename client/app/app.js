@@ -37,12 +37,15 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 			$scope.buttonToggle = !$scope.buttonToggle;
 		}
 		setTimeout(function(){
-			$scope.StartGame();
+			
+		$scope.StartGame();
 		}, 2500)
 
 	}
 	$scope.StartGame = function(){
+		var querystring = window.location.hash.slice(6);
 		Map.getMaps(function(result){
+			console.log(result, 'getmap result')
 			$scope.toggle = true;
 			$scope.buttonToggle = true;
 			$scope.incorrect = true;
@@ -51,9 +54,12 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 			$scope.answer = result.answer;
 			$scope.poi = result.poi;
 			$scope.answerChoices = result.answerChoices;
+			$scope.heading = result.streetViewParams.heading;
+			$scope.pitch = result.streetViewParams.pitch;
 
 		})
 	}
+	$scope.StartGame();
 
 }])
 
@@ -68,6 +74,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'ui.bootstra
 			if(path){
 				//if there is a querystring, add it to the base url
 				url = url + path;
+				
 			}
 			//send GET request to server for location for new game
 			$http.get(url).success(function(result){
