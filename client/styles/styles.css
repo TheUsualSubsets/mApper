@@ -7,9 +7,11 @@ body, html {
     border: 0px;
 	font-family: helvetica neue;
   background-color: #333;
+  color: #333;
 }
 
 .hero {
+  position: relative;
 	background: black url('./images/hero.jpg') top center no-repeat;
 	background-image:
 	  linear-gradient(
@@ -18,19 +20,21 @@ body, html {
 	  ),
 	  url('./images/hero.jpg');
 	background-size: cover;
-	height: 515px;
+	height: 510px;
 }
 
 
 .hero-text {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-75%, -50%);
   color: white;
   text-align: center;
 
 }
+
+
 
 #pano{
 	height: 70vh;
@@ -308,3 +312,15 @@ h3 {
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+/*.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #cccccc;
+  border-radius: 1px;
+}*/
+
+i {
+  color: #fff;
+}
