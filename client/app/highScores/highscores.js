@@ -35,7 +35,7 @@ angular.module('Highscores', [])
       }).then(function(result) {
         console.log(result);
       });
-    };
+    }
 
     return { getScores: getScores, addScore: addScore };
 
