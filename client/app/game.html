@@ -21,7 +21,11 @@
          <a class='option' href="http://www.google.com"> get me outta here!</a>
        </div>
 
-      <span class="score">SCORE: {{count}}</span>
+      <span class="score">
+          <div ng-class="isUser ? 'hidden' : 'score'">User: {{ user }}    </div>
+          <div>SCORE: {{count}}</div>
+      </span>
+
       <div ng-class="isUser ? 'userInfo' : 'hidden'">
         <form name='userForm'>
          Enter initials to save score

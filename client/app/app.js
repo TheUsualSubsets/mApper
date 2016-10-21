@@ -41,7 +41,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			$scope.buttonToggle = !$scope.toggle;
 		} else {
 			if ($scope.user) {
-			  scoreFactory.addScore('$scope.user', $scope.count);
+			  scoreFactory.addScore($scope.user, $scope.count);
 			}
 			$scope.count = 0;
 			$scope.incorrect = !$scope.incorrect;

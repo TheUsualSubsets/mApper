@@ -7,7 +7,7 @@ body, html {
     border: 0px;
   font-family: Play;
   background-color: #333;
-  color: #333;
+
 }
 
 .hero {
@@ -15,8 +15,8 @@ body, html {
   background: black url('./images/hero.jpg') top center no-repeat;
   background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
     ),
     url('./images/hero.jpg');
   background-size: cover;
@@ -279,6 +279,15 @@ h3 {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: red;
   font-size: 500%
+
+}
+
+.score div {
+  display: inline-block;
+  margin-left: 3%;
+  font-size: 1em;
+  color: white;
+
 }
 
 .scores h3{
