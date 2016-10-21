@@ -12,28 +12,38 @@ module.exports = {
       //shuffle the list of cities, returning only 5 in random order
       //random order ensures answer list on client is random order
       var cities = module.exports.shuffleArray(results, 5);
-      //select one city from the list to grab a point of database from database
-      var randomIndex = Math.floor(Math.random() * cities.length);
-      findRandomPOI(cities, cities[randomIndex]);
+      //pass cities array to random query
+      findRandomPOI(cities);
     });
 
-    //use selected city name to query database and return lat/long tuple
-    var findRandomPOI = function(cities, city) {
-      db.data.find().where('city_name').equals(city).then(function(results) {
-      //randomly select a point of interest from results
-      var randomIndex2 = Math.floor(Math.random() * results.length);
+    //pull a random entry from the database
+    var findRandomPOI = function(cities) {
+      db.data.find().then(function(results) {
+      //find a random entry from entire database
+      var randomIndex = Math.floor(Math.random() * results.length);
       //assign lat and lng values
-      var lat = results[randomIndex2].lat;
-      var lng = results[randomIndex2].lng;
+      var lat = results[randomIndex].lat;
+      var lng = results[randomIndex].lng;
+      var heading = results[randomIndex].heading;
+      var pitch = results[randomIndex].pitch;
+      var city = results[randomIndex].city_name;
+      var poi = results[randomIndex].poi;
+
+      //if selected city is not in shuffled array list, add it
+      if(cities.indexOf(city) === -1) {
+        cities[Math.floor(Math.random()*cities.length)] = city;
+      }
+
       //create object to send back to client
       var responseObject =
       {
         position: {lat: lat, lng: lng},
-        streetViewParams: {heading: results[randomIndex2].heading, pitch: results[randomIndex2].pitch},
+        streetViewParams: {heading: heading, pitch: pitch},
         answer: city,
-        poi: results[randomIndex2].poi,
+        poi: poi,
         answerChoices: cities
       };
+
       //send results back to client
       callback(responseObject);
     })
@@ -49,7 +59,6 @@ module.exports = {
 
   //-------USED WHEN NEW GAME IS STARTED VIA SHARED LINK-------//
   challengeQuery: function(link, callback){
-    console.log(link);
     //return 5 random cities from DB
     module.exports.distinctQuery(function(results) {
       //shuffle the list of cities, returning only 5 in random order
@@ -118,7 +127,6 @@ module.exports = {
            if(err){
              console.error(err);
            }
-           console.log(newPoint._id);
            callback(null, newPoint);
          });
        };
@@ -202,27 +210,6 @@ module.exports = {
         }
       })
 
-    },
-    //this uses a modified form of the fisher-yates shuffle to shuffle an array
-    shuffleArray: function(array, numOfItems) {
-        var originalLength = array.length;
-        var m = array.length, t, i;
-
-        // While there remain elements to shuffle…
-        while (m > originalLength - numOfItems) {
-
-          // Pick a remaining element…
-          i = Math.floor(Math.random() * m--);
-
-          // And swap it with the current element.
-          t = array[m];
-          array[m] = array[i];
-          array[i] = t;
-        }
-        //return a array with a length of numOfItems
-        var results = array.slice(originalLength - numOfItems);
-        console.log('shuffleresults', results);
-        return results;
     },
 
 
