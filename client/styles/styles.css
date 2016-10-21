@@ -5,11 +5,13 @@ body, html {
     margin: 0px;
     padding: 0px;
     border: 0px;
-  font-family: helvetica neue;
+  font-family: Play;
   background-color: #333;
+  color: #333;
 }
 
 .hero {
+  position: relative;
   background: black url('./images/hero.jpg') top center no-repeat;
   background-image:
     linear-gradient(
@@ -18,19 +20,22 @@ body, html {
     ),
     url('./images/hero.jpg');
   background-size: cover;
-  height: 515px;
+  overflow: auto;
+  height: 550px;
 }
 
 
 .hero-text {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-75%, -50%);
   color: white;
   text-align: center;
 
 }
+
+
 
 #pano{
   height: 70vh;
@@ -89,7 +94,7 @@ h3 {
  }
 
 .incorrect h1 {
-    margin-top: 10%;
+  margin-top: 10%;
   color: black;
     -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 1px;
@@ -288,18 +293,32 @@ h3 {
 
 .userInfo {
   position: absolute;
-  text-align: right;
-  z-index: 10;
-  margin: 0 25% 5px 25%;
-  width: 60%;
+  z-index: 11;
+  width: 100%;
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+  
 
 }
 
 .userInfo form {
-  font-size: 1.3em
+  color: red;
+  font-weight: bold;
+  font-size: 1.5em
 }
 
 .userInfo input {
+  color: black;
   border-radius: 15%
 }
 
@@ -308,3 +327,15 @@ h3 {
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+/*.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #cccccc;
+  border-radius: 1px;
+}*/
+
+i {
+  color: #fff;
+}

@@ -23,11 +23,11 @@
 
       <span class="score">SCORE: {{count}}</span>
       <div ng-class="isUser ? 'userInfo' : 'hidden'">
-        <form>
+        <form name='userForm'>
          Enter initials to save score
-          <input type="text" maxlength="3" size="5" ng-model='userName'>
+          <input type="text" maxlength="3" size="5" ng-model='userName' required>
 
-          <input type="submit" value="submit" ng-click=getUserInfo(userName)>
+          <input type="submit" value="submit" ng-disabled="userForm.$invalid" ng-click=getUserInfo(userName)>
         </form>
       </div>
       <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
