@@ -42,13 +42,13 @@ app.post('/api/addPoint', function(req, res) {
     //the above query returns the newly-added point
     //extract the unique ID and create a url using the ID as a querystring
     var ID = newEntry._id;
-    var testIP = 'http://localhost:9001/';
-    // var IP = 'http://104.236.129.131:9001/'
+    // var testIP = 'http://localhost:9001/';
+    var IP = 'http://104.236.129.131:9001/'
 
     //send the url back to the client
-    console.log(testIP + '#/game?q=' + ID);
+    console.log(IP + '#/game?q=' + ID);
     // console.log(IP + 'newGame?q=' + ID)
-    res.send(testIP + '#/game?q=' + ID);
+    res.send(IP + '#/game?q=' + ID);
     // res.send(IP + 'newGame?q=' + ID);
   });
 })
