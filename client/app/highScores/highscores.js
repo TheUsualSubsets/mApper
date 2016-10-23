@@ -40,4 +40,3 @@ angular.module('Highscores', [])
     return { getScores: getScores, addScore: addScore };
 
   })
-

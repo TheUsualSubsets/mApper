@@ -22,7 +22,6 @@ body, html {
   background-size: cover;
   overflow: auto;
   height: 550px;
-
 }
 
 
@@ -36,7 +35,11 @@ body, html {
 
 }
 
-
+.btn {
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
 
 #pano{
   height: 70vh;
@@ -348,4 +351,7 @@ h3 {
 }*/
 
 
+#bars {
+  color: #999;
+}
 
