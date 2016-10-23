@@ -72,7 +72,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			$scope.answerChoices = result.answerChoices;
 			$scope.heading = result.streetViewParams.heading;
 			$scope.pitch = result.streetViewParams.pitch;
-			console.log(result);
 		})
 
 	   scoreFactory.getScores(function(result) {
