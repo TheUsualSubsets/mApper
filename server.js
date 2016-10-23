@@ -15,6 +15,7 @@ app.use(express.static(__dirname + '/client'));
 //------------------------------MAIN ROUTES--------------------------//
 
 app.get('/newGame', function(req, res){
+  console.log('starting');
   //check if there was a querystring (from a shared link) attached to the req
   if(req.query.q){
     console.log(req.query.q);

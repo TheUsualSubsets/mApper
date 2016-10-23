@@ -34,7 +34,17 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	$scope.isUser = true;
 	$scope.topScores = [];
 
+	if($location.url() !== '/game'){
+		$scope.linkToggle = true;
+	} else {
+		$scope.infoToggle = true;
+	}
+
+
 	$scope.compareAnswer = function (answer){
+		if($location.url() !== '/game'){
+			$scope.link = true;
+		}
 		if ($scope.answer === answer.answer){
 			$scope.count++;
 			$scope.toggle = !$scope.toggle;
@@ -51,11 +61,9 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			//if game was started via shared link, show options
 			if($location.url() !== '/game'){
 				$scope.toggleOptionsDisplay();
-				$scope.StartGame();
-
 			}
-				$scope.StartGame();
-		}, 2500)
+			$scope.StartGame();
+		}, 2000)
 
 	}
 
@@ -63,6 +71,8 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 
 		Map.getMaps(function(result){
 			$scope.toggle = true;
+			$scope.infoToggle = false;
+			$scope.linkToggle = false;
 			$scope.buttonToggle = true;
 			$scope.incorrect = true;
 			$scope.lat = result.position.lat;
@@ -74,14 +84,8 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			$scope.pitch = result.streetViewParams.pitch;
 		})
 
-	   scoreFactory.getScores(function(result) {
-
-
-	   })
 	}
 
-	//these are options that will appear only when someone has started a game via
-	//a shared link.
 	$scope.displayOptions = false;
 
 	$scope.toggleOptionsDisplay = function(){
@@ -94,11 +98,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 		$scope.isUser = false;
 		$scope.userName = "";
 	};
-
-
-
-	$scope.StartGame();
-
 }])
 
 .factory('Map', ['$http', '$location', function ($http, $location){
