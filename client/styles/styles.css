@@ -10,6 +10,14 @@ body, html {
 
 }
 
+#fbFooter{
+  color: white;
+  position: absolute;
+  top: 91%;
+  left: 90%;
+}
+
+
 .hero {
   position: relative;
   background: black url('./images/hero.jpg') top center no-repeat;
