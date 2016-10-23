@@ -34,8 +34,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	$scope.isUser = true;
 	$scope.topScores = [];
 
-
-
 	$scope.compareAnswer = function (answer){
 		if ($scope.answer === answer.answer){
 			$scope.count++;
@@ -62,7 +60,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	}
 
 	$scope.StartGame = function(){
-		console.log($scope.show, 'before getMpas function')
+
 		Map.getMaps(function(result){
 			$scope.toggle = true;
 			$scope.buttonToggle = true;
@@ -75,6 +73,11 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			$scope.heading = result.streetViewParams.heading;
 			$scope.pitch = result.streetViewParams.pitch;
 		})
+
+	   scoreFactory.getScores(function(result) {
+
+
+	   })
 	}
 
 	//these are options that will appear only when someone has started a game via
@@ -91,6 +94,8 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 		$scope.isUser = false;
 		$scope.userName = "";
 	};
+
+
 
 	$scope.StartGame();
 
