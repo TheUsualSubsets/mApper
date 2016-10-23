@@ -65,7 +65,8 @@
        </div>
 
 
-      <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
+
+      <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), pov:{heading: {{heading}}, pitch: {{pitch}}}, addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
       </map>
       <div class = 'butt' ng-repeat="answer in answerChoices">
         <hr>
