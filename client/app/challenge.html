@@ -1,6 +1,7 @@
 <div ng-controller="challengeController">
     <div class="mapcontainer">
-      <map class="smallmap" center="39.56951192473842,-97.65442098692967">
+      <map class="smallmap" center="current-position"
+      geo-fallback-center= "[52.1996161,0.1157753]">
           <street-view-panorama
             container="streetview"
             ng-click="updateInfo()">
