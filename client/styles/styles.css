@@ -5,10 +5,18 @@ body, html {
     margin: 0px;
     padding: 0px;
     border: 0px;
+  overflow: hidden;
   font-family: Play;
   background-color: #333;
-
 }
+
+#fbFooter{
+  color: white;
+  position: absolute;
+  top: 91%;
+  left: 90%;
+}
+
 
 .hero {
   position: relative;
@@ -32,9 +40,13 @@ body, html {
   transform: translate(-75%, -50%);
   color: white;
   text-align: center;
-
 }
 
+.mapThing{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 .btn {
   margin-top: 10px;
   margin-left: 30px;
@@ -44,7 +56,7 @@ body, html {
 #pano{
   height: 70vh;
   width: 70vw;
-  z-index: 0;
+  position: relative;
 }
 
 .butt {
@@ -52,60 +64,57 @@ body, html {
   margin: .5%;
 }
 
-h1 {
-  font-size: 3em;
-
+.button {
+  background-color: black !important;
+  color: gray;
 }
 
-h3 {
-  margin-top: 0px;
+h1 {
+  font-size: 3em;
 }
 
  map {
   margin: auto;
-  width: 85%;
   height: 32em;
+  width: 100%;
  }
 
  .hidden {
    visibility: hidden;
  }
 
- .correct {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  text-align: center;
-  z-index: 10;
-
+ .info {
+   margin: auto;
+   width: 100%;
+   height: 32em;
+   z-index: 99;
+   position: absolute;
+   color: gray;
+   background-color: white;
+   opacity: .8;
  }
 
-.correct h1 {
-  margin-top: 10%;
-  color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-
-
-}
+ .correct {
+   margin: auto;
+   width: 100%;
+   height: 32em;
+   z-index: 99;
+   position: absolute;
+   color: black;
+   background-color: white;
+   opacity: .75;
+ }
 
  .incorrect {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  text-align: center;
-  z-index: 10;
+   margin: auto;
+   width: 100%;
+   height: 32em;
+   z-index: 99;
+   position: absolute;
+   color: black;
+   background-color: white;
+   opacity: .75;
  }
-
-.incorrect h1 {
-  margin-top: 10%;
-  color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}
-
 
 
 #googleMap {
@@ -218,8 +227,6 @@ h3 {
   margin-top: 10px;
   font-size: 1.5em;
   padding: 20px;
-  border: 1px solid white;
-  border-radius: 15px;
   color: gray;
 }
 
@@ -307,28 +314,12 @@ h3 {
 
 .userInfo {
   position: absolute;
-  z-index: 11;
+  margin: auto;
   width: 100%;
-  opacity:0;  /* make things invisible upon start */
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
-  
-
 }
 
 .userInfo form {
-  color: red;
-  font-weight: bold;
-  font-size: 1.5em
+  color: black;
 }
 
 .userInfo input {
@@ -342,21 +333,13 @@ h3 {
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-/*.navbar-toggle .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: #cccccc;
-  border-radius: 1px;
-}*/
-
 
 #bars {
   color: #999;
 }
 
+
 #fbButton {
   color: #fff;
   text-decoration: none;
 }
-

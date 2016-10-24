@@ -1,43 +1,77 @@
 <div class='container'>
-  <div class='pano' ng-init="StartGame()">
-    <div ng-controller = "mapController">
+  <div class='pano'>
+    <div ng-controller = "mapController" class='mapThing'>
+
+      <span class="score">
+        <div ng-class="isUser ? 'hidden' : 'score'">User: {{ user }}    </div>
+        <div>SCORE: {{count}}</div>
+      </span>
+
+      <div class='info' ng-show="infoToggle">
+        <h1>Are you ready to jump?</h1>
+        <br>
+        <h3>Click the button below to be dropped in a random location! <br>Explore
+        the area, get a feel for where you are. <br>Once you have it, make
+        a guess by selecting an answer button below the map.</h3> <h2>Wanna challenge
+        a friend?</h2><h3>Head over to the challenge page!</h3><br>
+
+        <div ng-class="isUser ? 'userInfo' : 'hidden'">
+          <form name='userForm'>
+            Enter initials to save score:
+            <input type="text" maxlength="3" size="5" ng-model='userName' required>
+          </form>
+        </div>
+        <br>
+        <button class = 'option' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+      </div>
+
+      <div class='info' ng-show="linkToggle">
+        <h1>Are you ready to jump?</h1>
+        <br>
+        <h3>Your friend has dropped you in a random location! <br>Explore
+        the area, get a feel for where you are. <br>Once you have it, make
+        a guess by selecting an answer button below the map.</h3> <br> <h2>Wanna
+        challenge your friend back?</h2><h3>Head over to the challenge page!</h3><br>
+
+        <div ng-class="isUser ? 'userInfo' : 'hidden'">
+          <form name='userForm'>
+            Enter initials to save score:
+            <input type="text" maxlength="3" size="5" ng-model='userName' required>
+          </form>
+        </div>
+        <br>
+        <a class='option' ng-click='getUserInfo(userName); StartGame()'>Jump!</a>
+      </div>
 
 
       <div ng-class="toggle ? 'hidden' : 'correct'">
-        <h1>Correct! <br> You were dropped near <br> {{poi}} <br> in <br> {{answer}}
-        </h1>
+        <h1>Correct!</h1> <br> <h2> You were dropped near <br> {{poi}} <br> in <br> {{answer}}
+        </h2>
+        <h3 ng-hide="link">Hang tight. We are dropping you in a new location...</h3>
       </div>
 
        <div ng-class="incorrect ? 'hidden' : 'incorrect'">
-         <h1>Incorrect that was <br> {{poi}} <br> in <br> {{answer}}
-         </h1>
+         <h1>Incorrect!</h1> <br> <h2> That was <br> {{poi}} <br> in <br> {{answer}}
+         </h2>
+         <h3 ng-hide="link">Hang tight. We are dropping you in a new location...</h3>
        </div>
 
        <div class="displayLink fade-in" ng-show="displayOptions">
          <h3>What's next?</h3>
          <br>
-         <a class='option' href="/#/game">keep playing</a>
-         <a class='option' href ng-click="link=null"> create a challenge</a>
+         <a class='option' ng-click="StartGame()">keep playing</a>
+         <a class='option' href="/#/challenge"> create a challenge</a>
          <a class='option' href="http://www.google.com"> get me outta here!</a>
        </div>
 
-      <span class="score">
-          <div ng-class="isUser ? 'hidden' : 'score'">User: {{ user }}    </div>
-          <div>SCORE: {{count}}</div>
-      </span>
 
-      <div ng-class="isUser ? 'userInfo' : 'hidden'">
-        <form name='userForm'>
-         Enter initials to save score
-          <input type="text" maxlength="3" size="5" ng-model='userName' required>
 
-          <input type="submit" value="submit" ng-disabled="userForm.$invalid" ng-click=getUserInfo(userName)>
-        </form>
-      </div>
       <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), pov:{heading: {{heading}}, pitch: {{pitch}}}, addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
       </map>
       <div class = 'butt' ng-repeat="answer in answerChoices">
-        <button type='button' ng-class="buttonToggle ? 'btn btn-lg btn-primary' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</button>
+        <hr>
+        <a href ng-class="buttonToggle ? 'option' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
+        <hr>
 
       </div>
     </div>
