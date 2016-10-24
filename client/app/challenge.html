@@ -8,12 +8,14 @@
           Use the street view to get the camera angle you want.
         </h2>
         <br>
+        <br>
         <h3>
           When you've got it, click "challenge" to create a link to your spot. <br>
           Update the info and send the link to your friends!
         </h3>
         <br>
-      <a href class = 'optionButton' ng-click='infoToggle = !infoToggle'>Explore!</a>      
+        <br>
+      <a href class = 'optionButton' ng-click='infoToggle = !infoToggle'>Explore!</a>
     </div><!--challengeInfo-->
 
 
@@ -28,13 +30,13 @@
       <form ng-submit=updateToPlace(place) class="searchbar">
         <input places-auto-complete ng-model="place" class="form-control input-transparent">
 
-    
+
         <div id="generatelinkpanelheading" >
-          
-          <span class="challengedescription">  
-            When you find a rad location 
+
+          <span class="challengedescription">
+            When you find a rad location
             <a href ng-click="appear = !appear; updateInfo()">  challenge a friend</a>
-          </span> 
+          </span>
         </div>
       </form>
     </div>

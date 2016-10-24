@@ -70,14 +70,13 @@
        </div>
 
       <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), pov:{heading: {{heading}}, pitch: {{pitch}}}, addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
-      </map>
-
-      <div class = 'butt' ng-repeat="answer in answerChoices">
-        <hr>
-        <a href ng-class="buttonToggle ? 'option' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
-        <hr>
-      </div>
-
+        <table class="butt">
+          <tr>
+            <td align="center" style="padding: 20px" ng-repeat="answer in answerChoices">
+              <a href ng-class="buttonToggle ? 'optionButton' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
+            </td>
+          </tr>
+        </table>
+    </map>
     </div>
   </div>
-
