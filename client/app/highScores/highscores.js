@@ -5,7 +5,7 @@ angular.module('Highscores', [])
 
     var postScores = function() {
       scoreFactory.getScores(function(result) {
-        $scope.scores = result.data;
+        $scope.scores = result.data.slice(0, 30);
       });
     };
 
@@ -14,6 +14,7 @@ angular.module('Highscores', [])
     };
 
     postScores();
+
 
   }])
   .factory('scoreFactory', function($http) {
@@ -30,6 +31,8 @@ angular.module('Highscores', [])
         method: 'POST',
         data: { user: user, score: score }
 
+      }).then(function(result) {
+  
       });
     }
 

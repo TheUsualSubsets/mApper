@@ -260,7 +260,7 @@ h1 {
 }
 
 .scores {
-  text-align: center;
+  text-align: left;
   background-color: white;
   opacity: .5;
   color: black;
