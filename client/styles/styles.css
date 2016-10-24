@@ -29,7 +29,16 @@ body, html {
     url('./images/hero.jpg');
   background-size: cover;
   overflow: auto;
-  height: 550px;
+  height: 600px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-75%, -50%);
+  color: white;
+  text-align: center;
 }
 
 .mapThing{
@@ -206,7 +215,7 @@ h1 {
 
 #generatelinkpanel {
   position: absolute;
-  border-radius: 15px;
+  /*border-radius: 15px;*/
   margin: 30px;
   top: 25%;
   left: 22%;
@@ -274,7 +283,7 @@ h1 {
   top: 30vh;
   height: 140px;
   color: white;
-  border-radius: 15px;
+  /*border-radius: 15px;*/
 }
 
 .specialtext {
