@@ -24,7 +24,7 @@
           </form>
         </div>
         <br>
-        <button class = 'option' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+        <button class = 'optionButton' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
       </div>
 
       <!--SHOWS WHEN GAME IS STARTED VIA SHARED LINK-->
@@ -37,7 +37,15 @@
         challenge your friend back?</h2><h3>Head over to the challenge page!</h3>
         <br>
 
-        <button class='option' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+        <!-- <div ng-class="isUser ? 'userInfo' : 'hidden'">
+          <form name='userForm'>
+            Enter initials to save score:
+            <input type="text" maxlength="3" size="5" ng-model='userName' required>
+          </form>
+        </div>
+        <br> -->
+        <button class='optionButton' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+
       </div>
 
 
