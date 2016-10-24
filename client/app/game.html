@@ -5,6 +5,7 @@
       <span class="score">
         <div ng-class="isUser ? 'hidden' : 'score'">User: {{ user }}    </div>
         <div>SCORE: {{count}}</div>
+        <div class="highscore"> Current Highscore: {{ topScore.id }} {{ topScore.score }}</div>
       </span>
 
       <!--SHOWS WHEN NEW GAME IS STARTED VIA HOMEPAGE-->
@@ -35,13 +36,7 @@
         a guess by selecting an answer button below the map.</h3> <br> <h2>Wanna
         challenge your friend back?</h2><h3>Head over to the challenge page!</h3>
         <br>
-        <!-- <div ng-class="isUser ? 'userInfo' : 'hidden'">
-          <form name='userForm'>
-            Enter initials to save score:
-            <input type="text" maxlength="3" size="5" ng-model='userName' required>
-          </form>
-        </div>
-        <br> -->
+
         <button class='option' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
       </div>
 

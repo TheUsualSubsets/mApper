@@ -31,9 +31,9 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	$scope.buttonToggle = true;
 	$scope.incorrect = true;
 	$scope.user;
-	$scope.isUser = true;
-	$scope.topScores = [];
+	$scope.isUser = true;	
 	$scope.displayOptions = false;
+	$scope.topScore;
 
 	if($location.url() !== '/game'){
 		$scope.linkToggle = true;
@@ -43,6 +43,10 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 
 
 	$scope.compareAnswer = function (answer){
+	    scoreFactory.getScores(function(result){
+		   $scope.topScore = result.data[0];
+	    })
+	
 		if($location.url() !== '/game'){
 			$scope.link = true;
 		}
@@ -50,6 +54,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 			$scope.count++;
 			$scope.toggle = !$scope.toggle;
 			$scope.buttonToggle = !$scope.toggle;
+			
 		} else {
 			if ($scope.user) {
 			  scoreFactory.addScore($scope.user, $scope.count);
@@ -69,7 +74,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	}
 
 	$scope.StartGame = function(){
-
 		Map.getMaps(function(result){
 			$scope.toggle = true;
 			$scope.infoToggle = false;
@@ -98,6 +102,12 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 		$scope.isUser = false;
 		$scope.userName = "";
 	};
+
+
+	scoreFactory.getScores(function(result){
+		$scope.topScore = result.data[0];
+
+	})
 }])
 
 .factory('Map', ['$http', '$location', function ($http, $location){
