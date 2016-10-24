@@ -100,6 +100,13 @@ h1 {
    visibility: hidden;
  }
 
+ .info, .correct, .incorrect, .challengeInfo {
+   background-image: url('parachutetransparent.png');
+   background-repeat: no-repeat;
+   background-position: 10%;
+   background-size: 30% 80%;
+ }
+
  .info {
    padding: 2%;
    margin: auto;
@@ -109,6 +116,7 @@ h1 {
    position: absolute;
    color: black;
    background-color: rgba(255,255,255,.75);
+
  }
 
  .challengeInfo {
