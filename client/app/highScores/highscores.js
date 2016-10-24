@@ -5,8 +5,7 @@ angular.module('Highscores', [])
 
     var postScores = function() {
       scoreFactory.getScores(function(result) {
-        console.log(result.data);
-        $scope.scores = result.data;
+        $scope.scores = result.data.slice(0, 30);
       });
     };
 
@@ -33,7 +32,7 @@ angular.module('Highscores', [])
         data: { user: user, score: score }
 
       }).then(function(result) {
-        console.log(result);
+  
       });
     }
 

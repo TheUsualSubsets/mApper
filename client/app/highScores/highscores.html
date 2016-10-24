@@ -1,8 +1,8 @@
 <div class='hero' ng-controller='scoreController'>
   <div class='scores col-xs-4'>
   <h1 class='top'>Top Scores</h1>
-    <div ng-repeat='score in scores'>
-      <h2>{{ score.id }}  {{ score.score }}</h2>
+    <div ng-repeat='score in scores track by $index'>
+      <h2> {{ (scores.indexOf(score)+1) }}  : {{ score.id }}  {{ score.score }}</h2>
     </div>
   </div>
   <div class='col-xs-8'></div>

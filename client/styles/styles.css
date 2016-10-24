@@ -289,7 +289,7 @@ h1 {
 }
 
 .scores {
-  text-align: center;
+  text-align: left;
   background-color: white;
   opacity: .5;
   color: black;
@@ -310,6 +310,16 @@ h1 {
   border-radius: 15%
 }
 
+.score div {
+  display: inline-block;
+  margin-left: 3%;
+  font-size: 1em;
+  color: white;
+} 
+
+.score .highscore {
+  margin-left: 15%;
+}
 
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
