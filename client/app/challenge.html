@@ -1,44 +1,56 @@
 <div ng-controller="challengeController">
-    <div class="mapcontainer">
-      <map class="smallmap" center="current-position"
+    <div class="container-fluid">
+
+      <div class='challengeInfo' ng-show="infoToggle">
+        <h1>Explore the world!</h1>
+        <h2>Use the search bar to find a rad location on the map.
+        <br>Use the street view to get the camera angle you want.</h2>
+        <br><h3>When you've got it, click "challenge" to create a link to your spot.
+        <br>Update the info and send the link to your friends!</h3>
+        <br>
+        <button class = 'option' ng-click='infoToggle = !infoToggle'>Explore!</button>
+      </div>
+
+      <map class="col-xs-6" center="current-position"
       geo-fallback-center= "[52.1996161,0.1157753]">
           <street-view-panorama
             container="streetview"
             ng-click="updateInfo()">
           </street-view-panorama>
       </map>
-      <div id="streetview"></div>
+      <div id="streetview" class="col-xs-6"></div>
     </div>
+
     <div class="noheight">
       <form ng-submit=updateToPlace(place) class="searchbar">
           <input places-auto-complete ng-model="place" class="form-control input-transparent">
       </form>
     </div>
-  <div class="fade-in appear" id="generatelinkpanelheading" ng-class="{'appear': !appear, 'dissapear': appear, 'fade-in': appear}">
-  Explore the world. <br><span class="challengedescription">  When you've found a rad location, challenge your friends and family by sending them a link, and they'll have to guess the location!</span><br>
-  When you're ready --->
-  <a href ng-click="appear = !appear; updateInfo()">Challenge them!</a>
-  </div>
-  <div class="fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}" id="generatelinkpanel">
-  <span style="margin-bottom: 20px;">We just need a bit more information to keep our database looking pretty!</span><br>
-  <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong! :)</span><br>
-    <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span><br>
-    <span>City Name:  </span> <span><input ng-model="locationObj.city" class="form-control" id="city"></span><br>
 
-    <a href ng-click="addToDatabase()">I'm ready, give me a link!  </a>
-    <span> OR....  </span>
-    <a href ng-click="appear=!appear" class="danger"> Not yet</a>
-  </div>
-  <div class="displayLink fade-in" ng-show="link">
-  Here's your link!  Click to copy to clipboard ;) <br>
-  <div class="specialtext btn-success" ngclipboard data-clipboard-text="Check out this awesome location! Can you guess where it is?  Play MappApp! {{link}}"> {{link}}</div><br>
-  <div>
-    What's next? <br>
-    <a href="/#/game">Play the game </a>,
-    <a href ng-click="link=null">Create another challenge</a> , or
-    <a href="http://www.google.com">Get me outta here</a>
-  </div>
-  </div>
+    <hr>
+    <a class='option' ng-click="appear = !appear; updateInfo()" href>Challenge</a>
+    <hr>
+
+    <div class="fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}" id="generatelinkpanel">
+      <span style="margin-bottom: 20px;">We just need a bit more information to keep our database looking pretty!</span><br>
+      <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong!</span><br>
+        <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span><br>
+        <span>City Name:  </span> <span><input ng-model="locationObj.city" class="form-control" id="city"></span><br>
+
+      <a href ng-click="addToDatabase()">Give me a link!  </a>
+
+      <a href ng-click="appear=!appear" class="danger">Not yet...</a>
+    </div>
+    <div class="displayLink fade-in" ng-show="link">
+      Here's your link!  Click to copy to clipboard <br>
+      <div class="specialtext btn-success" ngclipboard data-clipboard-text="Check out this awesome location! Can you guess where it is?  Play MappApp! {{link}}"> {{link}}</div><br>
+      <div>
+        What's next? <br>
+        <a class='option' href="/#/game">play the game </a>
+        <a class='option' href ng-click="link=null">create another challenge</a>
+        <a class='option' href="http://www.google.com">get me outta here!</a>
+      </div>
+    </div>
 
      <!--
         Point of Interest: <br>
