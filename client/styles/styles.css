@@ -104,7 +104,12 @@ h1 {
    z-index: 99;
    position: absolute;
    color: black;
+   background-image: url('parachutetransparent.png');
+   background-repeat: no-repeat;
+   background-position: 10% ;
+   background-size: 30% 90%;
    background-color: rgba(255,255,255,.75);
+
  }
 
  .challengeInfo {
@@ -114,6 +119,10 @@ h1 {
    z-index: 99;
    position: absolute;
    color: black;
+    background-image: url('parachutetransparent.png');
+   background-repeat: no-repeat;
+   background-position: 10%;
+   background-size: 20% 70%;
    background-color: rgba(255,255,255,.75);
  }
 
