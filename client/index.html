@@ -63,6 +63,28 @@
 
       <a id="twitterFooter" href="https://twitter.com/share" data-show-count="false" <i class="fa fa-twitter fa-2x" aria-hidden="true"></i> </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"> </script>
 
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business"
+        value="donations@Parachute.com">
+
+    <!-- Specify a Donate button. -->
+    <input type="hidden" name="cmd" value="_donations">
+
+    <!-- Specify details about the contribution -->
+    <input type="hidden" name="item_name" value="One Parachute Staff Member's Tuition">
+    <input type="hidden" name="amount" value="16920.00">
+    <input type="hidden" name="currency_code" value="USD">
+
+    <!-- Display the payment button. -->
+    <input id = "pp" type="image" name="submit"
+    src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+    alt="Donate">
+    <img alt="" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+  
 
     </div><!--App-->
 
