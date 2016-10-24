@@ -18,11 +18,9 @@ app.get('/newGame', function(req, res){
   console.log('starting');
   //check if there was a querystring (from a shared link) attached to the req
   if(req.query.q){
-    console.log(req.query.q);
     //if there was, query DB based on that querystring
     query.challengeQuery(req.query.q, function(result){
       res.send(result);
-      console.log(result);
     })
     //if not, return a random location
   } else {

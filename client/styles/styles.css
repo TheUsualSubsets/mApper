@@ -284,32 +284,16 @@ h1 {
 
 
 .top {
-  margin-left: 5%;
-  text-align: left;
-  color: black;
     -webkit-text-fill-color: grey;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: red;
-  font-size: 500%
-
 }
 
-.score div {
-  display: inline-block;
-  margin-left: 3%;
-  font-size: 1em;
-  color: white;
-
-}
-
-.scores h3{
-  margin-left: 10%;
-  text-align: left;
+.scores {
+  text-align: center;
+  background-color: white;
+  opacity: .5;
   color: black;
-    -webkit-text-fill-color: grey;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-  font-size: 300%;
 }
 
 .userInfo {

@@ -1,7 +1,9 @@
 <div class='hero' ng-controller='scoreController'>
-<h1 class= 'top'>Top Scores</h1>
-<div class='scores' ng-repeat='score in scores'>
-<h3>{{ score.id }} {{ score.score }}</h3>
-</div>
-<!-- <button ng-click='addScore()'>test button</button> -->
+  <div class='scores col-xs-4'>
+  <h1 class='top'>Top Scores</h1>
+    <div ng-repeat='score in scores'>
+      <h2>{{ score.id }}  {{ score.score }}</h2>
+    </div>
+  </div>
+  <div class='col-xs-8'></div>
 </div>
