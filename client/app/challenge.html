@@ -1,30 +1,45 @@
 <div ng-controller="challengeController">
-    <div class="mapcontainer">
+  <div class="mapcontainer">
+    <map class="smallmap" center="current-position" geo-fallback-center= "[52.1996161,0.1157753]">
+        <street-view-panorama container="streetview"ng-click="updateInfo()"></street>
+    </map>
 
-      <map class="smallmap" center="current-position"
-      geo-fallback-center= "[52.1996161,0.1157753]">
+    <div id="streetview"></div>
 
-          <street-view-panorama container="streetview" ng-click="updateInfo()"></street>
-      </map>
-      <div id="streetview"></div>
-    </div><!--mapcontainer-->
-
+    <!--google input field-->
     <div class="noheight">
       <form ng-submit=updateToPlace(place) class="searchbar">
           <input places-auto-complete ng-model="place" class="form-control input-transparent">
-      </form>
-    </div>
 
-  <div class="fade-in appear" id="generatelinkpanelheading" ng-class="{'appear': !appear, 'dissapear': appear, 'fade-in': appear}">
+      
+          <div id="generatelinkpanelheading" >
+            
+            <span class="challengedescription">  
+              When you find a rad location 
+              <a href ng-click="appear = !appear; updateInfo()">  challenge a friend</a>
+            </span> 
+          </div>
+        </form>
+      </div>
 
-    Explore the world. <br>
-    <span class="challengedescription">  When you've found a rad location, challenge your friends and family by sending them a link, and they'll have to guess the location!</span>
-    <br> When you're ready --->
+  </div><!--mapcontainer-->
+
+
+
+
+
+
+
+
+<!--   <div class="fade-in appear" id="generatelinkpanelheading" ng-class="{'appear': !appear, 'dissapear': appear, 'fade-in': appear}">
+  Explore the world. <br><span class="challengedescription">  When you've found a rad location, challenge your friends and family by sending them a link, and they'll have to guess the location!</span><br>
+  When you're ready
   <a href ng-click="appear = !appear; updateInfo()">Challenge them!</a>
-  </div>
+  </div> -->
 
 
   <div class="fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}" id="generatelinkpanel">
+
   <span style="margin-bottom: 20px;">We just need a bit more information to keep our database looking pretty!</span><br>
   <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong! :)</span><br>
     <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span><br>
@@ -43,6 +58,7 @@
     <a href ng-click="link=null">Create another challenge</a> , or
     <a href="http://www.google.com">Get me outta here</a>
   </div>
+
   </div>
 
      <!--
@@ -54,5 +70,4 @@
         Longitute: <input ng-model="locationObj.lng">
         Heading: <input ng-model="locationObj.heading"><br>
         Pitch: <input ng-model="locationObj.pitch"><br> -->
-
-</div><!--challengeCtrl-->
+</div>
