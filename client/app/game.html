@@ -7,6 +7,7 @@
         <div>SCORE: {{count}}</div>
       </span>
 
+      <!--SHOWS WHEN NEW GAME IS STARTED VIA HOMEPAGE-->
       <div class='info' ng-show="infoToggle">
         <h1>Are you ready to jump?</h1>
         <br>
@@ -25,6 +26,7 @@
         <button class = 'option' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
       </div>
 
+      <!--SHOWS WHEN GAME IS STARTED VIA SHARED LINK-->
       <div class='info' ng-show="linkToggle">
         <h1>Are you ready to jump?</h1>
         <br>
