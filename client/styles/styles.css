@@ -5,10 +5,18 @@ body, html {
     margin: 0px;
     padding: 0px;
     border: 0px;
+  overflow: scroll;
   font-family: Play;
   background-color: #333;
-
 }
+
+#fbFooter{
+  color: white;
+  position: absolute;
+  top: 91%;
+  left: 90%;
+}
+
 
 .hero {
   position: relative;
@@ -24,17 +32,11 @@ body, html {
   height: 550px;
 }
 
-
-.hero-text {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-75%, -50%);
-  color: white;
-  text-align: center;
-
+.mapThing{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-
 .btn {
   margin-top: 10px;
   margin-left: 30px;
@@ -44,7 +46,7 @@ body, html {
 #pano{
   height: 70vh;
   width: 70vw;
-  z-index: 0;
+  position: relative;
 }
 
 .butt {
@@ -52,66 +54,65 @@ body, html {
   margin: .5%;
 }
 
+.button {
+  background-color: black !important;
+  color: gray;
+}
+
 h1 {
   font-size: 3em;
 
 }
 
-h3 {
-  margin-top: 0px;
-}
-
  map {
   margin: auto;
-  width: 85%;
   height: 32em;
+  width: 100%;
  }
 
  .hidden {
    visibility: hidden;
  }
 
- .correct {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  text-align: center;
-  z-index: 10;
-
+ .info {
+   margin: auto;
+   width: 100%;
+   height: 32em;
+   z-index: 99;
+   position: absolute;
+   color: black;
+   background-color: rgba(255,255,255,.75);
  }
 
-.correct h1 {
-  margin-top: 10%;
-  color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+ .challengeInfo {
+   padding: 1%;
+   width: 100%;
+   height: 100%;
+   z-index: 99;
+   position: absolute;
+   color: black;
+   background-color: rgba(255,255,255,.75);
+ }
 
-
-}
+ .correct {
+   margin: auto;
+   width: 100%;
+   height: 32em;
+   z-index: 99;
+   position: absolute;
+   color: black;
+   background-color: rgba(255,255,255,.75);
+ }
 
  .incorrect {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  text-align: center;
-  z-index: 10;
+   margin: auto;
+   width: 100%;
+   height: 32em;
+   z-index: 99;
+   position: absolute;
+   color: black;
+   background-color: rgba(255,255,255,.75);
  }
-
-.incorrect h1 {
-  margin-top: 10%;
-  color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}
-
-
-
-#googleMap {
-  height: 100%;
-  width: 100%;
-}
 
 .smallmap, #streetview {
   display:inline-block;
@@ -130,7 +131,6 @@ h3 {
 #streetview {
   float: right;
 }
-
 
 .input-transparent {
   margin: 0px;
@@ -156,20 +156,6 @@ h3 {
   left: 34%;
   width: 40%;
   transform: translate(-75%, -50%);
-}
-
-
-
-.no-margin {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-}
-
-.whatever {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
 }
 
 .poiInput, .poiInfo {
@@ -233,13 +219,19 @@ h3 {
   text-align: center;
 }
 
-
-.option {
+.optionButton {
   margin-top: 10px;
   font-size: 1.5em;
   padding: 20px;
-  border: 1px solid white;
-  border-radius: 15px;
+  color: gray;
+  background-color: #333;
+  border: 2px solid white;
+}
+
+.option {
+  margin-top: 10px;
+  font-size: 1em;
+  padding: 20px;
   color: gray;
 }
 
@@ -272,10 +264,6 @@ h3 {
   font-size: .7em;
 }
 
-/*.noheight {
-  height: 0px;
-}*/
-
 .displayLink {
   padding: 20px;
   width: 60%;
@@ -294,61 +282,27 @@ h3 {
   color: lightblue;
 }
 
-
-
 .top {
-  margin-left: 5%;
-  text-align: left;
-  color: black;
     -webkit-text-fill-color: grey;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: red;
-  font-size: 500%
-
 }
 
-.score div {
-  display: inline-block;
-  margin-left: 3%;
-  font-size: 1em;
-  color: white;
-
-}
-
-.scores h3{
-  margin-left: 10%;
-  text-align: left;
+.scores {
+  text-align: center;
+  background-color: white;
+  opacity: .5;
   color: black;
-    -webkit-text-fill-color: grey;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-  font-size: 300%;
 }
 
 .userInfo {
   position: absolute;
-  z-index: 11;
+  margin: auto;
   width: 100%;
-  opacity:0;  /* make things invisible upon start */
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
-  
-
 }
 
 .userInfo form {
-  color: red;
-  font-weight: bold;
-  font-size: 1.5em
+  color: black;
 }
 
 .userInfo input {

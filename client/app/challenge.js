@@ -6,6 +6,7 @@ angular.module('challenge', [])
   $scope.appear = false;
   //$scope.place is the value in the map search box
   $scope.place;
+  $scope.infoToggle = true;
 
   //this function serves to update all the $scope variables to contain the
   //current information from the map and streetview obects, so that when the
