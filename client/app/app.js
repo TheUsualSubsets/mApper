@@ -33,6 +33,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	$scope.user;
 	$scope.isUser = true;
 	$scope.topScores = [];
+	$scope.displayOptions = false;
 
 	if($location.url() !== '/game'){
 		$scope.linkToggle = true;
@@ -86,7 +87,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 
 	}
 
-	$scope.displayOptions = false;
 
 	$scope.toggleOptionsDisplay = function(){
 		$scope.displayOptions = !$scope.displayOptions;
