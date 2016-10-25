@@ -1,5 +1,5 @@
 
-angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores', 'ui.bootstrap', 'ngclipboard'])
+angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores', 'ui.bootstrap', 'ngclipboard', 'ngCookies'])
 
 .config(function($routeProvider){
 	$routeProvider
@@ -25,7 +25,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	})
 })
 
-.controller('mapController', ['$scope', 'Map', '$location', 'scoreFactory', function ($scope, Map, $location, scoreFactory){
+.controller('mapController', ['$scope', 'Map', '$location', 'scoreFactory', '$cookies', '$route', function ($scope, Map, $location, scoreFactory, $cookies, $route){
 	$scope.count = 0;
 	$scope.toggle = true;
 	$scope.buttonToggle = true;
@@ -34,13 +34,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	$scope.isUser = true;	
 	$scope.displayOptions = false;
 	$scope.topScore;
-
-	if($location.url() !== '/game'){
-		$scope.linkToggle = true;
-	} else {
-		$scope.infoToggle = true;
-	}
-
 
 	$scope.compareAnswer = function (answer){
 	    scoreFactory.getScores(function(result){
@@ -75,8 +68,8 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	}
 
 	$scope.StartGame = function(){
-
 		Map.getMaps(function(result){
+			console.log('game started')
 			$scope.toggle = true;
 			$scope.infoToggle = false;
 			$scope.linkToggle = false;
@@ -100,18 +93,36 @@ angular.module('App', ['ngRoute', 'ngMap', 'homePage', 'challenge', 'Highscores'
 	}
 
 	$scope.getUserInfo = function(value) {
-		$scope.user = value;
+	    if (!$cookies.user) {
+		  $scope.user = value;
+		  $cookies.user = value;	    	
+	    } else {
+	    	$scope.user = $cookies.user;
+	    }
 		$scope.isUser = false;
+		
 	};
 
+	$scope.clearUser = function() {
+		$cookies.user = undefined;
+		$route.reload();
+	}
+
+	if ($cookies.user) {
+		$scope.StartGame();
+		$scope.getUserInfo();
+	} else if ($location.url() !== '/game') {
+		$scope.linkToggle = true;
+	} else {	 
+		$scope.infoToggle = true; 
+	} 
 
 	scoreFactory.getScores(function(result){
 		$scope.topScore = result.data[0];
-
 	})
 }])
 
-.factory('Map', ['$http', '$location', function ($http, $location){
+.factory('Map', ['$http', '$location',  function ($http, $location){
 		var getMaps = function (callback){
 			//set base url - will be called for standard gameplay started from homepage
 			var url = '/newGame';
