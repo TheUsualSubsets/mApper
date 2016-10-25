@@ -5,7 +5,7 @@ IP ADDRESS:
 104.236.129.131:9001
 Digital Ocean Server
 
-## FILES EXIST FOR BOTH COPYING DATA DOWN TO CSV FILE AND FOR SEEDING DATABASE
+Files exist for both copying database to CSV File and for seeding database.
 
 ### KNOWN BUGS
 
