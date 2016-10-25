@@ -5,7 +5,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 	$routeProvider
 	.when('/', {
 		templateUrl: '/app/info.html',
-		controller: 'homePageCtrl'
 	})
 	.when('/game', {
 		templateUrl: '/app/game.html',
