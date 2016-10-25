@@ -34,13 +34,13 @@ body, html {
 
 .hero {
   position: relative;
-  background: black url('./images/hero.jpg') top center no-repeat;
+  background: black url('./images/ourhero.png') top center no-repeat;
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2)
     ),
-    url('./images/hero.jpg');
+    url('./images/ourhero.png');
   background-size: cover;
   overflow: auto;
   height: 90vh;
