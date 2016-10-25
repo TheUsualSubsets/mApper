@@ -1,17 +1,17 @@
 angular.module('challenge', [])
 
-.controller('challengeController', ['$scope', 'GeoCoder', 'AddNewPoint', function($scope, GeoCoder, AddNewPoint){
+.controller('challengeController', ['$scope', 'GeoCoder', 'AddNewPoint','$cookies', function($scope, GeoCoder, AddNewPoint, $cookies){
   //initialize variables
   //$scope.appear is used for animations when generating links
   $scope.appear = false;
   //$scope.place is the value in the map search box
   $scope.place;
   $scope.infoToggle = true;
-
   //this function serves to update all the $scope variables to contain the
   //current information from the map and streetview obects, so that when the
   //user decides to generate a link, the information that is sent to the
   //database will be correct.
+
 
   $scope.updateInfo = function() {
     //create an object that we will send to server to input into the database

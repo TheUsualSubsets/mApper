@@ -6,6 +6,7 @@
         <div ng-class="isUser ? 'hidden' : 'score'">User: {{ user }}    </div>
         <div>SCORE: {{count}}</div>
         <div class="highscore"> Current Highscore: {{ topScore.id }} {{ topScore.score }}</div>
+        <div ng-click="clearUser(); $route.reload()"; ><a href>Switch User</a></div>
       </span>
 
       <!--SHOWS WHEN NEW GAME IS STARTED VIA HOMEPAGE-->
@@ -37,13 +38,13 @@
         challenge your friend back?</h2><h3>Head over to the challenge page!</h3>
         <br>
 
-        <!-- <div ng-class="isUser ? 'userInfo' : 'hidden'">
+        <div ng-class="isUser ? 'userInfo' : 'hidden'">
           <form name='userForm'>
             Enter initials to save score:
             <input type="text" maxlength="3" size="5" ng-model='userName' required>
           </form>
         </div>
-        <br> -->
+        <br>
         <button class='optionButton' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
 
       </div>
