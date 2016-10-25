@@ -1,10 +1,12 @@
-<div class='container'>
+
   <div class='pano'>
     <div ng-controller = "mapController" class='mapThing'>
 
       <span class="score">
         <div ng-class="isUser ? 'hidden' : 'score'">User: {{ user }}    </div>
         <div>SCORE: {{count}}</div>
+        <div class="highscore"> Current Highscore: {{ topScore.id }} {{ topScore.score }}</div>
+        <div ng-click="clearUser(); $route.reload()"; ><a href>Switch User</a></div>
       </span>
 
       <!--SHOWS WHEN NEW GAME IS STARTED VIA HOMEPAGE-->
@@ -23,7 +25,7 @@
           </form>
         </div>
         <br>
-        <button class = 'option' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+        <button class = 'optionButton' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
       </div>
 
       <!--SHOWS WHEN GAME IS STARTED VIA SHARED LINK-->
@@ -35,14 +37,16 @@
         a guess by selecting an answer button below the map.</h3> <br> <h2>Wanna
         challenge your friend back?</h2><h3>Head over to the challenge page!</h3>
         <br>
-        <!-- <div ng-class="isUser ? 'userInfo' : 'hidden'">
+
+        <div ng-class="isUser ? 'userInfo' : 'hidden'">
           <form name='userForm'>
             Enter initials to save score:
             <input type="text" maxlength="3" size="5" ng-model='userName' required>
           </form>
         </div>
-        <br> -->
-        <button class='option' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+        <br>
+        <button class='optionButton' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+
       </div>
 
 
@@ -67,14 +71,13 @@
        </div>
 
       <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), pov:{heading: {{heading}}, pitch: {{pitch}}}, addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
-      </map>
-
-      <div class = 'butt' ng-repeat="answer in answerChoices">
-        <hr>
-        <a href ng-class="buttonToggle ? 'option' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
-        <hr>
-      </div>
-
+        <table class="butt">
+          <tr>
+            <td align="center" style="padding: 20px" ng-repeat="answer in answerChoices">
+              <a href ng-class="buttonToggle ? 'optionButton' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
+            </td>
+          </tr>
+        </table>
+    </map>
     </div>
   </div>
-</div>

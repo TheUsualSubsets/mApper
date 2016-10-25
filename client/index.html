@@ -1,7 +1,7 @@
   <!DOCTYPE html>
 <html>
   <head>
-    <link rel='icon' href='https://cdn4.iconfinder.com/data/icons/cia-operations/512/parachute-512.png'>
+    <link rel='icon' href='../styles/logo.png'>
     <title>Parachute</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -21,6 +21,10 @@
     <script src="/bower_components/ngclipboard/dist/ngclipboard.min.js"></script>
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Play">
+
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
   </head>
   <body>
    <div id="fb-root"></div>
@@ -60,6 +64,32 @@
 
       <div ng-view></div>
        <a id = "fbFooter" data-href="http://104.236.129.131:9001/#/game" data-layout="button" data-mobile-iframe="true" "fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F104.236.129.131%3A9001%2F%23%2Fgame&amp;src=sdkpreparse"<i class = "fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+
+      <a id="twitterFooter" href="https://twitter.com/share" data-show-count="false" <i class="fa fa-twitter fa-2x" aria-hidden="true"></i> </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"> </script>
+
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business"
+        value="donations@Parachute.com">
+
+    <!-- Specify a Donate button. -->
+    <input type="hidden" name="cmd" value="_donations">
+
+    <!-- Specify details about the contribution -->
+    <input type="hidden" name="item_name" value="One Parachute Staff Member's Tuition">
+    <input type="hidden" name="amount" value="16920.00">
+    <input type="hidden" name="currency_code" value="USD">
+
+    <!-- Display the payment button. -->
+    <input id = "pp" type="image" name="submit"
+    src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+    alt="Donate">
+    <img alt="" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+  
+
     </div><!--App-->
 
 
@@ -67,4 +97,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </html>
