@@ -43,7 +43,7 @@ body, html {
     url('./images/hero.jpg');
   background-size: cover;
   overflow: auto;
-  height: 600px;
+  height: 90vh;
 }
 
 .hero-text {
