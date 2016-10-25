@@ -14,7 +14,6 @@ ___
 
 **team members:** Jeff Judkins, Masashi Swingle, David Trann
 
-___
 
 ## TABLE OF CONTENTS
 
@@ -24,7 +23,7 @@ ___
   * [Tasks](# tasks)
 3. [Known Bugs (Updated October, 2016)](# known-bugs)
 
-___
+
 
 ## DEPENDENCIES
 
@@ -38,7 +37,7 @@ ___
 - "nodemon": "^1.11.0",
 - "request": "^2.75.0"
 
-___
+
 
 ## DEVELOP / CONTRIBUTE
 
@@ -67,7 +66,7 @@ npm start
 
   This will populate your database with 50 initial locations selected from London, Chicago, New York, San Francisco and Istanbul.
 
-___
+
 
 ## KNOWN BUGS
 
