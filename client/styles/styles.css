@@ -10,28 +10,13 @@ body, html {
   background-color: #333;
 }
 
-#pp {
-  width: 35px;
-  position: absolute;
-  top: 90.4%;
-  left: 83.5%;
+h1 {
+  font-size: 3em;
 }
 
-#fbFooter{
-  color: white;
-  position: absolute;
-  top: 91%;
-  left: 90%;
-}
 
-#twitterFooter{
-  color: white;
-  position: absolute;
-  top: 91%;
-  left: 87%;
 
-}
-
+/*-----------------HOMEPAGE - MAIN IMAGE AND TITLE------------*/
 .hero {
   position: relative;
   background: black url('./images/ourhero.png') top center no-repeat;
@@ -46,12 +31,14 @@ body, html {
   height: 90vh;
 }
 
+/*homepage title*/
 .yuge {
   font-size: 8em;
   font-family: 'Orbitron', sans-serif;
   font-weight: bolder;
 }
 
+/*homepage text*/
 .hero-text {
   position: absolute;
   top: 30%;
@@ -61,24 +48,34 @@ body, html {
   text-align: center;
 }
 
-.mapThing{
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
+/*homepage gameplay/challenge buttons*/
 .btn {
   margin-top: 10px;
   margin-left: 30px;
   margin-right: 30px;
 }
 
+
+
+/*-------------------------------GAME PAGE MAP DIVS---------------------------*/
 #pano{
   height: 90vh;
   width: 100%;
   position: relative;
 }
 
+.mapThing{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+map {
+  height: 90vh;
+  width: 100%;
+}
+
+/*-------GENERAL BUTTONS - GAME PAGE AND CHALLENGE PAGE------*/
 .butt {
   bottom: 4%;
   position: absolute;
@@ -88,20 +85,22 @@ body, html {
   opacity: .75;
 }
 
-.button {
+.optionButton {
+  margin-top: 2%;
+  font-size: 1.5em;
+  padding: 20px;
+  color: white;
+  background-color: #333;
+}
+
+/*.button {
   background-color: black !important;
   color: gray;
-}
+}*/
 
-h1 {
-  font-size: 3em;
-}
 
- map {
-  height: 90vh;
-  width: 100%;
- }
-
+/*--------TOGGLE-ABLE GAME PAGE DISPLAY OPTIONS--------*/
+/*(PRE-GAME INSTRUCTIONS, CORRECT AND INCORRECT POPUPS)*/
  .hidden {
    visibility: hidden;
  }
@@ -157,6 +156,27 @@ h1 {
    background-color: rgba(255,255,255,.75);
  }
 
+ .userInfo {
+   position: absolute;
+   margin: auto;
+   width: 100%;
+ }
+
+ .userInfo form {
+   color: black;
+ }
+
+ .userInfo input {
+   color: black;
+   border-radius: 15%
+ }
+
+
+
+
+
+ /*-------------------------CHALLENGE PAGE MAP DIVS---------------------------*/
+
 .smallmap, #streetview {
   display:inline-block;
   width:50%;
@@ -183,7 +203,6 @@ h1 {
 }
 
 .mapcontainer {
-  /*position: absolute;*/
   height: 90vh;
   width: 100%;
   margin: 0px;
@@ -200,6 +219,8 @@ h1 {
   width: 40%;
   transform: translate(-75%, -50%);
 }
+
+/*----------------ADD A CITY POPUP-------------*/
 
 .poiInput, .poiInfo {
   display: inline-block;
@@ -225,6 +246,8 @@ h1 {
   display: block;
 }
 
+
+/*--------------LINK CREATION POPUP----------*/
 #generatelinkpanel, .displayLink {
   padding-bottom: 30px;
   background-color: #222;
@@ -262,13 +285,6 @@ h1 {
   text-align: center;
 }
 
-.optionButton {
-  margin-top: 2%;
-  font-size: 1.5em;
-  padding: 20px;
-  color: white;
-  background-color: #333;
-}
 
 .option {
   margin-top: 10px;
@@ -277,6 +293,8 @@ h1 {
   color: gray;
 }
 
+/*this animation is also used to popup display options after shared-link gameplay
+  on the game page*/
 .fade-in {
   opacity:0;  /* make things invisible upon start */
   -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
@@ -322,6 +340,16 @@ h1 {
   color: lightblue;
 }
 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+
+
+
+/*-------------------------------HIGH SCORE PAGE------------------------------*/
+
 .top {
     -webkit-text-fill-color: grey;
     -webkit-text-stroke-width: 2px;
@@ -333,21 +361,6 @@ h1 {
   background-color: white;
   opacity: .5;
   color: black;
-}
-
-.userInfo {
-  position: absolute;
-  margin: auto;
-  width: 100%;
-}
-
-.userInfo form {
-  color: black;
-}
-
-.userInfo input {
-  color: black;
-  border-radius: 15%
 }
 
 .score div {
@@ -362,18 +375,9 @@ h1 {
 }
 
 
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-/*.navbar-toggle .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: #cccccc;
-  border-radius: 1px;
-}*/
 
+/*-------------ICONS-----------*/
 
 #bars {
   color: #999;
@@ -382,4 +386,26 @@ h1 {
 #fbButton {
   color: #fff;
   text-decoration: none;
+}
+
+#pp {
+  width: 35px;
+  position: absolute;
+  top: 90.4%;
+  left: 83.5%;
+}
+
+#fbFooter{
+  color: white;
+  position: absolute;
+  top: 91%;
+  left: 90%;
+}
+
+#twitterFooter{
+  color: white;
+  position: absolute;
+  top: 91%;
+  left: 87%;
+
 }
