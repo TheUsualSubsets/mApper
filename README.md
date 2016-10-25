@@ -1,7 +1,11 @@
 # PARACHUTE
 ## A geo mapping game for friends
 ___
+IP ADDRESS:
+104.236.129.131:9001
+Digital Ocean Server
 
+## FILES EXIST FOR BOTH COPYING DATA DOWN TO CSV FILE AND FOR SEEDING DATABASE
 
 ### KNOWN BUGS
 
