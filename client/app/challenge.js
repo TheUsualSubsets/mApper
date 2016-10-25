@@ -1,6 +1,6 @@
 angular.module('challenge', [])
 
-.controller('challengeController', ['$scope', 'GeoCoder', 'AddNewPoint','$cookies', function($scope, GeoCoder, AddNewPoint, $cookies){
+.controller('challengeController', ['$scope', 'GeoCoder', 'AddNewPoint','$cookies', function($scope, GeoCoder, AddNewPoint){
   //initialize variables
   //$scope.appear is used for animations when generating links
   $scope.appear = false;
