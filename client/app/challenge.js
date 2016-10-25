@@ -51,10 +51,8 @@ angular.module('challenge', [])
 
   //user has selected a location they'd like to turn into a link
   $scope.addToDatabase = function() {
-    console.log('adding in client', $scope.locationObj);
     // AddNewPoint.addPoint($scope.locationObj);
     AddNewPoint.addPoint($scope.locationObj, function(link){
-      console.log('returned from DB: ', link);
       //setting $scope.link to a truthy values trigger ng-show to show link
       $scope.link = link;
       //toggle generate link panels
