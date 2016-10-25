@@ -12,7 +12,7 @@ ___
 
 **scrum master:** Lizzie Shipton
 
-**team members:** Jeff Judkins, Masashi Swingle, David Trann
+**team members:** Jeff Judkins, Masashi Swingle, David Trann, Sean Enright, Lizzie Shipton
 
 
 ## TABLE OF CONTENTS
