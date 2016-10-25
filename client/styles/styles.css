@@ -5,9 +5,12 @@ body, html {
     margin: 0px;
     padding: 0px;
     border: 0px;
-  overflow: scroll;
   font-family: Play;
   background-color: #333;
+}
+
+* {
+  overflow:scroll;
 }
 
 h1 {
@@ -29,6 +32,7 @@ h1 {
   background-size: cover;
   overflow: auto;
   height: 90vh;
+  width: 100%;
 }
 
 /*homepage title*/
