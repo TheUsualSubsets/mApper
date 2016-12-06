@@ -1,7 +1,7 @@
 <div class="pano container">
   <div ng-controller="mapController" class="mapThing">
-    <div class="score row">
-      <div class="col-sm-3" ng-class="isUser ? 'hidden' : 'score'" ng-click="clearUser(); $route.reload()"> <a href>  USER: </a>  {{ user.toUpperCase() }}   </div>
+    <div class="score">
+      <div class="col-sm-3" ng-class="isUser ? 'hidden' : 'score'" ng-click="clearUser()"> <a href>  USER: </a>  {{ user.toUpperCase() }}   </div>
       <div class="col-sm-3">SCORE: {{count}}</div>
       <div class="highscore col-sm-4"> HIGHSCORE: {{ topScore.id }} {{ topScore.score }}</div>
     </div>
@@ -9,26 +9,24 @@
     <!--SHOWS WHEN NEW GAME IS STARTED VIA HOMEPAGE-->
     <div class='info' ng-show="infoToggle">
       <h1>Are you ready to jump?</h1>
-      <br>
       <h3>Click the button below to be dropped in a random location!
       <br>Know where you are? Make
       a guess by selecting an answer below the map.</h3> <h2>Wanna challenge
       a friend?</h2><h3>Head over to the challenge page!</h3>
       <br>
       <div ng-class="isUser ? 'userInfo' : 'hidden'">
-        <form name='userForm'>
+        <form class="whatever" name='userForm'>
           Enter initials to save score:
           <input type="text" maxlength="3" size="5" ng-model='userName' required>
+          <button type="submit" class = 'btn' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
         </form>
       </div>
-      <br>
-      <button class = 'optionButton' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+      
     </div>
 
     <!--SHOWS WHEN GAME IS STARTED VIA SHARED LINK-->
     <div class='info' ng-show="linkToggle">
       <h1>Are you ready to jump?</h1>
-      <br>
       <h3>Your friend has dropped you in a random location!
       <br>Know where you are? Make
       a guess by selecting an answer button below the map.</h3> <br> <h2>Wanna
@@ -42,7 +40,7 @@
         </form>
       </div>
       <br>
-      <button class='optionButton' ng-click='getUserInfo(userName); StartGame()'>Jump!</button>
+      <button class='optionButton' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
 
     </div>
 

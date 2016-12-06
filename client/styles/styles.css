@@ -17,7 +17,13 @@ h1 {
   font-size: 3em;
 }
 
+h2 {
+  font-size: 2.5em;
+}
 
+h3 {
+  font-size: 2em;
+}
 
 /*-----------------HOMEPAGE - MAIN IMAGE AND TITLE------------*/
 .hero {
@@ -68,14 +74,15 @@ h1 {
   height:         calc(100vh - 50px);*/
   height: 100%;
   width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
-/*.mapThing{
+.mapThing{
   width: 100%;
   height: 100%;
   position: relative;
-}*/
+}
 
 map {
   height: calc(100vh - 100px);
@@ -134,13 +141,15 @@ map {
    background-repeat: no-repeat;
    background-position: 10%;
    background-size: 30% 80%;
+   font-size: 1.5vw;
+
  }
 
  .info {
    padding: 2%;
    margin: auto;
    width: 100%;
-   height: 100%;
+   height: 90%;
    z-index: 99;
    position: absolute;
    color: black;
@@ -181,9 +190,18 @@ map {
  }
 
  .userInfo {
-   position: absolute;
+   /*position: absolute;*/
    margin: auto;
    width: 100%;
+   justify-content: center;
+   vertical-align: middle;
+ }
+
+ .whatever {
+  display: inline-flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column; /* column | row */
  }
 
  .userInfo form {
@@ -389,9 +407,14 @@ map {
 
 .score div {
   display: inline-block;
-  margin-left: 3%;
+  /*margin-left: 3%;*/
   font-size: 1em;
   color: white;
+}
+
+.container-fluid .row {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 
