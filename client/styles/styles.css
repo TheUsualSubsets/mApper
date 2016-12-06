@@ -149,7 +149,7 @@ map {
     font-size: 3em;
   }
   #showanswer {
-    visibility: show;
+    visibility: visible;
   }
 }
 
@@ -161,6 +161,10 @@ map {
     visibility: hidden;
 
   }
+  #hideanswers {
+    visibility: hidden;
+  }
+
 }
 /*.button {
   background-color: black !important;
