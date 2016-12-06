@@ -17,7 +17,13 @@ h1 {
   font-size: 3em;
 }
 
+h2 {
+  font-size: 2.5em;
+}
 
+h3 {
+  font-size: 2em;
+}
 
 /*-----------------HOMEPAGE - MAIN IMAGE AND TITLE------------*/
 .hero {
@@ -63,8 +69,12 @@ h1 {
 
 /*-------------------------------GAME PAGE MAP DIVS---------------------------*/
 #pano{
-  height: 90vh;
+/*  height: -webkit-calc(100vh - 50px);
+  height:    -moz-calc(100vh - 50px);
+  height:         calc(100vh - 50px);*/
+  height: 100%;
   width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
@@ -75,28 +85,83 @@ h1 {
 }
 
 map {
-  height: 90vh;
+  height: calc(100vh - 100px);
   width: 100%;
 }
 
 /*-------GENERAL BUTTONS - GAME PAGE AND CHALLENGE PAGE------*/
-.butt {
-  bottom: 4%;
-  position: absolute;
+.answers, #showanswer{
   z-index: 99;
-  background-color: #333;
   width: 100%;
+  height: 10%;
+  top: 85%;
+  position: absolute;
+  font-size: 1vw;
   opacity: .75;
+  background-color: #333;
+  padding: 0px;
 }
+
+.answer {
+  display: inline-block;
+  height: 100%;
+  width: 20%;
+  margin: auto;
+  vertical-align: middle;
+}
+
 
 .optionButton {
-  margin-top: 2%;
+  margin: auto;
+  padding: auto;
   font-size: 1.5em;
-  padding: 20px;
+  height: 100%;
+  width: 100%;
   color: white;
-  background-color: #333;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column; /* column | row */
 }
 
+#showanswer {
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+  font-size: 100%;
+}
+
+#hideanswers {
+  visibility: hidden;
+  font-size: 6em;
+}
+@media (max-width: 500px) {
+  .answers {
+    height: 100%;
+    top: 0%;
+    visibility: hidden;
+
+  }
+  .answer {
+    display: block;
+    height: 15%;
+    font-size: 3em;
+  }
+  #showanswer {
+    visibility: show;
+  }
+}
+
+@media (min-width: 500px) {
+  #showanswer {
+    background-color: red;
+    height: 100%;
+    top: 0%;
+    visibility: hidden;
+
+  }
+}
 /*.button {
   background-color: black !important;
   color: gray;
@@ -114,13 +179,15 @@ map {
    background-repeat: no-repeat;
    background-position: 10%;
    background-size: 30% 80%;
+   font-size: 1.5vw;
+
  }
 
  .info {
    padding: 2%;
    margin: auto;
    width: 100%;
-   height: 90vh;
+   height: 90%;
    z-index: 99;
    position: absolute;
    color: black;
@@ -142,7 +209,7 @@ map {
    padding: 2%;
    margin: auto;
    width: 100%;
-   height: 90vh;
+   height: 100%;
    z-index: 99;
    position: absolute;
    color: black;
@@ -153,7 +220,7 @@ map {
    padding: 2%;
    margin: auto;
    width: 100%;
-   height: 90vh;
+   height: 100%;
    z-index: 99;
    position: absolute;
    color: black;
@@ -161,9 +228,18 @@ map {
  }
 
  .userInfo {
-   position: absolute;
+   /*position: absolute;*/
    margin: auto;
    width: 100%;
+   justify-content: center;
+   vertical-align: middle;
+ }
+
+ .whatever {
+  display: inline-flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column; /* column | row */
  }
 
  .userInfo form {
@@ -369,14 +445,17 @@ map {
 
 .score div {
   display: inline-block;
-  margin-left: 3%;
+  /*margin-left: 3%;*/
   font-size: 1em;
   color: white;
 }
 
-.score .highscore {
-  margin-left: 15%;
+.container-fluid .row {
+    margin-left: 0px;
+    margin-right: 0px;
 }
+
+
 
 
 

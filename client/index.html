@@ -4,17 +4,17 @@
     <link rel='icon' href='../styles/logo.png'>
     <title>Parachute</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap-theme.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
     <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
-    <script src= "http://maps.google.com/maps/api/js?key=AIzaSyB0HuOvHVC8Rs8ZLtFoYfkoG2OJpxaZR70&libraries=places"> </script>
+    <script src= "https://maps.google.com/maps/api/js?key=AIzaSyB0HuOvHVC8Rs8ZLtFoYfkoG2OJpxaZR70&libraries=places"> </script>
     <script src = "app/app.js"></script>
     <script src = "app/highScores/highscores.js"></script>
-    <script src="app/homePage.js"></script>
     <script src="app/challenge.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/clipboard/dist/clipboard.min.js"></script>
@@ -27,15 +27,6 @@
 
   </head>
   <body>
-   <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      </script>
     <div ng-app='App'>
       <div class='header'>
         <div class='navbar-inverse navbasr-static-top'>
@@ -62,31 +53,9 @@
         </div><!--navbar-inverse navbar-static-top-->
       </div><!-- header -->
       <div ng-view></div>
-       <a id = "fbFooter" data-href="http://104.236.129.131:9001/#/game" data-layout="button" data-mobile-iframe="true" "fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F104.236.129.131%3A9001%2F%23%2Fgame&amp;src=sdkpreparse"<i class = "fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+       
 
-      <a id="twitterFooter" href="https://twitter.com/share" data-show-count="false" <i class="fa fa-twitter fa-2x" aria-hidden="true"></i> </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"> </script>
 
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-
-    <!-- Identify your business so that you can collect the payments. -->
-    <input type="hidden" name="business"
-        value="donations@Parachute.com">
-
-    <!-- Specify a Donate button. -->
-    <input type="hidden" name="cmd" value="_donations">
-
-    <!-- Specify details about the contribution -->
-    <input type="hidden" name="item_name" value="One Parachute Staff Member's Tuition">
-    <input type="hidden" name="amount" value="16920.00">
-    <input type="hidden" name="currency_code" value="USD">
-
-    <!-- Display the payment button. -->
-    <input id = "pp" type="image" name="submit"
-    src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
-    alt="Donate">
-    <img alt="" width="1" height="1"
-    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-</form>
 
 
     </div><!--App-->

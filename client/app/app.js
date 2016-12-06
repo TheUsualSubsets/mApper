@@ -27,7 +27,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 .controller('mapController', ['$scope', 'Map', '$location', 'scoreFactory', '$cookies', '$route', function ($scope, Map, $location, scoreFactory, $cookies, $route){
 	$scope.count = 0;
 	$scope.toggle = true;
-	$scope.buttonToggle = true;
+	$scope.buttonToggle = false;
 	$scope.incorrect = true;
 	$scope.user;
 	$scope.isUser = true;
@@ -41,6 +41,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
     //answer is correct - increase score and display 'correct' div
 		if ($scope.answer === answer.answer){
 			$scope.count++;
+			$cookies.count = $scope.count;
 			$scope.toggle = !$scope.toggle;
 			$scope.buttonToggle = !$scope.toggle;
 
@@ -51,6 +52,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 			  scoreFactory.addScore($scope.user, $scope.count);
 			}
 			$scope.count = 0;
+			$cookies.count = $scope.count;
 			$scope.incorrect = !$scope.incorrect;
 			$scope.buttonToggle = !$scope.buttonToggle;
 		}
@@ -105,6 +107,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 	//save user info
 	$scope.getUserInfo = function(value) {
 	    if (!$cookies.user) {
+	    	console.log('getUserInfo no cookies.user', $cookies.user)
 		  $scope.user = value;
 		  $cookies.user = value;
 	    } else {
@@ -114,22 +117,52 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 
 	};
 
+	$scope.showAnswers = function() {
+		document.getElementsByClassName('answers')[0].style.visibility = 'visible';
+		document.getElementById('showanswer').style.visibility = 'hidden';
+		document.getElementById('hideanswers').style.visibility = 'visible'
+		console.log('yeppp')
+	}
+
+	$scope.hideAnswers = function() {
+		document.getElementsByClassName('answers')[0].style.visibility = 'hidden';
+		document.getElementById('showanswer').style.visibility = 'visible';
+		document.getElementById('hideanswers').style.visibility = 'hidden'
+		console.log('yeppp')
+	}
+
+	$scope.updateUserInfo = function(value) {
+	  $cookies.user = value;
+	  $scope.user = value;
+		$scope.isUser = false;
+		$cookies.count = 0;
+		$scope.count = 0;
+
+	};
   //remove current user cookie
 	$scope.clearUser = function() {
-		$cookies.user = undefined;
-		$route.reload();
+		$scope.buttonToggle = !$scope.buttonToggle;
+		$cookies.user = null;
+		$scope.infoToggle = true;
+		$scope.isUser = true;
 	}
 
 	//if a user is logged in, do not display instructions every time they return to
 	//the game page, just start game
 	if ($cookies.user) {
+		$scope.user = $cookies.user;
+		$scope.isUser = false;
+		$scope.count = $cookies.count;
+		console.log('there is a cookies.user', $cookies.user);
 		$scope.StartGame();
-		$scope.getUserInfo();
+		// $scope.getUserInfo();
 	} else if ($location.url() !== '/game') {
+		console.log('started via shared link');
 		//if game was started via shared link AND user is not
 		//logged in, show 'challenged by a friend' instructions
 		$scope.linkToggle = true;
 	} else {
+		console.log('there is not a cookies.user', $cookies.user);
 		$scope.infoToggle = true;
 	}
 
