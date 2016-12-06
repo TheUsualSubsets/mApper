@@ -70,7 +70,11 @@
         <div class="answer" align="center" ng-repeat="answer in answerChoices">
             <a href ng-class="buttonToggle ? 'optionButton' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
         </div>
+        <div class="answer optionButton" id="hideanswers">
+          <a href ng-click="hideAnswers()">Hide Choices</a>
+        </div>
     </div>
+    <div id="showanswer"><a hfref ng-click="showAnswers()"> Show Answer Choices </a>><div>
     </map>
   </div>
 </div>

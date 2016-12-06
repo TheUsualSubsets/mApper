@@ -90,7 +90,7 @@ map {
 }
 
 /*-------GENERAL BUTTONS - GAME PAGE AND CHALLENGE PAGE------*/
-.answers {
+.answers, #showanswer{
   z-index: 99;
   width: 100%;
   height: 10%;
@@ -124,6 +124,44 @@ map {
   flex-direction:column; /* column | row */
 }
 
+#showanswer {
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+  font-size: 100%;
+}
+
+#hideanswers {
+  visibility: hidden;
+  font-size: 6em;
+}
+@media (max-width: 500px) {
+  .answers {
+    height: 100%;
+    top: 0%;
+    visibility: hidden;
+
+  }
+  .answer {
+    display: block;
+    height: 15%;
+    font-size: 3em;
+  }
+  #showanswer {
+    visibility: show;
+  }
+}
+
+@media (min-width: 500px) {
+  #showanswer {
+    background-color: red;
+    height: 100%;
+    top: 0%;
+    visibility: hidden;
+
+  }
+}
 /*.button {
   background-color: black !important;
   color: gray;

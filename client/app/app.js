@@ -117,6 +117,20 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 
 	};
 
+	$scope.showAnswers = function() {
+		document.getElementsByClassName('answers')[0].style.visibility = 'visible';
+		document.getElementById('showanswer').style.visibility = 'hidden';
+		document.getElementById('hideanswers').style.visibility = 'visible'
+		console.log('yeppp')
+	}
+
+	$scope.hideAnswers = function() {
+		document.getElementsByClassName('answers')[0].style.visibility = 'hidden';
+		document.getElementById('showanswer').style.visibility = 'visible';
+		document.getElementById('hideanswers').style.visibility = 'hidden'
+		console.log('yeppp')
+	}
+
 	$scope.updateUserInfo = function(value) {
 	  $cookies.user = value;
 	  $scope.user = value;
