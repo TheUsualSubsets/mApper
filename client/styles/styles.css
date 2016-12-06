@@ -147,6 +147,7 @@ map {
     display: block;
     height: 15%;
     font-size: 3em;
+    width: 100%;
   }
   #showanswer {
     visibility: visible;
@@ -155,9 +156,6 @@ map {
 
 @media (min-width: 500px) {
   #showanswer {
-    background-color: red;
-    height: 100%;
-    top: 0%;
     visibility: hidden;
 
   }
