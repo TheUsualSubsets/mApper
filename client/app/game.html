@@ -68,7 +68,8 @@
     <map id="sv" street-view="StreetViewPanorama(document.querySelector('map#sv'), {position:new google.maps.LatLng({{lat}},{{lng}}), pov:{heading: {{heading}}, pitch: {{pitch}}}, addressControl: false, fullscreenControl: false, panControl: false, zoomControl: false, imageDateControl: false})"/>
     <div class="answers" ng-class="buttonToggle ? 'answers' :' hidden'">
         <div class="answer" align="center" ng-repeat="answer in answerChoices">
-            <a href ng-class="buttonToggle ? 'optionButton' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
+        <a href ng-class="buttonToggle ? 'optionButton' :' hidden'" ng-click="compareAnswer(this)">{{answer}}</a>
+
         </div>
         <div class="answer optionButton" id="hideanswers">
           <a href ng-click="hideAnswers()">Hide Choices</a>
