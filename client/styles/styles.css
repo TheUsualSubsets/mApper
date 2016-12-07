@@ -10,7 +10,6 @@ body, html {
 }
 
 * {
-  overflow:scroll;
 }
 
 h1 {
@@ -42,7 +41,7 @@ h3 {
 }
 
 /*homepage title*/
-.yuge {
+.title {
   font-size: 8em;
   font-family: 'Orbitron', sans-serif;
   font-weight: bolder;
@@ -50,10 +49,7 @@ h3 {
 
 /*homepage text*/
 .hero-text {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-75%, -50%);
+  font-size: 1.5vw;
   color: white;
   text-align: center;
 }
@@ -140,7 +136,7 @@ map {
   .answers {
     height: 100%;
     top: 0%;
-    visibility: hidden;
+    visibility: hidden ;
 
   }
   .answer {
@@ -155,12 +151,17 @@ map {
 }
 
 @media (min-width: 500px) {
+
+  .answers {
+    visibility: visible !important;
+  }
+
   #showanswer {
-    visibility: hidden;
+    visibility: hidden !important;
 
   }
   #hideanswers {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
 }
@@ -473,6 +474,14 @@ map {
   text-decoration: none;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+}
+
 #pp {
   width: 35px;
   position: absolute;
@@ -482,15 +491,10 @@ map {
 
 #fbFooter{
   color: white;
-  position: absolute;
-  top: 91%;
-  left: 90%;
+  padding: 5%;
 }
 
 #twitterFooter{
   color: white;
-  position: absolute;
-  top: 91%;
-  left: 87%;
-
+  padding: 5%;
 }

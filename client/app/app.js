@@ -127,7 +127,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 	$scope.hideAnswers = function() {
 		document.getElementsByClassName('answers')[0].style.visibility = 'hidden';
 		document.getElementById('showanswer').style.visibility = 'visible';
-		document.getElementById('hideanswers').style.visibility = 'hidden'
+		document.getElementById('hideanswers').style.visibility = 'hidden';
 		console.log('yeppp')
 	}
 
