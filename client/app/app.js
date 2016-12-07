@@ -1,5 +1,5 @@
 
-angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootstrap', 'ngclipboard', 'ngCookies'])
+angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ngclipboard', 'ngCookies'])
 
 .config(function($routeProvider){
 	$routeProvider
@@ -43,7 +43,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 			$scope.count++;
 			$cookies.count = $scope.count;
 			$scope.toggle = !$scope.toggle;
-			$scope.buttonToggle = !$scope.toggle;
+			$scope.buttonToggle = !$scope.buttonToggle;
 
 		} else {
 			//answer is incorrect - if user is logged-in, save score and reset to zero
@@ -127,7 +127,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ui.bootst
 	$scope.hideAnswers = function() {
 		document.getElementsByClassName('answers')[0].style.visibility = 'hidden';
 		document.getElementById('showanswer').style.visibility = 'visible';
-		document.getElementById('hideanswers').style.visibility = 'hidden'
+		document.getElementById('hideanswers').style.visibility = 'hidden';
 		console.log('yeppp')
 	}
 

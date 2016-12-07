@@ -19,7 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "ngmap": "^1.17.6",
+    "ngmap": "^1.17.8",
     "ngclipboard": "^1.1.1"
   }
 }

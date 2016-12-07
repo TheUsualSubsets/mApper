@@ -10,7 +10,6 @@ body, html {
 }
 
 * {
-  overflow:scroll;
 }
 
 h1 {
@@ -25,9 +24,11 @@ h3 {
   font-size: 2em;
 }
 
+.icon-parachute:before {
+  content: "\e900";
+}
 /*-----------------HOMEPAGE - MAIN IMAGE AND TITLE------------*/
 .hero {
-  position: relative;
   background: black url('./images/ourhero.png') top center no-repeat;
   background-image:
     linear-gradient(
@@ -36,13 +37,13 @@ h3 {
     ),
     url('./images/ourhero.png');
   background-size: cover;
-  overflow: auto;
+  overflow: hidden;
   height: 90vh;
   width: 100%;
 }
 
 /*homepage title*/
-.yuge {
+.title {
   font-size: 8em;
   font-family: 'Orbitron', sans-serif;
   font-weight: bolder;
@@ -50,10 +51,7 @@ h3 {
 
 /*homepage text*/
 .hero-text {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-75%, -50%);
+  font-size: 1.5vw;
   color: white;
   text-align: center;
 }
@@ -140,7 +138,7 @@ map {
   .answers {
     height: 100%;
     top: 0%;
-    visibility: hidden;
+    visibility: hidden ;
 
   }
   .answer {
@@ -155,12 +153,17 @@ map {
 }
 
 @media (min-width: 500px) {
+
+  .answers {
+    visibility: visible !important;
+  }
+
   #showanswer {
-    visibility: hidden;
+    visibility: hidden !important;
 
   }
   #hideanswers {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
 }
@@ -473,24 +476,65 @@ map {
   text-decoration: none;
 }
 
-#pp {
-  width: 35px;
+.footer {
   position: absolute;
-  top: 90.4%;
-  left: 83.5%;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
 }
+
 
 #fbFooter{
   color: white;
-  position: absolute;
-  top: 91%;
-  left: 90%;
+  padding: 5%;
 }
 
 #twitterFooter{
   color: white;
-  position: absolute;
-  top: 91%;
-  left: 87%;
-
+  padding: 5%;
 }
+
+/*Icon Moon Styles*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?whgmww');
+  src:  url('fonts/icomoon.eot?whgmww#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?whgmww') format('truetype'),
+    url('fonts/icomoon.woff?whgmww') format('woff'),
+    url('fonts/icomoon.svg?whgmww#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-parachute:before {
+  content: "\e900";
+}
+.icon-question:before {
+  content: "\ea09";
+}
+
