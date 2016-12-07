@@ -26,7 +26,6 @@ h3 {
 
 /*-----------------HOMEPAGE - MAIN IMAGE AND TITLE------------*/
 .hero {
-  position: relative;
   background: black url('./images/ourhero.png') top center no-repeat;
   background-image:
     linear-gradient(
@@ -35,7 +34,7 @@ h3 {
     ),
     url('./images/ourhero.png');
   background-size: cover;
-  overflow: auto;
+  overflow: hidden;
   height: 90vh;
   width: 100%;
 }
@@ -479,15 +478,8 @@ map {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 50px;
 }
 
-#pp {
-  width: 35px;
-  position: absolute;
-  top: 90.4%;
-  left: 83.5%;
-}
 
 #fbFooter{
   color: white;
