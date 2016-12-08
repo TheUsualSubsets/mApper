@@ -1,5 +1,4 @@
-<div ng-controller="challengeController">
-  <div class="mapcontainer">
+<div ng-controller="challengeController" class="mapcontainer">
 
     <div class='challengeInfo' ng-show="infoToggle">
         <h1>Explore the world!</h1>
@@ -15,16 +14,57 @@
         </h3>
         <br>
         <br>
-      <a href class = 'btn' ng-click='infoToggle = !infoToggle'>Explore!</a>
+      <button class='btn' ng-click='infoToggle = !infoToggle'>Explore!</button>
     </div><!--challengeInfo-->
 
 
     <map class="smallmap" center="current-position" geo-fallback-center= "[52.1996161,0.1157753]">
-        <street-view-panorama container="streetview"ng-click="updateInfo()"></street>
+        <street-view-panorama container="streetview" ng-click="updateInfo()"></street-view-panorama>
     </map>
+    <div class="tostreetview">
+      <span ng-click="scrollTo('streetview')">
+        <i class="fa fa-street-view" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br><br>
+        S<br>T<br>R<br>E<br>E<br>T<br><br>V<br>I<br>E<br>W<br><br>
+        <i class="fa fa-street-view" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      </span>
+    </div>
 
     <div id="streetview"></div>
-
+    <div class="tomapview">
+      <span ng-click="scrollTo('streetview', 2000)">
+        
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-map" aria-hidden="true"></i>
+        <br>
+        <br>
+        M<br>A<br>P<br><br>V<br>I<br>E<br>W<br><br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-map" aria-hidden="true"></i>
+      </span>
+    </div>
     <!--google input field-->
     <div class="noheight">
       <form ng-submit=updateToPlace(place) class="searchbar">
@@ -39,7 +79,6 @@
           </span>
         </div>
       </form>
-    </div>
   </div><!--mapcontainer-->
 
   <div class="fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}" id="generatelinkpanel">
@@ -61,14 +100,4 @@
       <a class='option' href="http://www.google.com">get me outta here!</a>
     </div>
   </div>
-
-   <!--
-      Point of Interest: <br>
-      City: <input ng-model="locationObj.city">
-      State: <input ng-model="locationObj.state">
-      Country: <input ng-model="locationObj.country"><br>
-      Latitude: <input ng-model="locationObj.lat">
-      Longitute: <input ng-model="locationObj.lng">
-      Heading: <input ng-model="locationObj.heading"><br>
-      Pitch: <input ng-model="locationObj.pitch"><br> -->
 </div>

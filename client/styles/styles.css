@@ -192,7 +192,7 @@ map {
    padding: 2%;
    margin: auto;
    width: 100%;
-   height: 90%;
+   height: 100%;
    z-index: 99;
    position: absolute;
    color: black;
@@ -203,7 +203,7 @@ map {
  .challengeInfo {
    padding: 2%;
    width: 100%;
-   height: 100%;
+   height: 90%;
    z-index: 99;
    position: absolute;
    color: black;
@@ -240,7 +240,7 @@ map {
    vertical-align: middle;
  }
 
- .whatever {
+ .userform {
   display: inline-flex;
   justify-content:center;
   align-content:center;
@@ -265,19 +265,32 @@ map {
 .smallmap, #streetview {
   display:inline-block;
   width:50%;
-  height: 100%;
+  height: calc(100vh - 70px);
   margin: auto;
   padding: 0px;
   border: 0px;
   border-radius: 10px;
 }
 
+.tostreetview, .tomapview {
+  display: none;
+  padding: 0px;
+  border: 0px;
+  width: 10%;
+  height: 90vh;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+  vertical-align: middle;
+}
+
+
 .smallmap {
   float: left;
 }
 
 #streetview {
-  float: right;
+  float: left;
 }
 
 .input-transparent {
@@ -288,7 +301,7 @@ map {
 }
 
 .mapcontainer {
-  height: 90vh;
+  height: calc(100vh - 70px);
   width: 100%;
   margin: 0px;
   padding-left: 4px;
@@ -303,6 +316,28 @@ map {
   left: 34%;
   width: 40%;
   transform: translate(-75%, -50%);
+}
+
+@media (max-width: 600px) {
+
+  .smallmap, #streetview {
+    display:inline-block;
+    width:90%;
+    margin: auto;
+    padding: 0px;
+    border: 0px;
+    border-radius: 10px;
+  }
+
+  .mapcontainer {
+    height: auto;
+  }
+
+  .tostreetview, .tomapview {
+    display: table-cell;
+    color: white;
+  }
+
 }
 
 /*----------------ADD A CITY POPUP-------------*/

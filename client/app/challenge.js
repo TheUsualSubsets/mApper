@@ -1,12 +1,25 @@
 angular.module('challenge', [])
 
-.controller('challengeController', ['$scope', 'GeoCoder', 'AddNewPoint','$cookies', function($scope, GeoCoder, AddNewPoint){
+.controller('challengeController', ['$scope', 'GeoCoder', 'AddNewPoint','$cookies', '$anchorScroll', '$location', function($scope, GeoCoder, AddNewPoint, $cookies, $anchorScroll, $location){
   //initialize variables
   //$scope.appear is used for animations when generating links
   $scope.appear = false;
   //$scope.place is the value in the map search box
   $scope.place;
   $scope.infoToggle = true;
+
+  //send the user to the anchor without activating $route (in mobile view)
+  $scope.scrollTo = function(id, offset) {
+    var old = $location.hash();
+    $location.hash(id);
+    if(offset) {
+      $anchorScroll.yOffset = offset;
+    }
+    $anchorScroll();
+    $anchorScroll.yOffset = 0;
+    //reset to old to keep any additional routing logic from kicking in
+    $location.hash(old);
+  };
   //this function serves to update all the $scope variables to contain the
   //current information from the map and streetview obects, so that when the
   //user decides to generate a link, the information that is sent to the
