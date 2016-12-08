@@ -66,15 +66,6 @@ h3 {
 
 
 /*-------------------------------GAME PAGE MAP DIVS---------------------------*/
-#pano{
-/*  height: -webkit-calc(100vh - 50px);
-  height:    -moz-calc(100vh - 50px);
-  height:         calc(100vh - 50px);*/
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
 
 .mapThing{
   width: 100%;
@@ -185,10 +176,6 @@ h3 {
    background-position: 10%;
    background-size: 30% 80%;
    font-size: 1.5vw;
-
- }
-
- .info {
    padding: 2%;
    margin: auto;
    width: 100%;
@@ -200,37 +187,6 @@ h3 {
 
  }
 
- .challengeInfo {
-   padding: 2%;
-   width: 100%;
-   height: 90%;
-   z-index: 99;
-   position: absolute;
-   color: black;
-   background-color: rgba(255,255,255,.75);
- }
-
- .correct {
-   padding: 2%;
-   margin: auto;
-   width: 100%;
-   height: 100%;
-   z-index: 99;
-   position: absolute;
-   color: black;
-   background-color: rgba(255,255,255,.75);
- }
-
- .incorrect {
-   padding: 2%;
-   margin: auto;
-   width: 100%;
-   height: 100%;
-   z-index: 99;
-   position: absolute;
-   color: black;
-   background-color: rgba(255,255,255,.75);
- }
 
  .userInfo {
    /*position: absolute;*/
@@ -263,6 +219,7 @@ h3 {
  /*-------------------------CHALLENGE PAGE MAP DIVS---------------------------*/
 
 .smallmap, .streetviewcontainer {
+  position: relative;
   display:inline-block;
   width:50%;
   height: calc(100vh - 70px);
@@ -271,6 +228,7 @@ h3 {
   border: 0px;
   border-radius: 10px;
   align-content: center;
+  float: left;
 }
 
 .smallmap map {
@@ -292,15 +250,6 @@ h3 {
   align-content:center;
   flex-direction:column;
   vertical-align: middle;
-}
-
-
-.smallmap {
-  float: left;
-}
-
-.streetviewcontainer {
-  float: left;
 }
 
 .input-transparent {
@@ -329,9 +278,10 @@ h3 {
 }
 
 #generatelinkpanelheading {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  bottom: 15%;
+  bottom: 10%;
+  left: 12.5%;
   width: 75%;
   margin: 0 auto;
 }
@@ -360,21 +310,12 @@ h3 {
 
 /*----------------ADD A CITY POPUP-------------*/
 
-.poiInput, .poiInfo {
-  display: inline-block;
-  width: 50%;
-  float: left;
-  margin: 0;
-  padding: 0;
-  border: 0;
 
-}
 
 #poi, #city {
   display: inline-block;
-  width: 30%;
+  width: 100%;
   height: 20px;
-  margin: 10px;
 }
 
 .dissapear {
@@ -386,6 +327,23 @@ h3 {
 
 
 /*--------------LINK CREATION POPUP----------*/
+.generatelinkpopup {
+  background-image: url('parachutetransparent.png');
+  background-repeat: no-repeat;
+  background-position: 10%;
+  background-size: 30% 80%;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  top: 0%;
+  color: black;
+  background-color: rgba(255,255,255,.9);
+  font-size: 2vw;
+}
+
+
 #generatelinkpanel, .displayLink {
   padding-bottom: 30px;
   background-color: #222;
@@ -431,6 +389,13 @@ h3 {
   color: gray;
 }
 
+@media (max-width: 600px) {
+
+  .generatelinkpopup {
+    font-size: 5vw;
+  }
+
+}
 /*this animation is also used to popup display options after shared-link gameplay
   on the game page*/
 .fade-in {
@@ -448,9 +413,6 @@ h3 {
   animation-duration:1s;
 }
 
-.notice {
-  font-size: .7em;
-}
 
 .danger {
   color: red;
