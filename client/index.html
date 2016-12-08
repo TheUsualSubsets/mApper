@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap-theme.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./add-to-homescreen/style/addtohomescreen.css"/>
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
     <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
@@ -24,6 +25,8 @@
 
    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <script src="./add-to-homescreen/src/addtohomescreen.min.js">
+    </script>
 
   </head>
   <body>
@@ -40,6 +43,11 @@
                 <i id='bars' class="fa fa-bars"></i>
               </button>
             </div>
+
+            <!-- script for prompting user to add the page to homescreen -->
+            <script>
+              addToHomescreen();
+            </script>
 
 
               <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
