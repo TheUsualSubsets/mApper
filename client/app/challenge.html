@@ -86,13 +86,15 @@
 
 
       <!-- generated link box -->
-      <div class="displayLink fade-in" ng-show="link">
-        Here's your link!  Click to copy to clipboard <br>
-        <div class="specialtext btn-success" ngclipboard data-clipboard-text="Check out this awesome location! Can you guess where it is?  Play Parachute! {{link}}"> {{link}}</div><br>
+      <div class="generatelinkpopup fade-in" ng-show="link">
+        Here's your link!  Click to copy to clipboard, and share away. <br>
+        <div class="specialtext btn-success" ngclipboard data-clipboard-text="Check out this awesome location! Can you guess where it is?  Play Parachute! {{link}}">{{link}}</div><br>
         <div>
           What's next? <br>
           <a class='option' href="/#/game">play the game </a>
+          <br>
           <a class='option' href ng-click="link=null">create another challenge</a>
+          <br>
           <a class='option' href="http://www.google.com">get me outta here!</a>
         </div>
       </div>
