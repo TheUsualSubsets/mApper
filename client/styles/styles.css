@@ -66,15 +66,6 @@ h3 {
 
 
 /*-------------------------------GAME PAGE MAP DIVS---------------------------*/
-#pano{
-/*  height: -webkit-calc(100vh - 50px);
-  height:    -moz-calc(100vh - 50px);
-  height:         calc(100vh - 50px);*/
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
 
 .mapThing{
   width: 100%;
@@ -82,7 +73,7 @@ h3 {
   position: relative;
 }
 
-map {
+.mapThing map {
   height: calc(100vh - 100px);
   width: 100%;
 }
@@ -185,32 +176,6 @@ map {
    background-position: 10%;
    background-size: 30% 80%;
    font-size: 1.5vw;
-
- }
-
- .info {
-   padding: 2%;
-   margin: auto;
-   width: 100%;
-   height: 90%;
-   z-index: 99;
-   position: absolute;
-   color: black;
-   background-color: rgba(255,255,255,.75);
-
- }
-
- .challengeInfo {
-   padding: 2%;
-   width: 100%;
-   height: 100%;
-   z-index: 99;
-   position: absolute;
-   color: black;
-   background-color: rgba(255,255,255,.75);
- }
-
- .correct {
    padding: 2%;
    margin: auto;
    width: 100%;
@@ -219,18 +184,9 @@ map {
    position: absolute;
    color: black;
    background-color: rgba(255,255,255,.75);
+
  }
 
- .incorrect {
-   padding: 2%;
-   margin: auto;
-   width: 100%;
-   height: 100%;
-   z-index: 99;
-   position: absolute;
-   color: black;
-   background-color: rgba(255,255,255,.75);
- }
 
  .userInfo {
    /*position: absolute;*/
@@ -240,7 +196,7 @@ map {
    vertical-align: middle;
  }
 
- .whatever {
+ .userform {
   display: inline-flex;
   justify-content:center;
   align-content:center;
@@ -262,22 +218,38 @@ map {
 
  /*-------------------------CHALLENGE PAGE MAP DIVS---------------------------*/
 
-.smallmap, #streetview {
+.smallmap, .streetviewcontainer {
+  position: relative;
   display:inline-block;
   width:50%;
-  height: 100%;
+  height: calc(100vh - 70px);
   margin: auto;
   padding: 0px;
   border: 0px;
   border-radius: 10px;
-}
-
-.smallmap {
+  align-content: center;
   float: left;
 }
 
+.smallmap map {
+  height: 100%;
+  width: 100%;
+}
+
 #streetview {
-  float: right;
+  width: 100%;
+  height: 100%;
+}
+.tostreetview, .tomapview {
+  display: none;
+  padding: 0px;
+  border: 0px;
+  width: 10%;
+  height: 90vh;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+  vertical-align: middle;
 }
 
 .input-transparent {
@@ -288,7 +260,7 @@ map {
 }
 
 .mapcontainer {
-  height: 90vh;
+  height: calc(100vh - 70px);
   width: 100%;
   margin: 0px;
   padding-left: 4px;
@@ -298,30 +270,52 @@ map {
 }
 
 .searchbar {
+  position: relative;
+  z-index: 2;
+  bottom: 15%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#generatelinkpanelheading {
   position: absolute;
-  bottom: 0%;
-  left: 34%;
-  width: 40%;
-  transform: translate(-75%, -50%);
+  z-index: 2;
+  bottom: 10%;
+  left: 12.5%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+
+  .smallmap, .streetviewcontainer {
+    display:inline-block;
+    width:90%;
+    margin: auto;
+    padding: 0px;
+    border: 0px;
+    border-radius: 10px;
+  }
+
+  .mapcontainer {
+    height: auto;
+  }
+
+  .tostreetview, .tomapview {
+    display: table-cell;
+    color: white;
+  }
+
 }
 
 /*----------------ADD A CITY POPUP-------------*/
 
-.poiInput, .poiInfo {
-  display: inline-block;
-  width: 50%;
-  float: left;
-  margin: 0;
-  padding: 0;
-  border: 0;
 
-}
 
 #poi, #city {
   display: inline-block;
-  width: 30%;
+  width: 100%;
   height: 20px;
-  margin: 10px;
 }
 
 .dissapear {
@@ -333,6 +327,23 @@ map {
 
 
 /*--------------LINK CREATION POPUP----------*/
+.generatelinkpopup {
+  background-image: url('parachutetransparent.png');
+  background-repeat: no-repeat;
+  background-position: 10%;
+  background-size: 30% 80%;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  top: 0%;
+  color: black;
+  background-color: rgba(255,255,255,.9);
+  font-size: 2vw;
+}
+
+
 #generatelinkpanel, .displayLink {
   padding-bottom: 30px;
   background-color: #222;
@@ -370,14 +381,13 @@ map {
   text-align: center;
 }
 
+@media (max-width: 600px) {
 
-.option {
-  margin-top: 10px;
-  font-size: 1em;
-  padding: 20px;
-  color: gray;
+  .generatelinkpopup {
+    font-size: 5vw;
+  }
+
 }
-
 /*this animation is also used to popup display options after shared-link gameplay
   on the game page*/
 .fade-in {
@@ -395,9 +405,6 @@ map {
   animation-duration:1s;
 }
 
-.notice {
-  font-size: .7em;
-}
 
 .danger {
   color: red;
@@ -421,8 +428,9 @@ map {
 }
 
 .specialtext {
-  margin-top: 5px;
   color: lightblue;
+  overflow-wrap: break-word;
+
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -485,13 +493,14 @@ map {
 
 
 #fbFooter{
+  height: 10px;
   color: white;
-  padding: 5%;
+  padding: 5px;
 }
 
 #twitterFooter{
   color: white;
-  padding: 5%;
+  padding: 5px;
 }
 
 /*Icon Moon Styles*/

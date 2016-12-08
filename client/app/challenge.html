@@ -1,6 +1,4 @@
-<div ng-controller="challengeController">
-  <div class="mapcontainer">
-
+  <div ng-controller="challengeController" class="mapcontainer">
     <div class='challengeInfo' ng-show="infoToggle">
         <h1>Explore the world!</h1>
         <h2>
@@ -15,60 +13,116 @@
         </h3>
         <br>
         <br>
-      <a href class = 'btn' ng-click='infoToggle = !infoToggle'>Explore!</a>
+      <button class='btn' ng-click='infoToggle = !infoToggle'>Explore!</button>
     </div><!--challengeInfo-->
-
-
-    <map class="smallmap" center="current-position" geo-fallback-center= "[52.1996161,0.1157753]">
-        <street-view-panorama container="streetview"ng-click="updateInfo()"></street>
-    </map>
-
-    <div id="streetview"></div>
-
-    <!--google input field-->
-    <div class="noheight">
+    <!-- Map container div contains map and searchbar -->
+    <div class="smallmap">
+      <map center="current-position" geo-fallback-center= "[52.1996161,0.1157753]">
+          <street-view-panorama container="streetview" ng-click="updateInfo()"></street-view-panorama>
+      </map>
+      <!--search box-->
       <form ng-submit=updateToPlace(place) class="searchbar">
         <input places-auto-complete ng-model="place" class="form-control input-transparent">
-
-
-        <div id="generatelinkpanelheading" >
-
-          <span class="challengedescription">
-            When you find a rad location
-            <a href ng-click="appear = !appear; updateInfo()">  challenge a friend</a>
-          </span>
-        </div>
       </form>
+    </div>
+    <div class="tostreetview" ng-click="scrollTo('streetview')">
+      <span >
+        <i class="fa fa-street-view" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br><br>
+        S<br>T<br>R<br>E<br>E<br>T<br><br>V<br>I<br>E<br>W<br><br>
+        <i class="fa fa-street-view" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      </span>
+    </div>
+
+
+    <!-- STreetview container div contains streetview and challenge a friend link div -->
+    <div class="streetviewcontainer">
+      <div id="streetview"></div>
+      <!-- box for selecting challenge friend -->
+      <div id="generatelinkpanelheading" >
+
+        <span class="challengedescription">
+          Find a rad location?  
+          <a href ng-click="appear = !appear; updateInfo()">  Challenge a friend</a>
+        </span>
+      </div>
+
+
+      <!-- box for entering city and POI and sharing location -->
+      <div class="fade-in dissapear generatelinkpopup" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}">
+        <span class="notice">
+        Please make sure this information is correct and then generate your link!
+        </span>
+        <br>
+        <br>
+        <span>Point of Interest:</span>
+        <span>
+          <input ng-model="locationObj.poi" class="form-control" id="poi">
+        </span>
+        <br>
+        <br>
+        <span>City Name:</span> 
+        <span>
+          <input ng-model="locationObj.city" class="form-control" id="city">
+        </span>
+        <br>
+        <br>
+        <a href ng-click="addToDatabase()">Give me a link!  </a>
+
+        <a href ng-click="appear=!appear" class="danger">Not yet...</a>
+      </div>
+
+
+      <!-- generated link box -->
+      <div class="generatelinkpopup fade-in" ng-show="link">
+        Here's your link!  Click to copy to clipboard, and share away. <br>
+        <div class="specialtext btn-success" ngclipboard data-clipboard-text="Check out this awesome location! Can you guess where it is?  Play Parachute! {{link}}">{{link}}</div><br>
+        <div>
+          What's next? <br>
+          <a class='option' href="/#/game">play the game </a>
+          <br>
+          <a class='option' href ng-click="link=null">create another challenge</a>
+          <br>
+          <a class='option' href="http://www.google.com">get me outta here!</a>
+        </div>
+      </div>
+    </div> <!-- End of Streetview Container -->
+
+    <div class="tomapview" ng-click="scrollTo('streetview', 2000)">
+      <span >
+        
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-map" aria-hidden="true"></i>
+        <br>
+        <br>
+        M<br>A<br>P<br><br>V<br>I<br>E<br>W<br><br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-map" aria-hidden="true"></i>
+      </span>
     </div>
   </div><!--mapcontainer-->
 
-  <div class="fade-in dissapear" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}" id="generatelinkpanel">
-    <span class="notice">We tried our best to perform magic and fill out these values, but please correct them if they are wrong!</span><br>
-      <span>Point of Interest:  </span><span><input ng-model="locationObj.poi" class="form-control" id="poi"></span><br>
-      <span>City Name:  </span> <span><input ng-model="locationObj.city" class="form-control" id="city"></span><br>
 
-    <a href ng-click="addToDatabase()">Give me a link!  </a>
-
-    <a href ng-click="appear=!appear" class="danger">Not yet...</a>
-  </div>
-  <div class="displayLink fade-in" ng-show="link">
-    Here's your link!  Click to copy to clipboard <br>
-    <div class="specialtext btn-success" ngclipboard data-clipboard-text="Check out this awesome location! Can you guess where it is?  Play Parachute! {{link}}"> {{link}}</div><br>
-    <div>
-      What's next? <br>
-      <a class='option' href="/#/game">play the game </a>
-      <a class='option' href ng-click="link=null">create another challenge</a>
-      <a class='option' href="http://www.google.com">get me outta here!</a>
-    </div>
-  </div>
-
-   <!--
-      Point of Interest: <br>
-      City: <input ng-model="locationObj.city">
-      State: <input ng-model="locationObj.state">
-      Country: <input ng-model="locationObj.country"><br>
-      Latitude: <input ng-model="locationObj.lat">
-      Longitute: <input ng-model="locationObj.lng">
-      Heading: <input ng-model="locationObj.heading"><br>
-      Pitch: <input ng-model="locationObj.pitch"><br> -->
-</div>
+<!-- <div class="fade-in dissapear generatelinkpopup" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}"> -->

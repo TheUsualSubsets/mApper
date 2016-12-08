@@ -1,4 +1,4 @@
-<div class="pano container">
+<div class="container">
   <div ng-controller="mapController" class="mapThing">
     <div class="score">
       <div class="col-sm-3" ng-class="isUser ? 'hidden' : 'score'" ng-click="clearUser()"> <a href>  USER: </a>  {{ user.toUpperCase() }}   </div>
@@ -15,7 +15,7 @@
       a friend?</h2><h3>Head over to the challenge page!</h3>
       <br>
       <div ng-class="isUser ? 'userInfo' : 'hidden'">
-        <form class="whatever" name='userForm'>
+        <form class="userform" name='userForm'>
           Enter initials to save score:
           <input type="text" maxlength="3" size="5" ng-model='userName' required>
           <button type="submit" class = 'btn' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
@@ -40,7 +40,7 @@
         </form>
       </div>
       <br>
-      <button class='optionButton' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
+      <button class='btn' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
 
     </div>
 
