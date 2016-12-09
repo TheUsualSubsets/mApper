@@ -581,28 +581,31 @@ h3 {
   margin-top: 5%;
 }
 
+.techlogo {
+  max-width: 100%;
+}
+
+@media (min-width: 544px) {
+
   .teammate {
     position: relative;
     display: inline;
-    height: 25%;
+    height: 30%;
     width: 25%;
   }
   .biopic {
     width: inherit;
     height: inherit;
+    max-height: 30%;
     margin: 3%;
     border: 1px solid gray;
     border-radius: 5px;
   }
 
-  .techlogo {
-    max-width: 100%;
-  }
+    #team, #about {
+      height: 100%;
+    }
 
-@media (min-width: 544px) {
-  #team, #about {
-    height: 75vh;
-  }
    .name {
      position: absolute;
      left: 0;
@@ -631,6 +634,7 @@ h3 {
     margin: 3%;
     border: 1px solid gray;
     border-radius: 5px;
+    max-width: 50%;
   }
 
 }
