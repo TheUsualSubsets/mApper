@@ -38,9 +38,6 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ngclipboa
 	$scope.topScore;
 
 	$scope.compareAnswer = function (answer){
-	    scoreFactory.getScores(function(result){
-		   $scope.topScore = result.data[0];
-	    })
     //answer is correct - increase score and display 'correct' div
 		if ($scope.answer === answer.answer){
 			$scope.count++;
@@ -75,7 +72,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ngclipboa
 				$scope.toggleOptionsDisplay();
 			}
 			//start game at new spot
-			$scope.StartGame();
+			window.location.reload();
 		}, 2000)
 
 	}
