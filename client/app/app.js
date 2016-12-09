@@ -18,6 +18,9 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ngclipboa
 		templateUrl: 'app/highScores/highscores.html',
 		controller: 'scoreController'
 	})
+  .when('/about', {
+    templateUrl: 'app/about.html'
+  })
 	.otherwise({
 		redirectTo: '/game'
 		//any link with querystring will be redirected to this view

@@ -3,7 +3,7 @@ A geo-location guessing game for friends!
 
 [www.parachute9001.com](www.parachute9001.com)
 
-*Developed at MakerSquare, San Francisco. Deployed via Digital Ocean*
+*Shipped from San Francisco, CA*
 
 ___
 

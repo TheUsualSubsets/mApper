@@ -9,7 +9,8 @@ body, html {
   background-color: #333;
 }
 
-* {
+a {
+  text-decoration: none !important;
 }
 
 h1 {
@@ -443,22 +444,36 @@ h3 {
 
 /*-------------------------------HIGH SCORE PAGE------------------------------*/
 
+.sco {
+  background: black url('./images/ourhero.png') top center no-repeat;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url('./images/ourhero.png');
+  background-size: cover;
+  overflow: scroll;
+  height: 90vh;
+  width: 100%;
+}
+
 .top {
     -webkit-text-fill-color: grey;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: red;
+    margin-bottom: 5%;
+    font-size: 2em;
 }
 
 .scores {
   text-align: left;
-  background-color: white;
-  opacity: .5;
+  background-color: rgba(255, 255, 255, 0.5);
   color: black;
 }
 
 .score div {
   display: inline-block;
-  /*margin-left: 3%;*/
   font-size: 1em;
   color: white;
 }
@@ -467,10 +482,6 @@ h3 {
     margin-left: 0px;
     margin-right: 0px;
 }
-
-
-
-
 
 
 /*-------------ICONS-----------*/
@@ -524,7 +535,7 @@ h3 {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  
+
   /* Enable Ligatures ================ */
   letter-spacing: 0;
   -webkit-font-feature-settings: "liga";
@@ -547,3 +558,79 @@ h3 {
   content: "\ea09";
 }
 
+.about {
+  background: black url('./images/ourhero.png') top center no-repeat;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url('./images/ourhero.png');
+  background-size: cover;
+  overflow: scroll;
+  height: 90vh;
+  width: 100%;
+}
+
+#team, #about, #tech {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: 'Play';
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 5%;
+}
+
+  .teammate {
+    position: relative;
+    display: inline;
+    height: 25%;
+    width: 25%;
+  }
+  .biopic {
+    width: inherit;
+    height: inherit;
+    margin: 3%;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .techlogo {
+    max-width: 100%;
+  }
+
+@media (min-width: 544px) {
+  #team, #about {
+    height: 75vh;
+  }
+   .name {
+     position: absolute;
+     left: 0;
+     padding: 10%;
+     visibility: hidden;
+   }
+   .teammate:hover .biopic {
+     opacity: .5;
+   }
+   .teammate:hover .name {
+     visibility: visible;
+   }
+}
+
+@media (max-width: 544px) {
+  .name {
+    display: block;
+    visibility: visible;
+  }
+  .teammate {
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+  .biopic {
+    margin: 3%;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+}
