@@ -4,6 +4,8 @@
 azure.err
 iisnode.yml
 config.js
+ecosystem.json
+server/copyRemoteDB.js
 
 # Icon must ends with two \r.
 Icon
