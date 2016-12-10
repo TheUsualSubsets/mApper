@@ -12,7 +12,6 @@ module.exports = {
       //shuffle the list of cities, returning only 5 in random order
       //random order ensures answer list on client is random order
       var cities = module.exports.shuffleArray(results, 5);
-      console.log(cities, 'cities');
       //pass cities array to random query
       findRandomPOI(cities);
     });
@@ -67,7 +66,6 @@ module.exports = {
       //shuffle the list of cities, returning only 5 in random order
       //random order ensures answer list on client is random order
       var cities = module.exports.shuffleArray(results, 5);
-      console.log(cities, 'cities');
 
 
       //query DB based on querystring attached to end of shared link,
@@ -141,7 +139,6 @@ module.exports = {
 
   //--------SHUFFLE CITY ARRAY VIA MODIFIED FISHER-YATES-------//
   shuffleArray: function(array, numOfItems) {
-    console.log(array, 'shuffle array')
     var originalLength = array.length;
     var m = array.length, t, i;
 
@@ -240,7 +237,6 @@ module.exports = {
           score: data.score
 
         });
-        console.log(newScore);
         newScore.save(function(err, resp){
           if (err) {
             console.log('issue saving score')

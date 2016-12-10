@@ -171,7 +171,7 @@ h3 {
    visibility: hidden;
  }
 
- .info, .correct, .incorrect, .challengeInfo {
+ .info, .correct, .incorrect, .challengeInfo, .displayoptions {
    background-image: url('parachutetransparent.png');
    background-repeat: no-repeat;
    background-position: 10%;
@@ -186,6 +186,16 @@ h3 {
    color: black;
    background-color: rgba(255,255,255,.75);
 
+ }
+
+ @media(max-width: 600px) {
+  .info, .correct, .incorrect, .challengeInfo, .displayoptions {
+    font-size: 3vw;
+  }
+ }
+
+ .displayoptions {
+  background-color: rgba(255,255,255,1);
  }
 
 

@@ -27,7 +27,7 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ngclipboa
 	})
 })
 
-.controller('mapController', ['$scope', 'Map', '$location', 'scoreFactory', '$cookies', '$route', function ($scope, Map, $location, scoreFactory, $cookies, $route){
+.controller('mapController', ['$scope', 'Map', '$location', 'scoreFactory', '$cookies', '$route', '$timeout', function ($scope, Map, $location, scoreFactory, $cookies, $route, $timeout){
 	$scope.count = 0;
 	$scope.toggle = true;
 	$scope.buttonToggle = false;
@@ -66,13 +66,14 @@ angular.module('App', ['ngRoute', 'ngMap', 'challenge', 'Highscores', 'ngclipboa
 
 		//after answer has been given, either generate a new location, or display
 		//options for continuing
-		setTimeout(function(){
+		$timeout(function(){
 			//if game was started via shared link, show options
 			if($location.url() !== '/game'){
 				$scope.toggleOptionsDisplay();
+			} else {
+				window.location.href = '#/game';
+				window.location.reload();	
 			}
-			//start game at new spot
-			window.location.reload();
 		}, 2000)
 
 	}
