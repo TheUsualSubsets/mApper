@@ -42,15 +42,20 @@ angular.module('challenge', [])
     //maybe option in the future would be to have a database of city names
     //that the user must select the city from in order to validate the data?
     GeoCoder.geocode({location: {lat: $scope.locationObj.lat, lng: $scope.locationObj.lng}}).then(function(result) {
-      var addressComponents = result[result.length - 3].formatted_address.split(',');
-      if (addressComponents.length === 2) {
-        $scope.locationObj.country = addressComponents[1];
-      } else {
-        $scope.locationObj.country = addressComponents[2];
-        $scope.locationObj.state = addressComponents[1];
-      }
-
-      $scope.locationObj.city = addressComponents[0];
+        var components = result[0].address_components;
+        for(var i = 0; i < components.length; i++) {
+          if ((components[i].types[0] === "locality" ||
+            components[i].types[0] === 'administrative_area_level_1') && !$scope.locationObj.city) {
+            $scope.locationObj.city = components[i].long_name;
+          }
+          if (components[i].types[0] === "country") {
+            if(components[i].short_name === 'US') {
+              $scope.locationObj.country = 'USA';
+            } else {
+              $scope.locationObj.country = components[i].long_name;
+            }
+          }
+        }
     })
   };
 
