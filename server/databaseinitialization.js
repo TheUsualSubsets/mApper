@@ -50,6 +50,10 @@ var entrySchema = new mongoose.Schema({
   country: {
     type: String,
     required: true
+  },
+  answer: {
+    type: String,
+    required: true
   }
 });
 

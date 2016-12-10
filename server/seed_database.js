@@ -51,11 +51,14 @@ var populateDatabase = function(file) {
         heading: Number(entryArray[4]),
         pitch: Number(entryArray[5]),
         state: entryArray[6],
-        country: entryArray[7]
+        country: entryArray[7],
+        answer:JSON.parse(`${entryArray[8]},${entryArray[9]}`)
       }
       //PUSH THE MODIFIED OBJECT TO THE ARRAY
       finalArray.push(entryObject);
     });
+
+    console.log(finalArray, 'finalArray')
     //USE DB.DATA.CREATE TO CREATE NEW INSTANCES OF AN ENTRY AND TO SAVE THEM TO THE DATABASE
     db.data.create(finalArray, function(err, results) {
       if(err) throw err;
