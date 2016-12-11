@@ -27,6 +27,9 @@ angular.module('challenge', [])
 
 
   $scope.updateInfo = function() {
+    //reset validatio alert values
+    $scope.showCityAlert = false;
+    $scope.showPOIAlert = false;
     //create an object that we will send to server to input into the database
     $scope.locationObj =
     {

@@ -62,12 +62,10 @@
 
       <!-- box for entering city and POI and sharing location -->
       <div class="fade-in dissapear generatelinkpopup" ng-class="{'appear': appear, 'dissapear': !appear, 'fade-in': appear}">
-        <div class="alert alert-warning alert-dismissible" role="alert" ng-show="!showPOIAlert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="alert alert-warning" role="alert" ng-show="!showPOIAlert">
           Please provide a short description of location - e.g. "Eiffel Tower"
         </div>
-        <div class="alert alert-danger alert-dismissible" role="alert" ng-show="showPOIAlert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="alert alert-danger" role="alert" ng-show="showPOIAlert">
           Please provide a short description of location - e.g. "Eiffel Tower"
         </div>
         <span>Point of Interest:</span>
@@ -76,12 +74,10 @@
         </span>
         <br>
         <br>
-        <div class="alert alert-warning alert-dismissible" role="alert" ng-show="!showCityAlert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="alert alert-warning" role="alert" ng-show="!showCityAlert">
           If city is not already listed, please provide the closest city to the point of interest.
         </div>
-        <div class="alert alert-danger alert-dismissible" role="alert" ng-show="showCityAlert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="alert alert-danger" role="alert" ng-show="showCityAlert">
          Please provide the closest city to the point of interest.
         </div>
         <span>City Name:</span> 
