@@ -354,6 +354,10 @@ h3 {
   font-size: 2vw;
 }
 
+ .generatelinkpopup .alert {
+    font-size: 1.5vw;
+  }
+
 
 #generatelinkpanel, .displayLink {
   padding-bottom: 30px;
@@ -395,6 +399,10 @@ h3 {
 @media (max-width: 600px) {
 
   .generatelinkpopup {
+    font-size: 5vw;
+  }
+
+  .generatelinkpopup .alert {
     font-size: 5vw;
   }
 

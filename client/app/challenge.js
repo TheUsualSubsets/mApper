@@ -56,6 +56,9 @@ angular.module('challenge', [])
             }
           }
         }
+        if(!$scope.locationObj.country) {
+          $scope.locationObj.country = 'Earth';
+        }
     })
   };
 
@@ -69,6 +72,9 @@ angular.module('challenge', [])
 
   //user has selected a location they'd like to turn into a link
   $scope.addToDatabase = function() {
+    //reset the validation alerts to false;
+    $scope.showCityAlert = false;
+    $scope.showPOIAlert = false;
     // AddNewPoint.addPoint($scope.locationObj);
     AddNewPoint.addPoint($scope.locationObj, function(link){
       //setting $scope.link to a truthy values trigger ng-show to show link
@@ -77,6 +83,21 @@ angular.module('challenge', [])
       $scope.appear = !$scope.appear;
     });
   };
+
+  $scope.validateInput = function() {
+    if(!$scope.locationObj.city || $scope.locationObj.city === '') {
+      $scope.showCityAlert = true;
+    }
+
+    if(!$scope.locationObj.poi || $scope.locationObj.poi === '') {
+      $scope.showPOIAlert = true;
+    }
+
+    if($scope.locationObj.city !== '' && $scope.locationObj.poi !== '' && $scope.locationObj.city && $scope.locationObj.poi) {
+      console.log($scope.locationObj, 'location obj')
+      $scope.addToDatabase();
+    }
+  }
 
   //use map search box value to update current location of the map
   $scope.updateToPlace = function(place) {
