@@ -1,16 +1,21 @@
 var mongoose = require('mongoose');
 var fs = require('fs');
 
+
 //In order for the following connection to work, I had to set the bind_ip variable
 //inside the etc/mongo.config file (on the remote server) to 0.0.0.0.
 //This allows the database to accept connections from networks outside of the local machine.
-mongoose.connect('mongodb://104.236.129.131/mapper', function(err, db) {
+if(process.env.DBUSERNAME && process.env.DBPASSWORD) {
+  var options = {user: process.env.DBUSERNAME, pass: process.env.DBPASSWORD};
+}
+mongoose.connect('mongodb://localhost/mapper', options || null , function(err, db) {
   if (err) {
     throw err;
   } else {
     console.log('successfully connected to database');
   }
 });
+
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -48,6 +53,10 @@ var entrySchema = new mongoose.Schema({
     required: false
   },
   country: {
+    type: String,
+    required: true
+  },
+  answer: {
     type: String,
     required: true
   }

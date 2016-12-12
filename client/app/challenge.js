@@ -27,6 +27,9 @@ angular.module('challenge', [])
 
 
   $scope.updateInfo = function() {
+    //reset validatio alert values
+    $scope.showCityAlert = false;
+    $scope.showPOIAlert = false;
     //create an object that we will send to server to input into the database
     $scope.locationObj =
     {
@@ -42,15 +45,23 @@ angular.module('challenge', [])
     //maybe option in the future would be to have a database of city names
     //that the user must select the city from in order to validate the data?
     GeoCoder.geocode({location: {lat: $scope.locationObj.lat, lng: $scope.locationObj.lng}}).then(function(result) {
-      var addressComponents = result[result.length - 3].formatted_address.split(',');
-      if (addressComponents.length === 2) {
-        $scope.locationObj.country = addressComponents[1];
-      } else {
-        $scope.locationObj.country = addressComponents[2];
-        $scope.locationObj.state = addressComponents[1];
-      }
-
-      $scope.locationObj.city = addressComponents[0];
+        var components = result[0].address_components;
+        for(var i = 0; i < components.length; i++) {
+          if ((components[i].types[0] === "locality" ||
+            components[i].types[0] === 'administrative_area_level_1') && !$scope.locationObj.city) {
+            $scope.locationObj.city = components[i].long_name;
+          }
+          if (components[i].types[0] === "country") {
+            if(components[i].short_name === 'US') {
+              $scope.locationObj.country = 'USA';
+            } else {
+              $scope.locationObj.country = components[i].long_name;
+            }
+          }
+        }
+        if(!$scope.locationObj.country) {
+          $scope.locationObj.country = 'Earth';
+        }
     })
   };
 
@@ -64,6 +75,9 @@ angular.module('challenge', [])
 
   //user has selected a location they'd like to turn into a link
   $scope.addToDatabase = function() {
+    //reset the validation alerts to false;
+    $scope.showCityAlert = false;
+    $scope.showPOIAlert = false;
     // AddNewPoint.addPoint($scope.locationObj);
     AddNewPoint.addPoint($scope.locationObj, function(link){
       //setting $scope.link to a truthy values trigger ng-show to show link
@@ -72,6 +86,21 @@ angular.module('challenge', [])
       $scope.appear = !$scope.appear;
     });
   };
+
+  $scope.validateInput = function() {
+    if(!$scope.locationObj.city || $scope.locationObj.city === '') {
+      $scope.showCityAlert = true;
+    }
+
+    if(!$scope.locationObj.poi || $scope.locationObj.poi === '') {
+      $scope.showPOIAlert = true;
+    }
+
+    if($scope.locationObj.city !== '' && $scope.locationObj.poi !== '' && $scope.locationObj.city && $scope.locationObj.poi) {
+      console.log($scope.locationObj, 'location obj')
+      $scope.addToDatabase();
+    }
+  }
 
   //use map search box value to update current location of the map
   $scope.updateToPlace = function(place) {

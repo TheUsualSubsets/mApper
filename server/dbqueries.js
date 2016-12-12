@@ -28,10 +28,12 @@ module.exports = {
       var pitch = results[randomIndex].pitch;
       var city = results[randomIndex].city_name;
       var poi = results[randomIndex].poi;
+      var country = results[randomIndex].country;
+      var answer = results[randomIndex].answer;
 
       //if selected city is not in shuffled array list, add it
-      if(cities.indexOf(city) === -1) {
-        cities[Math.floor(Math.random()*cities.length)] = city;
+      if(cities.indexOf(answer) === -1) {
+        cities[Math.floor(Math.random()*cities.length)] = answer;
       }
 
       //create object to send back to client
@@ -39,7 +41,7 @@ module.exports = {
       {
         position: {lat: lat, lng: lng},
         streetViewParams: {heading: heading, pitch: pitch},
-        answer: city,
+        answer: answer,
         poi: poi,
         answerChoices: cities
       };
@@ -79,10 +81,10 @@ module.exports = {
         var challengePoint = result;
 
         //check to see if correct answer is in random shuffled answer array
-        if (cities.indexOf(challengePoint.city_name) === -1) {
+        if (cities.indexOf(challengePoint.answer) === -1) {
           //If it is not, we must replace one city 
           //with the correct answer
-          cities[Math.floor(Math.random()*5)] = challengePoint.city_name;
+          cities[Math.floor(Math.random()*5)] = challengePoint.answer;
         } 
 
 
@@ -91,7 +93,7 @@ module.exports = {
         {
           position: {lat: challengePoint.lat, lng: challengePoint.lng},
           streetViewParams: {heading: challengePoint.heading, pitch: challengePoint.pitch},
-          answer: challengePoint.city_name,
+          answer: challengePoint.answer,
           poi: challengePoint.poi,
           answerChoices: cities
         };
@@ -121,7 +123,8 @@ module.exports = {
            heading: point.heading,
            pitch: point.pitch,
            state: point.state || 'not in US',
-           country: point.country
+           country: point.country,
+           answer: `${point.city}, ${point.country}`
          });
          newPoint.save(function(err){
            if(err){
@@ -152,6 +155,7 @@ module.exports = {
     }
     //return a array with a length of numOfItems
     var results = array.slice(originalLength - numOfItems);
+    
     return results;
   },
 
@@ -200,7 +204,7 @@ module.exports = {
     //this function was used for testing purposes but can also be used to retrieve a
     //list of all available cities.
     distinctQuery: function(callback) {
-      db.data.distinct('city_name').then(function(result) {
+      db.data.distinct('answer').then(function(result) {
         callback(result);
       })
       .catch(function(err) {
@@ -233,7 +237,6 @@ module.exports = {
           score: data.score
 
         });
-        console.log(newScore);
         newScore.save(function(err, resp){
           if (err) {
             console.log('issue saving score')

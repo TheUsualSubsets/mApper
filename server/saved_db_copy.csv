@@ -1,52 +1,138 @@
- city_name, lat, lng, poi ,heading,pitch,state,country
- Chicago,41.8916978,-87.60852, Navy Pier ,0,0,IL,USA
- Chicago,41.8827381,-87.62276, The Bean ,0,0,IL,USA
- Chicago,41.8813627,-87.67255, The United Center ,0,0,IL,USA
- Chicago,41.9102189,-87.67752, Wicker Park ,0,0,IL,USA
- Chicago,41.8515308,-87.63204, China Town ,0,0,IL,USA
- Chicago,41.7799305,-87.64968, Englewood ,0,0,IL,USA
- Chicago,41.9472224,-87.65648, Wrigley Field ,0,0,IL,USA
- Chicago,41.946409,-87.64939, Lakeview ,0,0,IL,USA
- Chicago,41.9017095,-87.70334, Humboldt Park ,0,0,IL,USA
- Chicago,41.9028199,-87.6895, Pilson ,0,0,IL,USA
- London,51.5031075,-0.1197771, London Eye ,0,0,,UK
- Chicago,41.9542214,-87.67958, Lakeview ,0,0,IL,USA
- London,51.5086019,-0.0761589, Tower of London ,0,0,,UK
- London,51.5073368,-0.164999, Hyde Park ,0,0,,UK
- London,51.5137588,-0.0990787, St Paul's Cathedral ,0,0,,UK
- London,51.5009354,-0.1244986, Big Ben ,0,0,,UK
- London,51.5056233,-0.1872464, Kensington Palace ,0,0,,UK
- London,51.6570983,-0.3911517, Watford ,0,0,,UK
- London,51.518845,-0.12597, British Museum ,0,0,,UK
- London,51.5081035,-0.09708, Globe Theatre ,0,0,,UK
- London,51.5383379,-0.0173894, Olympic Stadium ,0,0,,UK
- San Francisco,37.7597727,-122.42706, Dolores Park ,0,0,CA,USA
- San Francisco,37.770478,-122.47743, Golden Gate Park ,0,0,CA,USA
- San Francisco,37.8158332,-122.47804, Golden Gate Bridge ,0,0,CA,USA
- San Francisco,37.7631877,-122.51286, Ocean Beach ,0,0,CA,USA
- San Francisco,37.8087435,-122.41588, Fishermans Wharf ,0,0,CA,USA
- San Francisco,37.7545798,-122.44642, Twin Peaks ,0,0,CA,USA
- San Francisco,37.7948658,-122.39347, San Francisco Ferry Building ,0,0,CA,USA
- San Francisco,37.778074,-122.39166, At&t Park ,0,0,CA,USA
- San Francisco,37.7699989,-122.44691, Haight Ashbury ,0,0,CA,USA
- New York,40.7585853,-73.97901, 30 Rockefeller Plaza ,0,0,NY,USA
- San Francisco,37.8020583,-122.41918, Lombard Street ,0,0,CA,USA
- New York,40.7514272,-73.9937, Madison Square Garden ,0,0,CA,USA
- New York,40.7483142,-73.9847, Empire State Building ,0,0,CA,USA
- New York,40.7585993,-73.98514, Times Square ,0,0,CA,USA
- New York,40.775333,-73.97283, Central Park ,0,0,CA,USA
- New York,40.5730103,-73.98132, Cony Island ,0,0,CA,USA
- New York,40.7613411,-73.97796, MoMa ,0,0,CA,USA
- New York,40.7112892,-74.01456, Near World Trade Center ,0,0,CA,USA
- New York,40.7054665,-74.01336, New York Stock Exchange ,0,0,CA,USA
- Istanbul,41.0063603,28.97808, Sultanahmet ,0,0,,Turkey
- New York,40.7037122,-73.99374, Brooklyn Bridge ,0,0,NY,USA
- Istanbul,41.0373658,28.98542, Taksim Square ,0,0,,Turkey
- Istanbul,41.041994,29.00686, Becesehir University ,0,0,,Turkey
- Istanbul,41.0220137,28.97704, Karakoy ,0,0,,Turkey
- Istanbul,41.0054443,28.97694, Blue Mosque ,0,0,,Turkey
- Istanbul,41.008767,28.9798, Haiga Sophia ,0,0,,Turkey
- Istanbul,41.0754137,29.04433, Misir Konsoloslugo ,0,0,,Turkey
- Istanbul,41.0105645,28.96803, Grand Bazaar ,0,0,,Turkey
- Istanbul,40.8779465,29.0995, Heybiliada ,0,0,,Turkey
- Istanbul,41.012334,28.98463, Topkapi Palace ,0,0,,Turkey
+ city_name, lat, lng, poi, heading, pitch, state, country ,answer
+Al Haram,29.9766217,31.1359366, Pyramid of Giza,100.9570236,-23.1163197,  Giza Governorate,Egypt,"Al Haram, Egypt"
+Arizona,35.9881578,-113.8201984, Grand Canyon,323.1713143,-10.6613557,  AZ,AZ,"Arizona, AZ"
+Arlington Heights,42.08468665,-87.97680841, Recreation Park,207.5384587,16.3814022, not in US,USA,"Arlington Heights, USA"
+Attica,37.9448214,23.63842893, Port of Pireas,145.1044698,1.3067586, not in US,Greece,"Attica, Greece"
+Austin,30.2639936,-97.7703776, Barton Springs,27.6396530,-7.7940744,  TX,USA,"Austin, USA"
+Austin,30.283315,-97.73354, Darrell K Royal Stadium - University of Texas,67.7165784,-12.5730511,  TX,USA,"Austin, USA"
+Austin,30.26720552,-97.739778, 6th Street,195.8674309,-0.0445019,  TX,USA,"Austin, USA"
+Austin,30.2741043,-97.7414524, Texas State Capitol Building,37.5403515,26.2058063,  TX,USA,"Austin, USA"
+Austin,30.28499487,-97.73952686, The University of Texas at Austin,10.9260329,7.9729089,  TX,USA,"Austin, USA"
+Austin,30.26190215,-97.7450626, Congress Avenue Bridge,8.1644092,13.2914767,  TX,USA,"Austin, USA"
+Barcelona,41.39004318,2.18652181, Parc de la Ciutadella,117.1808934,10.5018660, not in US,Spain,"Barcelona, Spain"
+Barcelona,41.3767739,2.190715, Platja de la Barceloneta,134.7896803,9.9017813, not in US,Spain,"Barcelona, Spain"
+Beijing,39.908715,116.397389, Tiananmen Square,164.9610327,4.4965324, not in US,China,"Beijing, China"
+Berkeley,37.88569678,-122.2729717, Yolo Ave,218.3144670,-0.8777848,  CA,USA,"Berkeley, USA"
+Big Sur,36.2382967,-121.817025, Pfeiffer Point,251.0872989,3.3281087,  CA,USA,"Big Sur, USA"
+Bogot‡,4.6081519,-74.0592328, Monserrate,176.0346922,-5.9564644, not in US,Colombia,"Bogot‡, Colombia"
+Bogot‡,4.598039721,-74.07304687, La Candelaria,49.2499879,0.6271196,  Bogota,Colombia,"Bogot‡, Colombia"
+Bogot‡,4.624067827,-74.06463304, Parque Nacional,106.6335703,7.4731537, not in US,Colombia,"Bogot‡, Colombia"
+BorŒs,57.71711162,12.93309613, No Limit Borí«s (Street Art By Carolina Falholt),72.6304945,11.3520202, not in US,Sweden,"BorŒs, Sweden"
+Boston,42.3740883,-71.1162732, Harvard University,175.6085587,17.5985657, not in US,USA,"Boston, USA"
+Boston,42.3570439,-71.0928603, Massachusetts Institute of Technology,244.3780300,12.8384332, not in US,USA,"Boston, USA"
+Boston,42.35030054,-71.10338688, Boston University,55.8804157,6.8988049, not in US,USA,"Boston, USA"
+Boston,42.36679751,-71.12677351, Harvard Stadium,223.6895065,6.6297703, not in US,USA,"Boston, USA"
+Boston,42.35412471,-71.06996484, Boston Public Garden,346.5155619,5.8068088, not in US,USA,"Boston, USA"
+Boston,42.35495843,-71.08093809, Esplanade,67.4824940,-1.1484058, not in US,USA,"Boston, USA"
+Budapest,47.49126623,19.04537505, Taban,42.3193534,-1.1161427, not in US,Hungary,"Budapest, Hungary"
+Cabarete,19.7482852,-70.403105, Calle B,128.9364128,-5.8875269, not in US,Dominican Republic,"Cabarete, Dominican Republic"
+Cape Town,-33.9248685,18.4240553, Table Mountain,235.6683795,-9.5350413, not in US,South Africa,"Cape Town, South Africa"
+Chicago,41.8916978,-87.60852,  Navy Pier ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.8827381,-87.62276,  The Bean ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.8813627,-87.67255,  The United Center ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.8515308,-87.63204,  China Town ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.9102189,-87.67752,  Wicker Park ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.7799305,-87.64968,  Englewood ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.9472224,-87.65648,  Wrigley Field ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.946409,-87.64939,  Lakeview ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.9017095,-87.70334,  Humboldt Park ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.9028199,-87.6895,  Pilson ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Chicago,41.9542214,-87.67958,  Lakeview ,0.0000000,0.0000000, IL,USA,"Chicago, USA"
+Dubrovnik,42.64102602,18.1092952, The Gaffe,218.2979689,-13.7588086, not in US,Croatia,"Dubrovnik, Croatia"
+Fargo,46.87724412,-96.78984988, Downtown,47.1718473,9.9510348, not in US,USA,"Fargo, USA"
+Fargo,46.9031867,-96.80182, Fargo Dome,285.0184385,12.5956623, not in US,USA,"Fargo, USA"
+Haledon,40.93638492,-74.18262673, 57 Zabriskie St.,321.7328688,6.7371236,  NY-NJ-PA,USA,"Haledon, USA"
+Haledon,40.94127576,-74.18519727, The Sheppard and The Knucklehead,254.0951345,4.9080456,  NY-NJ-PA,USA,"Haledon, USA"
+H_Long,20.8818573,107.1675648, Ha Long Bay,335.4085441,-28.8315355,  Quà_£ng Ninh,Vietnam,"H_Long, Vietnam"
+Huairou,40.42901244,116.5680471, Great Wall of China,308.8703951,-15.0969612,  Beijing,China,"Huairou, China"
+Istanbul,41.0063603,28.97808,  Sultanahmet ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.041994,29.00686,  Becesehir University ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.0373658,28.98542,  Taksim Square ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.0220137,28.97704,  Karakoy ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.0054443,28.97694,  Blue Mosque ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.0754137,29.04433,  Misir Konsoloslugo ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.008767,28.9798,  Haiga Sophia ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.0105645,28.96803,  Grand Bazaar ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,40.8779465,29.0995,  Heybiliada ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Istanbul,41.012334,28.98463,  Topkapi Palace ,0.0000000,0.0000000,null,Turkey,"Istanbul, Turkey"
+Kabul,34.5251109,69.1528422, Karte Parwan,10.5644693,2.2924532, not in US,Afghanistan,"Kabul, Afghanistan"
+Ketchikan,55.34126896,-131.646862, Ketchikan,303.7236461,-5.2133421,  AK 99901,USA,"Ketchikan, USA"
+Kyoto,35.0393108,135.7295909, Kinkaku-ji Temple,10.8667706,2.5307021, not in US,Japan,"Kyoto, Japan"
+Laredo,27.51095286,-99.50322066, Border Crossing - USA/Mexico in Laredo,181.6165030,-4.4274997,  TX,USA,"Laredo, USA"
+Lincolnshire,53.2911241,-0.192984194, Sotby,313.2167924,-8.4029885, not in US,UK,"Lincolnshire, UK"
+Lincolnshire,53.234279,-0.535396, Lincoln Cathedral,305.0394876,6.4570880, not in US,UK,"Lincolnshire, UK"
+London,51.5031075,-0.1197771,  London Eye ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.5086019,-0.0761589,  Tower of London ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.5073368,-0.164999,  Hyde Park ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.5137588,-0.0990787,  St Paul's Cathedral ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.5009354,-0.1244986,  Big Ben ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.5056233,-0.1872464,  Kensington Palace ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.518845,-0.12597,  British Museum ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.5081035,-0.09708,  Globe Theatre ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.6570983,-0.3911517,  Watford ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.5383379,-0.0173894,  Olympic Stadium ,0.0000000,0.0000000,null,UK,"London, UK"
+London,51.51051723,-0.143837859, it's a banksy,124.2888155,28.8906984, not in US,UK,"London, UK"
+London,51.50421965,-0.076274662, Tower Bridge,19.5271051,21.9061366, not in US,UK,"London, UK"
+Los Angeles,34.1347299,-118.3209103, Hollywood,159.4810986,-12.9116209,  CA,USA,"Los Angeles, USA"
+Los Angeles,33.9858111,-118.4727424, Venice Beach,258.2251256,-11.4141219,  CA,USA,"Los Angeles, USA"
+Los Angeles,34.0496701,-118.2394435, Little Tokyo,251.3004502,-6.3929216,  CA,USA,"Los Angeles, USA"
+Louth,53.3674573,-0.001676001, Prime Meridian Marker,348.4428682,-5.7210053, not in US,UK,"Louth, UK"
+Minneapolis,44.86232942,-93.56151757, Paisley Park,178.3766793,4.2668116, not in US,USA,"Minneapolis, USA"
+Minneapolis,44.977753,-93.2650108, Metrodome - Home of The Minnesota Vikings,125.1924140,22.4846643, not in US,USA,"Minneapolis, USA"
+Mokelumne Hill,38.30091855,-120.7059384, Hotel Leger,55.8419285,-2.7973798,  CA,USA,"Mokelumne Hill, USA"
+Moshi,-3.0666386,37.3506618, Uhuru Peak - Mount Kilimanjaro,110.0817612,-6.6013734, not in US,Tanzania,"Moshi, Tanzania"
+Mountain View,37.421657,-122.083854, Googleplex,92.6544047,9.2753348,  CA,USA,"Mountain View, USA"
+New York,40.7585853,-73.97901,  30 Rockefeller Plaza ,0.0000000,0.0000000, NY,USA,"New York, USA"
+New York,40.7585993,-73.98514,  Times Square ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.7514272,-73.9937,  Madison Square Garden ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.7483142,-73.9847,  Empire State Building ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.775333,-73.97283,  Central Park ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.5730103,-73.98132,  Cony Island ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.7613411,-73.97796,  MoMa ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.7054665,-74.01336,  New York Stock Exchange ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.7112892,-74.01456,  Near World Trade Center ,0.0000000,0.0000000, CA,USA,"New York, USA"
+New York,40.7037122,-73.99374,  Brooklyn Bridge ,0.0000000,0.0000000, NY,USA,"New York, USA"
+Niagara,43.0772749,-79.0753202, Niagra Falls,282.8673141,-5.5238450,  ON,Canada,"Niagara, Canada"
+Oakland,37.81858027,-122.2686548, The Ghetto,95.7980163,-5.7514186,  CA,USA,"Oakland, USA"
+Pallanza,45.92105724,8.553290338, Pallanza,27.0292808,12.9525725, not in US,Italy,"Pallanza, Italy"
+Paris,48.85889556,2.293511667, Eiffel Tower,323.7258739,-4.2764613, not in US,France,"Paris, France"
+Paris,48.85865051,2.337681874, Pont des Arts Bridge,114.6210587,-1.9115505, not in US,France,"Paris, France"
+Pisa,43.72242658,10.39659188, Leaning Tower od Pisa,7.0906774,6.7933505, not in US,Italy,"Pisa, Italy"
+Portland,45.52759289,-122.6692517, N Steel Bridge,50.3353480,3.3144926, not in US,USA,"Portland, USA"
+Rio de Janeiro,-22.95109055,-43.20945104, Christ the Redeemer,131.8711910,-10.8711789, not in US,Brazil,"Rio de Janeiro, Brazil"
+San Diego,32.8812369,-117.2358628, University of California San Diego,339.5007033,14.0234068,  CA,USA,"San Diego, USA"
+San Francisco,37.7597727,-122.42706,  Dolores Park ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.770478,-122.47743,  Golden Gate Park ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.8158332,-122.47804,  Golden Gate Bridge ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.7631877,-122.51286,  Ocean Beach ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.7545798,-122.44642,  Twin Peaks ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.8087435,-122.41588,  Fishermans Wharf ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.7948658,-122.39347,  San Francisco Ferry Building ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.778074,-122.39166,  At&t Park ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.7699989,-122.44691,  Haight Ashbury ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.8020583,-122.41918,  Lombard Street ,0.0000000,0.0000000, CA,USA,"San Francisco, USA"
+San Francisco,37.81998305,-122.3743699, Treasure Island,198.0986937,8.8114900,  CA,USA,"San Francisco, USA"
+San Francisco,37.78768388,-122.400189, makersquare,0.0000000,0.0000000,  CA,USA,"San Francisco, USA"
+San Francisco,37.79411778,-122.407795, Chinatown,187.4972771,-1.5593140,  CA,USA,"San Francisco, USA"
+San Francisco,37.78768388,-122.400189, Chestnut Street,0.0000000,0.0000000,  CA,USA,"San Francisco, USA"
+San Francisco,37.78768388,-122.400189," document.createTextNode(""Hi  greetings test 123445566623423423!"");",0.0000000,0.0000000,  CA,USA,"San Francisco, USA"
+San Francisco,37.7784272,-122.3896726, at&t park,149.8324170,-19.9894236,  CA,USA,"San Francisco, USA"
+San Francisco,37.7507235,-122.4654169, House,250.6263582,-6.1295536,  CA,USA,"San Francisco, USA"
+San Luis Obispo,35.6852319,-121.1681916, Hearst Castle,43.7313557,24.3362713,  CA,USA,"San Luis Obispo, USA"
+Santa Cruz,36.96443102,-122.0194265, Boardwalk,138.0975049,2.8888416,  CA,USA,"Santa Cruz, USA"
+Santa Cruz,37.017279,-122.003778, The Mystery Spot,260.5946755,4.5057971,  CA,USA,"Santa Cruz, USA"
+Santiago,-33.4378305,-70.6504492, Santiago Metro,274.4969059,15.3613133, not in US,Chile,"Santiago, Chile"
+Sarajevo,43.8197666,18.33736145, Tunnel of Hope,20.4641217,-16.2079118, not in US,Bosnia and Herzegovina,"Sarajevo, Bosnia and Herzegovina"
+Seward,60.0994392,-149.4405416, Seward,48.0406328,-0.5862316,  AK,USA,"Seward, USA"
+Sidney,48.64897337,-123.4012996, Sidney,103.7652021,4.6165039,  BC,Canada,"Sidney, Canada"
+Siskiyou,41.3098746,-122.3105666, Mt Shasta,221.8778612,-5.5550568,  CA,USA,"Siskiyou, USA"
+Sotby,53.2911241,-0.192984194, Chapel Cottage,300.2349748,5.0614493, not in US,UK,"Sotby, UK"
+Sydney,-33.8688197,151.2092955, Sydney Harbor Bridge,285.4312809,7.5866629,  NSW,Australia,"Sydney, Australia"
+Tokyo,35.6244965,139.7758026, Gundam Front,346.3752157,7.4533524, not in US,Japan,"Tokyo, Japan"
+Upminster,51.55582616,0.248999204, High St.,0.0000000,0.0000000, not in US,UK,"Upminster, UK"
+Valdez,61.1412541,-146.3585855, Valdez,104.3245070,-10.6859625,  AK,USA,"Valdez, USA"
+Wayne,40.92617241,-74.24639087, Alps,281.8541028,-4.9429717,  NY-NJ-PA,USA,"Wayne, USA"
+Wayne,40.94222512,-74.19898582, Shea Center William Paterson University,31.9024265,7.9357213,  NY-NJ-PA,USA,"Wayne, USA"
+Zanzibar,-6.2658619,39.5342904, Paje Beach,81.2718372,12.3267081, not in US,Tanzania,"Zanzibar, Tanzania"
+Zanzibar,-6.1611763,39.1920417, Stone Town,183.0359913,7.6974997, not in US,Tanzania,"Zanzibar, Tanzania"
+Zanzibar,-6.1522939,39.518985, The Rock Restaurant,62.5094119,1.5504524,  Pingwe,Tanzania,"Zanzibar, Tanzania"

@@ -1,0 +1,16 @@
+//this file is required by PM2 on digital ocean and is used to set up the environment needed for server to run and connect/authenticate with database
+//usage: pm2 start ecosystem.json
+
+{
+  "apps" : [{
+    // Application #1
+    "name"        : "parachute",
+    "script"      : "server.js",
+    "watch"       : true,
+    "env": {
+      "PORT"      : 80,
+      "DBUSERNAME": "xxx",
+      "DBPASSWORD": "xxx"
+    }
+  }]
+}

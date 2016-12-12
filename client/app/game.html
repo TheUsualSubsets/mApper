@@ -18,7 +18,7 @@
         <form class="userform" name='userForm'>
           Enter initials to save score:
           <input type="text" maxlength="3" size="5" ng-model='userName' required>
-          <button type="submit" class = 'btn' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
+          <button type="submit" class = 'btn-primary' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
         </form>
       </div>
       
@@ -40,7 +40,7 @@
         </form>
       </div>
       <br>
-      <button class='btn' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
+      <button class='btn-primary' ng-click='updateUserInfo(userName); StartGame()'>Jump!</button>
 
     </div>
 
@@ -57,11 +57,11 @@
       <h3 ng-hide="link">Hang tight. We are dropping you in a new location...</h3>
     </div>
 
-    <div class="displayLink fade-in" ng-show="displayOptions">
+    <div class="displayoptions fade-in" ng-show="displayOptions">
       <h3>What's next?</h3>
       <br>
-      <a class='option' href="/#/game">start new game</a>
-      <a class='option' href="/#/challenge"> create a challenge</a>
+      <a class='option' href="/#/game">continue playing</a> <br><br> 
+      <a class='option' href="/#/challenge"> create a challenge</a> <br><br>
       <a class='option' href="http://www.google.com"> get me outta here!</a>
     </div>
 
