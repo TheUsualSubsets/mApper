@@ -21,7 +21,7 @@ ___
 2. [Development](# develop-/-contribute)
   * [Usage](# usage)
   * [Tasks](# tasks)
-3. [Known Bugs (Updated October, 2016)](# known-bugs)
+
 
 
 
@@ -45,7 +45,7 @@ ___
 
   Fork the repo to your github.com account. Clone to your local machine.
 
-  Install dependencies and start local server (from command-line):
+  Install dependencies and start local server (from command-line).  You must have an instance of mongod running in the background.  Please see Tasks to seed database with initial locations.
 
 ```
 cd mApper
@@ -58,24 +58,15 @@ npm start
 
 ### Tasks
 
-  To seed the database, run the seed_database.js file one time from your command-line:
+  To seed the database, run the seed_database.js file one time from your command-line.  You must have an instance of mongod running in the background.
 
   ```
+  cd server
   node seed_database.js
+  cd ..
   ```
 
   This will populate your database with 50 initial locations selected from London, Chicago, New York, San Francisco and Istanbul.
 
 
 
-## KNOWN BUGS
-
-1. Cookies don't totally work - if you switch the user, it makes user undefined, instead of taking you back to the instruction page to log in with new initials
-
-2. Sometimes it will freeze after 6 rounds....but usually not
-
-3. We are querying the entire DB every time we need a random city, which is probably not the most efficient method
-
-4. If the browser is zoomed in (or in some cases if the resolution is very different from what the game was designed for) the list of cities at the bottom of the screen will render really....wrong-looking
-
-5.  Not mobile optimized
